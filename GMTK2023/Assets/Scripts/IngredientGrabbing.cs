@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static DraggableObject;
 
-public class SimpleBoxObjectPhysics : MonoBehaviour
+public class IngredientGrabbing : MonoBehaviour
 {
     //added stuff
     public enum ingredientStatus { Dragging, NotDragging };
