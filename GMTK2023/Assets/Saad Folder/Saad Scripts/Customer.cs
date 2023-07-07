@@ -6,9 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class Customer : ScriptableObject
 {
-	[SerializeField] private new string name;
-	[SerializeField] private string[] dialogueLines;
-	[SerializeField] private PotionTypes preferredPotionType;
+	 public new string name;
+	 public string[] dialogueLines;
+	 public PotionTypes preferredPotionType;
 
 
 

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Old Man
   dialogueLines:
-  - Hello...
-  - I'm an old man
+  - Hello there, I amHello there, I am an old man Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeHello
+    there, I am an old man Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee an old man
+    Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - 
   preferredPotionType: 1
