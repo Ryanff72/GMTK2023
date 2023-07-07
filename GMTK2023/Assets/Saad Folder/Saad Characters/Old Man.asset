@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Old Man
   dialogueLines:
-  - Hello there, I amHello there, I am an old man Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeHello
-    there, I am an old man Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee an old man
-    Help me pleaseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  - Hello there I am an old man in dire need of potion making supplies. Please help
+    or else I will die.
   - 
   preferredPotionType: 1

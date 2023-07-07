@@ -466,7 +466,7 @@ MonoBehaviour:
   positionToSizeYRatio: {x: -13.54, y: 26.92421}
   currentText: {fileID: 0}
   currentRenderer: {fileID: 0}
-  timeBetweenLetters: 0.01
+  timeBetweenLetters: 0.03
 --- !u!1 &1071479231
 GameObject:
   m_ObjectHideFlags: 0
