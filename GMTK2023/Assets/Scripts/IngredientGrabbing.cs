@@ -110,7 +110,7 @@ public class IngredientGrabbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > 6.1f && ingStatus == ingredientStatus.NotDragging)
+        if(transform.position.y > 5.6f && ingStatus == ingredientStatus.NotDragging)
         {
             GameObject.Find("GameController").GetComponent<GameController>().serveItem = gameObject;
         }

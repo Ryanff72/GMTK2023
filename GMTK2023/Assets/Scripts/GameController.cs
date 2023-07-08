@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     public Sprite MorningBg;
     public Sprite SunsetBg;
     public Sprite NightBg;
+    public List<Sprite> tablesTops;
+    public List<Sprite> tablesBots;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,9 @@ public class GameController : MonoBehaviour
     public IEnumerator startDay()
     {
         GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
+        GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
+        GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
+
         yield return new WaitForSeconds(2.5f);
         currentCustomers = new List<GameObject>(Customers.Count);
         for(int i = 0; i < Customers.Count; i++)
@@ -70,7 +75,7 @@ public class GameController : MonoBehaviour
         serveItem.GetComponent<Ingredient>().serve();
         yield return new WaitForSeconds(0.5f);
         currentCustomers[CustomerIndex].GetComponent<Client>().receiveItem(serveItem);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
@@ -78,17 +83,23 @@ public class GameController : MonoBehaviour
             if(CustomerIndex == 2)
             {
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
-            } else if(CustomerIndex == 4)
+                GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
+                GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
+            }
+            else if(CustomerIndex == 4)
             {
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
+                GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
+                GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
             }
             if(CustomerIndex % CharactersPerDay == 0)
             {
                 day++;
+                yield return new WaitForSeconds(newDayWaitTime);
             }
-            yield return new WaitForSeconds(newDayWaitTime);
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
-        } else
+        } 
+        else
         {
             endedDay = true;
         }
