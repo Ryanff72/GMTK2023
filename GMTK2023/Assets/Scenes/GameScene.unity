@@ -3502,7 +3502,7 @@ MonoBehaviour:
   - {fileID: 6075445496166873225, guid: bbd2a44e82b9c7047a71bc201eaa4ce5, type: 3}
   CustomerIndex: 0
   CustomerPos: {x: 2.89, y: 0}
-  day: 1
+  day: 2
   serveItem: {fileID: 0}
 --- !u!4 &2078553499
 Transform:

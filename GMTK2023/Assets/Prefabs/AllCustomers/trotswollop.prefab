@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b26b8e3f0e5c64ea0ee65e165c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appearLerp: 0
   appearSpeed: 0.08
   Hp: 3
-  wantedItemName: onion
+  wantedItemName: veggie paste
   wantedItemMod: 0
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: a15cf1fe2c2b9984aaae52be8470b359, type: 2}
