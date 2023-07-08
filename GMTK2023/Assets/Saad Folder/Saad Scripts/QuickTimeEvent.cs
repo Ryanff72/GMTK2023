@@ -26,7 +26,7 @@ public class QuickTimeEvent : MonoBehaviour
 		}
 	}
 
-	void RandomQTE()
+	public void RandomQTE()
 	{
 		//Instantiate(qtePrompts[0].qtePrefab, qteSpawnPos.position, Quaternion.identity);
 
@@ -35,8 +35,9 @@ public class QuickTimeEvent : MonoBehaviour
 		if (randomValue == 1)
 		{
 			//this has a 20% of occuring
-			GameObject spawnedKey = Instantiate(qtePrompts[0].qtePrefab, qteSpawnPos.position, Quaternion.identity);
-			currentQTECoroutine = StartCoroutine(StartQTE(spawnedKey,qtePrompts[0].keyCode));
+			int randomQTE = Random.Range(0, qtePrompts.Length);
+			GameObject spawnedKey = Instantiate(qtePrompts[randomQTE].qtePrefab, qteSpawnPos.position, Quaternion.identity);
+			currentQTECoroutine = StartCoroutine(StartQTE(spawnedKey,qtePrompts[randomQTE].keyCode));
 		}
 	}
 
@@ -52,7 +53,7 @@ public class QuickTimeEvent : MonoBehaviour
 		{
 			//failed QTE
 			//do something
-
+			print("FAILED!");
 
 			StopCoroutine(currentQTECoroutine);
 		}
