@@ -22,7 +22,7 @@ public class Item {
 
     public bool isPoisonous()
     {
-        if(Name == "Leaf water")
+        if(Name == "leafWater")
         {
             return true;
         }

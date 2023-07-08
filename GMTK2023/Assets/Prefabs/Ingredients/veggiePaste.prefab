@@ -208,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 7
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.2767119, g: 0.3019608, b: 0.18431373, a: 1}
   m_FlipX: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5800b10759d48469997e8259e7d603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: veggiePaste
   Mod: 0
   canHeat: 0
   canShake: 0
@@ -340,6 +340,8 @@ MonoBehaviour:
   rightGc: {fileID: 6746220002989633174}
   heatedSprite: {fileID: 0}
   shakenSprite: {fileID: 0}
+  characterHandPos: {x: 0, y: 0, z: 0}
+  lerpSpeed: 0.01
 --- !u!1 &6310793256179935320
 GameObject:
   m_ObjectHideFlags: 0

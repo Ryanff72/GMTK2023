@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appearSpeed: 0.08
   Hp: 3
-  wantedItemName: onion
+  wantedItemName: veggiePaste
   wantedItemMod: 0
   holdingItem: {fileID: 0}
