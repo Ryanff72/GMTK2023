@@ -105,7 +105,7 @@ Transform:
   - {fileID: 1111897202674841323}
   - {fileID: 1299456678745710296}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5209017577257044643
 SpriteRenderer:
@@ -295,6 +295,7 @@ MonoBehaviour:
   WCHR: {fileID: 9216517901562787215}
   CCR: {fileID: 1111897202674841323}
   CCL: {fileID: 1299456678745710296}
+  landingSmoke: {fileID: 18903135036247335, guid: d597b64907e3c45459d84294877bcae9, type: 3}
 --- !u!1 &5204172104691233765
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6844171806969227369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: 0.5024, z: 0}
+  m_LocalPosition: {x: 0.49, y: 0.5079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7205874888015266367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49, y: 0.5021, z: 0}
+  m_LocalPosition: {x: -0.49, y: 0.5076, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

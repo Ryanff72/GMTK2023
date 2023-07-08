@@ -320,6 +320,7 @@ MonoBehaviour:
   WCHR: {fileID: 2689177898194209713}
   CCR: {fileID: 3546710052873994168}
   CCL: {fileID: 8963199401262408807}
+  landingSmoke: {fileID: 18903135036247335, guid: d597b64907e3c45459d84294877bcae9, type: 3}
   landSound: {fileID: 0}
 --- !u!114 &1752014597968601823
 MonoBehaviour:

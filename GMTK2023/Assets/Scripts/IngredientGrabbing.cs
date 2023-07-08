@@ -42,7 +42,7 @@ public class IngredientGrabbing : MonoBehaviour
     [SerializeField] Transform CCR;
     [SerializeField] Transform CCL;
     bool velHasDiminished = false;
-    //[SerializeField] GameObject landingSmoke;
+    public GameObject landingSmoke;
     //[SerializeField] GameObject breakSmoke;
     //[SerializeField] GameObject SoundCreator;
     bool crushed;
@@ -174,7 +174,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if (hasSpawnedSmoke == false)
                 {
                     hasSpawnedSmoke = true;
-                    //Instantiate(landingSmoke, transform.position + new Vector3(0, -0.72f, 0), Quaternion.Euler(-90, 0, 0));
+                    Instantiate(landingSmoke, transform.position + new Vector3(0, -0.72f, -5), Quaternion.Euler(-90, 0, 0));
                     //SoundCreator.transform.position = transform.position;
                     //SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
                 }
