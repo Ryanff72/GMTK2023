@@ -9,10 +9,9 @@ public class SpawnNew : MonoBehaviour
 
     Animator anim ;
     GameObject go;
-<<<<<<< Updated upstream
-=======
     public GameObject cauldronPoof;
->>>>>>> Stashed changes
+
+
     public Sprite[] sp;
     public Vector3[] spsc;
 
@@ -28,7 +27,6 @@ public class SpawnNew : MonoBehaviour
     public void SpawnItem (GameObject spawnedItem)
     {
         go = spawnedItem;
-<<<<<<< Updated upstream
 
         //make for each item that can be added to the pot
         if (spawnedItem.name == "veggiePaste")
@@ -36,15 +34,6 @@ public class SpawnNew : MonoBehaviour
             chosenSprite = sp[0];
             chosenVector3 = spsc[0]; 
         }
-        
-
-=======
-        if(spawnedItem.name == "veggiePaste")
-        {
-            chosenSprite = sp[0];
-            chosenVector3 = spsc[0];
-        }
->>>>>>> Stashed changes
 
         StartCoroutine("animAndSpawn");
     }
