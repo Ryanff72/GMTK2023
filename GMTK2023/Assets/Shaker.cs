@@ -55,7 +55,7 @@ public class Shaker : MonoBehaviour
         worldMousePos = Camera.main.ScreenToWorldPoint(screenPoint);
 
         //pick up the object
-        if (Input.GetButtonDown("Fire1") && hovering)
+        if (Input.GetButtonDown("Fire1") && hovering && shksts != shakerStatus.Output)
         {
             shksts = shakerStatus.Shaking;
         }
@@ -82,8 +82,11 @@ public class Shaker : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.5f);
                 shakenObjects[i].GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.NotDragging;
-                shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
-                shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
+                if (shakenObjects[i].GetComponent<IngredientGrabbing>().shakeable == true)
+                {
+                    shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
+                    shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
+                }
                 shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(7, 10), Random.Range(15, 20));
             }
             shakenObjects.Clear();
@@ -95,7 +98,7 @@ public class Shaker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 8 && (shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant) && collision.gameObject.GetComponent<IngredientGrabbing>().shakeable == true)
+        if (collision.gameObject.layer == 8 && shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant)
         {
             hasOutputItems = false;
             shakenObjects.Add(collision.gameObject);
