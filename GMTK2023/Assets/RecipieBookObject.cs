@@ -25,9 +25,10 @@ public class RecipieBookObject : MonoBehaviour
     {
         if (recc.GetComponent<RecipeController>().book.KnownRecipes.Count > totalRecepieCount) 
         {
+            Debug.Log("why");
             totalRecepieCount++;
             string newRecepieName = recc.GetComponent<RecipeController>().book.KnownRecipes[totalRecepieCount].Output.Name;
-            addNewRecipe(newRecepieName);
+            
         }
     }
 
@@ -37,6 +38,7 @@ public class RecipieBookObject : MonoBehaviour
         {
             if (newRec == recipieCanvas[i].name)
             {
+                Debug.Log("ahhhh");
                 Instantiate(recipieCanvas[i]);
             }
         }
