@@ -4015,6 +4015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2291332834358698383, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: musicVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5586028980807963539, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -4058,6 +4062,26 @@ PrefabInstance:
     - target: {fileID: 5586028980807963539, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686001796195712699, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: <music>k__BackingField.Path
+      value: event:/Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686001796195712699, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data1
+      value: 829899725
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686001796195712699, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data2
+      value: 1264981256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686001796195712699, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data3
+      value: 770032820
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686001796195712699, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data4
+      value: -1219688645
       objectReference: {fileID: 0}
     - target: {fileID: 9047965825978951282, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
       propertyPath: m_Name

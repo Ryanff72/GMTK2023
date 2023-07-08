@@ -86,7 +86,7 @@ public class AudioManager : MonoBehaviour
 
 	private void Start()
 	{
-		IntializeMusic(FMODEvents.instance.nightMusic);
+		IntializeMusic(FMODEvents.instance.music);
 		//AudioManager.instance.PlayOneShot(FMODEvents.instance.newPotion, transform.position);
 	}
 
@@ -96,6 +96,10 @@ public class AudioManager : MonoBehaviour
 		musicEventInstance.start();
 	}
 
+	public void SetMusic(MusicEnum musicType)
+	{
+		musicEventInstance.setParameterByName("MusicType", (int)musicType);
+	}
 	public void PlayOneShot(EventReference sound, Vector3 worldPos)
 	{
 		RuntimeManager.PlayOneShot(sound, worldPos);

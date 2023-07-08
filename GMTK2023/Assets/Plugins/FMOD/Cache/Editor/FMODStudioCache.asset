@@ -20,6 +20,34 @@ MonoBehaviour:
   - Name: Desktop
     Value: 50528
   Exists: 1
+--- !u!114 &-5907633652249745105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  Guid:
+    Data1: 829899725
+    Data2: 1264981256
+    Data3: 770032820
+    Data4: -1219688645
+  Banks:
+  - {fileID: 1459539140272485916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4401807060755683181}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5534712362865369952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +63,41 @@ MonoBehaviour:
   Path: ../FMOD PROJECT/GMTK2023 FMOD PROJECT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244365750791999
+  lastModified: 638244406529501956
   FileSizes:
   - Name: Desktop
-    Value: 1068
+    Value: 1020
+  Exists: 1
+--- !u!114 &-4401807060755683181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MusicType
+  m_EditorClassIdentifier: 
+  Name: MusicType
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 4074891940
+    data2: 778887467
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Intro
+  - TitleScreen
+  - Morning
+  - Noon
+  - Night
+  - Bad Ending
+  - Good Ending
   Exists: 1
 --- !u!114 &-3977494116795308487
 MonoBehaviour:
@@ -55,7 +114,7 @@ MonoBehaviour:
   Path: ../FMOD PROJECT/GMTK2023 FMOD PROJECT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244365750761863
+  lastModified: 638244406529482009
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -78,16 +137,14 @@ MonoBehaviour:
   - {fileID: 1459539140272485916}
   - {fileID: -9006755475788725778}
   EditorEvents:
-  - {fileID: 3709279260560380794}
-  - {fileID: 3900917139473914988}
-  - {fileID: 2720642680906337492}
   - {fileID: 6375530812725390856}
+  - {fileID: -5907633652249745105}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3977494116795308487}
   StringsBanks:
   - {fileID: -5534712362865369952}
-  cacheTime: 638244365812059594
+  cacheTime: 638244406530717290
   cacheVersion: 131605
 --- !u!114 &1459539140272485916
 MonoBehaviour:
@@ -104,92 +161,11 @@ MonoBehaviour:
   Path: ../FMOD PROJECT/GMTK2023 FMOD PROJECT/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244365810211505
+  lastModified: 638244406530717290
   FileSizes:
   - Name: Desktop
-    Value: 4022560
+    Value: 4029312
   Exists: 1
---- !u!114 &2720642680906337492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/night
-  m_EditorClassIdentifier: 
-  Path: event:/night
-  Guid:
-    Data1: -170780466
-    Data2: 1102344806
-    Data3: -1424337770
-    Data4: 1229779136
-  Banks:
-  - {fileID: 1459539140272485916}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 78025
---- !u!114 &3709279260560380794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/badEnding
-  m_EditorClassIdentifier: 
-  Path: event:/badEnding
-  Guid:
-    Data1: -1754773647
-    Data2: 1128501049
-    Data3: -218149195
-    Data4: 655596012
-  Banks:
-  - {fileID: 1459539140272485916}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 113220
---- !u!114 &3900917139473914988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/introductionMusic
-  m_EditorClassIdentifier: 
-  Path: event:/introductionMusic
-  Guid:
-    Data1: -700606089
-    Data2: 1293618267
-    Data3: 577057444
-    Data4: -51433230
-  Banks:
-  - {fileID: 1459539140272485916}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 137972
 --- !u!114 &6375530812725390856
 MonoBehaviour:
   m_ObjectHideFlags: 0

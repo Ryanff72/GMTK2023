@@ -1,0 +1,10 @@
+public enum MusicEnum
+{
+	INTRO,
+	TITLE_SCREEN,
+	MORNING,
+	NOON,
+	NIGHT,
+	BAD_ENDING,
+	GOOD_ENDING
+}
