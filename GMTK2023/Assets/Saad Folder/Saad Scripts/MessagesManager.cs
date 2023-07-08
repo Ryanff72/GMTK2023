@@ -49,10 +49,10 @@ public class MessagesManager : MonoBehaviour
 		//	SpawnTextMessageAndStartDialogue(currentSpeaker);
 		//}
 
-		if(!hasFinishedDialogue && hasStartedBubble) 
+		if(!hasFinishedDialogue && hasStartedBubble && currentRenderer != null) 
 			UpdateTextBox();
 
-		if (Input.GetButtonDown("Fire1") && !isTyping)
+		if (Input.GetButtonDown("Fire1") /*&& !isTyping*/)
 		{
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
@@ -131,10 +131,12 @@ public class MessagesManager : MonoBehaviour
 	void NextSentence()
 	{
 		
-		if(hasFinishedDialogue)
+		if(hasFinishedDialogue || (numberOfLineTyping == currentSpeaker.dialogueLines.Length - 1))
 		{
+			numberOfLineTyping = 0;
 			Destroy(spawnedTextMessage);
 		}
+		StopCoroutine(currentTypingCoroutine);
 		numberOfLineTyping++;
 		if(currentTypingCoroutine != null)
 			currentTypingCoroutine = StartCoroutine(Type(currentSpeaker));
