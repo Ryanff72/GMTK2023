@@ -43,6 +43,8 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
     bool crushed;
     float crushtime;
     // Start is called before the first frame update
+    GameObject currentShadowCircle;
+
     private void Awake()
     {
         bxsts = boxStatus.NotDragging;
@@ -50,6 +52,11 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         cam = Camera.main.gameObject;
         initialPosition = cam.transform.position;
+    }
+
+    private void Start()
+    {
+        currentShadowCircle = Instantiate(GameObject.Find("ShadowCircle"), new Vector2(transform.position.x, -1.5f), Quaternion.identity);
     }
 
     public void StateMachine()
@@ -82,6 +89,8 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentShadowCircle.transform.position = new Vector2(transform.position.x, currentShadowCircle.transform.position.y);
+        currentShadowCircle.transform.localScale = new Vector2(1.6f, 0.46f) * Mathf.Clamp((4 / (transform.position.y + 1.5f)), 0.1f, 1.0f);
         StateMachine();
 
         //screen shake
