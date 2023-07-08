@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using Unity.VisualScripting;
+
 
 public class Client : MonoBehaviour
 {
@@ -14,12 +20,22 @@ public class Client : MonoBehaviour
     public string wantedItemName;
     public Modifier wantedItemMod;
     public GameObject holdingItem;
+    [SerializeField] Customer dialogueObject;
+    string lastPotion;
 
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+
+        initChar();
+    }
+
+    void initChar()
+    {
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        Debug.Log("day: " + GameObject.Find("GameController").GetComponent<GameController>().day);
+        dialogueObject.dialogueLines = DialogueParser.LoadDialogue(dialogueObject.name, Hp, GameObject.Find("GameController").GetComponent<GameController>().day, lastPotion).ToArray();
     }
 
     // Update is called once per frame
@@ -31,6 +47,7 @@ public class Client : MonoBehaviour
     public void startDialogue()
     {
         //Do Dialogue(day, name, hp, lastPotion)
+        FindObjectOfType<MessagesManager>().SpawnTextMessageAndStartDialogue(dialogueObject);
         endDialogue();
     }
 
@@ -45,13 +62,15 @@ public class Client : MonoBehaviour
         holdingItem = holdItem;
         if(item.Name == wantedItemName && item.Mod == wantedItemMod)
         {
+            lastPotion = "god";
             disappear();
             return;
         }
-
+        lastPotion = "mid";
         Hp--;
         if (item.isPoisonous())
         {
+            lastPotion = "awf";
             Hp--;
         }
 

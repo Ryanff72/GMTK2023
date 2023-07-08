@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 6972616196531035498}
   - component: {fileID: 1752014597968601823}
   m_Layer: 8
-  m_Name: angryPepper
+  m_Name: leafWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7924528, g: 0.31772873, b: 0.31772873, a: 1}
+  m_Color: {r: 0.3340696, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5800b10759d48469997e8259e7d603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: angry pepper
+  ItemName: leaf water
   Mod: 0
   canHeat: 0
   canShake: 0

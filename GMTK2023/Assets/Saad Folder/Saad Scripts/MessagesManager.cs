@@ -37,10 +37,10 @@ public class MessagesManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Mouse0) && !hasStartedBubble)
-		{
-			SpawnTextMessageAndStartDialogue(currentSpeaker);
-		}
+		//if(Input.GetKeyDown(KeyCode.Mouse0) && !hasStartedBubble)
+		//{
+		//	SpawnTextMessageAndStartDialogue(currentSpeaker);
+		//}
 
 		if(!hasFinishedDialogue && hasStartedBubble) 
 			UpdateTextBox();
@@ -52,7 +52,7 @@ public class MessagesManager : MonoBehaviour
 	}
 
 
-	void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
+	public void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
 	{
 		currentSpeaker = dialogueObject;
 

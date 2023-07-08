@@ -51,7 +51,6 @@ public class CattleController : MonoBehaviour
         GameObject output = RecipeController.getIngredient(recipe.Output.Name);
         if (output)
         {
-            
             NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output);
         }
 

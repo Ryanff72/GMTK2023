@@ -31,8 +31,8 @@ public class SpawnNew : MonoBehaviour
         //make for each item that can be added to the pot
         if (spawnedItem.name == "veggiePaste")
         {
-            chosenSprite = sp[0];
-            chosenVector3 = spsc[0]; 
+            //chosenSprite = sp[0];
+            //chosenVector3 = spsc[0]; 
         }
 
         StartCoroutine("animAndSpawn");

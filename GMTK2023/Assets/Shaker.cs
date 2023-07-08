@@ -30,9 +30,9 @@ public class Shaker : MonoBehaviour
         switch (shksts)
         {
             case shakerStatus.Dormant:
-            break;
+                break;
 
-            
+
             case shakerStatus.NotShaking:
                 goBack();
                 break;
@@ -98,7 +98,7 @@ public class Shaker : MonoBehaviour
         Ytraveled += Mathf.Abs(transform.position.y - lastPosY);
         lastPosY = transform.position.y;
 
-        if (Xtraveled+Ytraveled >= shakeRequired)
+        if (Xtraveled + Ytraveled >= shakeRequired)
         {
             shksts = shakerStatus.Output;
             Xtraveled = 0.0f;
