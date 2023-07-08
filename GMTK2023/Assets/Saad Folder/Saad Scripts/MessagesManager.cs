@@ -39,7 +39,7 @@ public class MessagesManager : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Mouse0) && !hasStartedBubble)
 		{
-			SpawnTextMessageAndStartDialogue();
+			SpawnTextMessageAndStartDialogue(currentSpeaker);
 		}
 
 		if(!hasFinishedDialogue && hasStartedBubble) 
@@ -52,8 +52,10 @@ public class MessagesManager : MonoBehaviour
 	}
 
 
-	void SpawnTextMessageAndStartDialogue()
+	void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
 	{
+		currentSpeaker = dialogueObject;
+
 		hasFinishedDialogue = false;
 		hasStartedBubble = true;
 		Vector2 spawnPos = Vector2.one;
