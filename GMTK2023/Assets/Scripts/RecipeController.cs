@@ -45,6 +45,10 @@ public class RecipeBook {
     public List<Recipe> KnownRecipes;
 
     public Recipe getRecipe(List<Item> Ingredients) {    // Gets corresponding recipe to list of items
+        if(Ingredients.Count == 0)
+        {
+            return null;
+        }
         Debug.Log("Getting recipe with ingredients...");
         for(int i = 0; i < Ingredients.Count; i++)
         {
