@@ -68,15 +68,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: ssssssssssssssssssssssssssssssssssssssddddddddddddddd
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4bc58a35938561144b356586bbc30d3f, type: 2}
-  m_sharedMaterial: {fileID: 8481524225869359425, guid: 4bc58a35938561144b356586bbc30d3f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 22f7cb2dac3f00044a4758d08ad64bca, type: 2}
+  m_sharedMaterial: {fileID: 441006718768782140, guid: 22f7cb2dac3f00044a4758d08ad64bca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -288,7 +288,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6540872704253977935}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.014091999, y: 0.014091999, z: 0.014091999}
   m_ConstrainProportionsScale: 0
@@ -296,7 +296,7 @@ RectTransform:
   - {fileID: 5210832706872100471}
   - {fileID: 718231896247208240}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

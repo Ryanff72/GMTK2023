@@ -85,8 +85,8 @@ public class MessagesManager : MonoBehaviour
 		startYPos = currentRenderer.transform.localPosition.y;
 		startYScale = currentRenderer.transform.localScale.y;
 
-		Color boxColour = new Color(currentSpeaker.boxColour.r, currentSpeaker.boxColour.g, currentSpeaker.boxColour.b, 255f);
-		currentRenderer.color = boxColour;
+		//Color boxColour = new Color(currentSpeaker.boxColour.r, currentSpeaker.boxColour.g, currentSpeaker.boxColour.b, 255f);
+		//currentRenderer.color = boxColour;
 
 		//Sets the text of the message
 		currentText = spawnedTextMessage.GetComponentInChildren<TextMeshProUGUI>();
