@@ -87,7 +87,8 @@ public class Shaker : MonoBehaviour
                     shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
                     shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
                 }
-                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(7, 10), Random.Range(15, 20));
+                shakenObjects[i].gameObject.transform.position = new Vector3(-1.22000003f, -0.439999998f, 0);
+                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(12, 18), Random.Range(17, 20));
             }
             shakenObjects.Clear();
             yield return new WaitForSeconds(0.5f);
@@ -98,7 +99,7 @@ public class Shaker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 8 && shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant)
+        if ( collision.gameObject.layer == 8 && collision.gameObject.GetComponent<IngredientGrabbing>() != null && shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant)
         {
             hasOutputItems = false;
             shakenObjects.Add(collision.gameObject);

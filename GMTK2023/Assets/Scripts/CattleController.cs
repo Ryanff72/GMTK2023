@@ -45,8 +45,9 @@ public class CattleController : MonoBehaviour
             Items.Add(IngredientsInPot[i].GetComponent<Ingredient>().item);
         }
         Recipe recipe = RecipeController.book.getRecipe(Items);
-        if (recipe == null)
+        if (recipe == null && IngredientsInPot != null)
         {
+
             Debug.Log("Recipe not found");
             return;
         }

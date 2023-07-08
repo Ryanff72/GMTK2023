@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 5209017577257044643}
   - component: {fileID: 3528836087355100326}
   - component: {fileID: 5514993479293810872}
-  - component: {fileID: 6632527554138246382}
   - component: {fileID: 7161402225513784294}
   - component: {fileID: 868739481230153029}
   m_Layer: 8
@@ -231,34 +230,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6632527554138246382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282636143851637098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e83bbac31063a894cac9a322b0b20a6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingStatus: 0
-  hovering: 0
-  cam: {fileID: 0}
-  weight: 0
-  velocity: {x: 0, y: 0}
-  crushable: 0
-  gravity: -30
-  leftGc: {fileID: 1681882676659389822}
-  rightGc: {fileID: 2016521089821735939}
-  WCLR: {fileID: 2320842659595126339}
-  WCHL: {fileID: 1191473258841039356}
-  WCLL: {fileID: 2897480913688951102}
-  WCHR: {fileID: 9216517901562787215}
-  CCR: {fileID: 1111897202674841323}
-  CCL: {fileID: 1299456678745710296}
-  landSound: {fileID: 0}
 --- !u!95 &7161402225513784294
 Animator:
   serializedVersion: 5
