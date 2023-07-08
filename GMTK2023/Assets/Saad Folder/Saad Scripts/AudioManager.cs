@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
 	{
 		//Gets the current playback state
 		musicEventInstance.getPlaybackState(out currentPlaybackstate);
-		//print(currentPlaybackstate);
+		print(currentPlaybackstate);
 
 		musicBus.setVolume(musicVolume);
 		sfxBus.setVolume(sfxVolume);
@@ -82,6 +82,11 @@ public class AudioManager : MonoBehaviour
 		sfxBus = RuntimeManager.GetBus("bus:/SFX");
 
 		DontDestroyOnLoad(gameObject);
+	}
+
+	private void Start()
+	{
+		IntializeMusic(FMODEvents.instance.introMusic);
 	}
 
 	public void IntializeMusic(EventReference musicEventReference)
