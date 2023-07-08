@@ -899,6 +899,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3657aca8daa96b749af2aaacb0c8b0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collidedObjects: []
+  cookTimes: []
+  cookTime: 10
+  smokeEffect: {fileID: 8832406003091642870, guid: a2521b6c11ba38c49891f7e1fb07205d, type: 3}
 --- !u!1 &535554577
 GameObject:
   m_ObjectHideFlags: 0
