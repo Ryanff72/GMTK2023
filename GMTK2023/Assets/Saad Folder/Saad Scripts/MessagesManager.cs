@@ -45,7 +45,7 @@ public class MessagesManager : MonoBehaviour
 		if(!hasFinishedDialogue && hasStartedBubble) 
 			UpdateTextBox();
 
-		if (Input.GetKeyDown(KeyCode.Return) && !isTyping)
+		if (Input.GetButtonDown("Fire1") && !isTyping)
 		{
 			NextSentence();
 		}
