@@ -52,7 +52,7 @@ public class Shaker : MonoBehaviour
         worldMousePos = Camera.main.ScreenToWorldPoint(screenPoint);
 
         //pick up the object
-        if (Input.GetButtonDown("Fire1") && hovering && shksts != shakerStatus.Output)
+        if (Input.GetButtonDown("Fire1") && hovering && shksts != shakerStatus.Output && shakenObjects.Count!=0)
         {
             shksts = shakerStatus.Shaking;
         }

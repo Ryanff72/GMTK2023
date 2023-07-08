@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5800b10759d48469997e8259e7d603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: water
+  ItemName: Powdered Iron
   Mod: 0
   canHeat: 0
   canShake: 0

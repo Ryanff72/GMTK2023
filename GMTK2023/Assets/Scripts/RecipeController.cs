@@ -55,6 +55,7 @@ public class RecipeBook {
             Debug.Log(Ingredients[i].Name);
         }
         for (int i = 0; i < AllRecipes.Count; i++) {
+            Debug.Log(Ingredients[i]);
             if (checkRecipe(AllRecipes[i], Ingredients)) {
                 if(!isRecipeKnown(AllRecipes[i].Output, Ingredients)) {
                     KnownRecipes.Add(AllRecipes[i]);
@@ -112,17 +113,21 @@ public class RecipeController : MonoBehaviour
     public List<GameObject> Ingredients;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         book = new RecipeBook();
 
-        //Item courageLeaf = new Item("courage leaf");
-        //Item water = new Item("water");
+        //base items
+        Item ravensTears = new Item("Raven's Tears");
+        Item demonPepper = new Item("Demon Pepper");
+        Item pixieSugar = new Item("Pixie Sugar");
+        Item powderedIron = new Item("Powdered Iron");
 
-        //Item leafWater = new Item("leaf water");
+        //created items
+        Item handsomeCaramel = new Item("Handsome Caramel");
 
 
-        //book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, water}, leafWater));
+        book.AllRecipes.Add(new Recipe(new List<Item>() {pixieSugar, ravensTears}, handsomeCaramel));
     }
 
     public GameObject getIngredient(string IngrName)
