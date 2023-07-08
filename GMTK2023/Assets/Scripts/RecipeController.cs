@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using System.Linq;
 using Unity.VisualScripting;
+using FMOD.Studio;
+using UnityEditor.PackageManager.UI;
 
 public enum Modifier {
     None,
@@ -115,17 +117,78 @@ public class RecipeController : MonoBehaviour
 
         //base items
         Item ravensTears = new Item("Raven's Tears");
+
         Item demonPepper = new Item("Demon Pepper");
+        Item ShakenDemonPepper = new Item("Demon Pepper", Modifier.Shaken);
+        Item HotDemonPepper = new Item("Demon Pepper", Modifier.Heated);
+
         Item pixieSugar = new Item("Pixie Sugar");
+        Item ShakenPixieSugar = new Item("Pixie Sugar", Modifier.Shaken);
+        Item HotPixieSugar = new Item("Pixie Sugar", Modifier.Heated);
+
+
         Item powderedIron = new Item("Powdered Iron");
+        Item HotPowderedIron = new Item("Powdered Iron", Modifier.Heated);
+        Item ShakenPowderedIron = new Item("Powdered Iron", Modifier.Shaken);
+
         Item veggiePaste = new Item("Veggie Paste");
-        ravensTears.Mod = Modifier.Heated;
 
-        //created items
+
+
+        //DP + RT = [LJ] Lemon Juice (hate, vengeance, sour)
+        Item lemonJuice = new Item("Lemon Juice");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { demonPepper, ravensTears }, lemonJuice));
+
+        //PS + RT = [HC] Handsome Caramel (charisma)
         Item handsomeCaramel = new Item("Handsome Caramel");
-
-
         book.AllRecipes.Add(new Recipe(new List<Item>() {pixieSugar, ravensTears}, handsomeCaramel));
+
+        //PS + #DP = [SH] [HC] Hot Coffee (restless, productive, depressant)
+        Item hotCoffee = new Item("Hot Coffee");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { pixieSugar, HotDemonPepper }, hotCoffee));
+
+        //PS + $DP = [SH] Crushed Beans (lunatic)
+        Item crushedBeans = new Item("Crushed Beans");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { pixieSugar, ShakenDemonPepper }, crushedBeans));
+
+        //$PS + PI = [VG] Vitamin Gummy (health)
+        Item vitaminGummy = new Item("Vitamin Gummy");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenPixieSugar, powderedIron }, vitaminGummy));
+
+        //#DP + PI = [GP] Gunpowder (potent energy, pressure, danger)
+        Item gunpowder = new Item("Gunpowder");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { HotDemonPepper, powderedIron }, gunpowder));
+
+        //RT + $PI = [RC] Rust Catalyst (decay, infection, bitter)
+        Item rustCatalyst = new Item("Rust Catalyst");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, ShakenPixieSugar }, rustCatalyst));
+
+        //RT + #PI = [AG] Acidic Gunk (poison, melt)
+        Item acidicGunk = new Item("Acidic Gunk");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, HotPixieSugar }, acidicGunk));
+
+        //#PI + RT = [PB] Paint Bomb (mischief, explosive)
+        Item paintBomb = new Item("Paint Bomb");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPowderedIron, ravensTears }, paintBomb));
+
+        //$PS + RT = [HP] Happy Pill (antidepressant)
+        Item happyPill = new Item("Happy Pill");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenPixieSugar, ravensTears }, happyPill));
+
+        //LJ + PS = [EM] Elegant Martini (luxury)
+        Item martini = new Item("Elegant Martini");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { lemonJuice, pixieSugar }, martini));
+
+        //RT + DP + PS + PI = [RS] Rainbow Sludge (confusion, thrill, surprise)
+        Item rainbow = new Item("Rainbow Sludge");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, demonPepper, powderedIron, pixieSugar }, rainbow));
+
+        //RT + DP + PS = [PrSp] Primordial Soup(wisdom, life, experience)
+        Item soup = new Item("Primordial Soup");
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, demonPepper, pixieSugar }, soup));
+
+        //DP + PS + PI = [PrSp] Primordial Soup (wisdom, life, experience)
+        book.AllRecipes.Add(new Recipe(new List<Item>() { demonPepper, pixieSugar, powderedIron }, soup));
     }
 
     public GameObject getIngredient(string IngrName)
