@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     public IEnumerator startDay()
     {
         GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.5f);
         currentCustomers = new List<GameObject>(Customers.Count);
         for(int i = 0; i < Customers.Count; i++)
         {
@@ -70,9 +70,8 @@ public class GameController : MonoBehaviour
         serveItem.GetComponent<Ingredient>().serve();
         yield return new WaitForSeconds(0.5f);
         currentCustomers[CustomerIndex].GetComponent<Client>().receiveItem(serveItem);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(1.5f);
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
