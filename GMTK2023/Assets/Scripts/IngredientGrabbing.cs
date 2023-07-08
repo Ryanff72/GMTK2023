@@ -31,7 +31,6 @@ public class IngredientGrabbing : MonoBehaviour
     bool grounded;
     bool nearGrounded;
     [SerializeField] bool crushable;
-    public bool shakeable;
     bool hasSpawnedSmoke = false;
     public float gravity;
     [SerializeField] Transform leftGc;
