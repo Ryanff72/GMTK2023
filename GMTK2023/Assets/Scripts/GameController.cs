@@ -14,7 +14,11 @@ public class GameController : MonoBehaviour
     bool endedDay = false;
     public int CharactersPerDay = 6;
     public float newDayWaitTime = 5.0f;
-    
+
+    public Sprite MorningBg;
+    public Sprite SunsetBg;
+    public Sprite NightBg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,7 @@ public class GameController : MonoBehaviour
 
     public IEnumerator startDay()
     {
+        GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
         yield return new WaitForSeconds(1.0f);
         currentCustomers = new List<GameObject>(Customers.Count);
         for(int i = 0; i < Customers.Count; i++)
@@ -71,6 +76,13 @@ public class GameController : MonoBehaviour
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
+            if(CustomerIndex == 2)
+            {
+                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
+            } else if(CustomerIndex == 4)
+            {
+                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
+            }
             if(CustomerIndex % CharactersPerDay == 0)
             {
                 day++;

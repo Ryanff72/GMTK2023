@@ -49,6 +49,10 @@ public class IngredientGrabbing : MonoBehaviour
     float crushtime;
     public AudioClip landSound;
     GameObject currentShadowCircle;
+    Sprite MorningBg;
+    Sprite SunsetBg;
+    Sprite NightBg;
+
     // Start is called before the first frame update
     private void Awake()
     {
