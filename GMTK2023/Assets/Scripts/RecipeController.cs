@@ -36,14 +36,16 @@ public class RecipeBook {
     public List<Recipe> KnownRecipes;
 
     public Recipe getRecipe(List<Item> Ingredients) {    // Gets corresponding recipe to list of items
-        for(int i = 0; i < AllRecipes.Count; i++) {
+        for (int i = 0; i < AllRecipes.Count; i++) {
             if(checkRecipe(AllRecipes[i], Ingredients)) {
                 if(!isRecipeKnown(AllRecipes[i].Output, Ingredients)) {
                     KnownRecipes.Add(AllRecipes[i]);
                 }
+
                 return AllRecipes[i];
             }
         }
+
         return null;
     }
 
@@ -60,8 +62,24 @@ public class RecipeBook {
         if(Rcp.Ingredients.Count != Ingrdns.Count) {
             return false;
         }
+        for(int i = 0; i < Ingrdns.Count; i++)
+        {
+            bool found = false;
+            for(int j = 0; j < Rcp.Ingredients.Count; j++)
+            {
+                if (Ingrdns[i].Name == Rcp.Ingredients[i].Name && Ingrdns[i].Mod == Rcp.Ingredients[i].Mod)
+                {
+                    found = true;
+                    break;
+                }
+            }
+            if(!found)
+            {
+                return false;
+            }
+        }
 
-        return (Rcp.Ingredients.All(Ingrdns.Contains) && Ingrdns.All(Rcp.Ingredients.Contains));
+        return true;
     }
 
     public RecipeBook() {
@@ -74,28 +92,42 @@ public class RecipeBook {
 public class RecipeController : MonoBehaviour
 {
     public RecipeBook book;
+    public List<string> IngredientNames;
+    public List<GameObject> Ingredients;
 
     // Start is called before the first frame update
     void Start()
     {
-        RecipeBook book = new RecipeBook();
+        book = new RecipeBook();
 
         Item egg = new Item("egg");
         Item coldMilk = new Item("milk");
-        Item hotMilk = new Item("milk", Modifier.Heated);
 
-        Item coldCake = new Item("cold cake");
-        Item hotCake = new Item("hot cake");
+        Item coldCake = new Item("cake");
 
 
         book.AllRecipes.Add(new Recipe(new List<Item>() {egg, coldMilk}, coldCake));
-        book.AllRecipes.Add(new Recipe(new List<Item>() {egg, hotMilk}, hotCake));
 
 
         List<Item> CrntIngredients = new List<Item>() {egg, coldMilk};
-        Debug.Log(book.getRecipe(CrntIngredients).Output.Name);
-        CrntIngredients = new List<Item>() {egg, hotMilk};
-        Debug.Log(book.getRecipe(CrntIngredients).Output.Name);
+        Debug.Log(getIngredient(book.getRecipe(CrntIngredients).Output.Name));
+    }
+
+    public GameObject getOutcome(List<Item> Ingrdnts)
+    {
+        return getIngredient(book.getRecipe(Ingrdnts).Output.Name);
+    }
+
+    public GameObject getIngredient(string IngrName)
+    {
+        for(int i = 0; i < IngredientNames.Count; i++)
+        {
+            if (IngredientNames[i] == IngrName)
+            {
+                return Ingredients[i];
+            }
+        }
+        return null;
     }
 
     // Update is called once per frame
