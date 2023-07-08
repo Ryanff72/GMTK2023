@@ -8,10 +8,11 @@ using static DraggableObject;
 
 public class IngredientGrabbing : MonoBehaviour
 {
+
     //added stuff
     public enum ingredientStatus { Dragging, NotDragging };
     public ingredientStatus ingStatus;
-    bool hovering = false;
+    public bool hovering = false;
     Vector3 worldMousePos;
     Vector2 oldPosition; //used to calculate throw speed
 
@@ -44,7 +45,6 @@ public class IngredientGrabbing : MonoBehaviour
     {
         //SoundCreator = Instantiate(SoundCreator, transform.position, Quaternion.identity);
         rb2d = GetComponent<Rigidbody2D>();
-        ingStatus = ingredientStatus.NotDragging;
     }
 
     public void StateMachine()
@@ -75,6 +75,7 @@ public class IngredientGrabbing : MonoBehaviour
     {
         StateMachine();
 
+        //mousepos to worldpos
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
         worldMousePos = Camera.main.ScreenToWorldPoint(screenPoint);
         
@@ -116,7 +117,7 @@ public class IngredientGrabbing : MonoBehaviour
     {
         if (crushed == false)
         {
-            RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << LayerMask.NameToLayer("Ground"));
+            RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << 6 | 1 << 8);
             if (GroundCheck.collider != null)
             {
                 grounded = true;
@@ -154,9 +155,9 @@ public class IngredientGrabbing : MonoBehaviour
                 grounded = false;
             }
             RaycastHit2D NearGroundCheck = Physics2D.Linecast(leftGc.transform.position + new Vector3(0, -0.1f, 0), rightGc.transform.position + new Vector3(0, -0.1f, 0), 1 << LayerMask.NameToLayer("Ground"));
-            RaycastHit2D WallCheckRight = Physics2D.Linecast(WCLR.position, WCHR.position, 1 << LayerMask.NameToLayer("Ground"));
-            RaycastHit2D WallCheckLeft = Physics2D.Linecast(WCLL.position, WCHL.position, 1 << LayerMask.NameToLayer("Ground"));
-            RaycastHit2D CeilingCheck = Physics2D.Linecast(CCR.position, CCL.position, 1 << LayerMask.NameToLayer("Ground"));
+            RaycastHit2D WallCheckRight = Physics2D.Linecast(WCLR.position, WCHR.position, 1 << 6 | 1 << 8);
+            RaycastHit2D WallCheckLeft = Physics2D.Linecast(WCLL.position, WCHL.position,  1 << 6 | 1 << 8);
+            RaycastHit2D CeilingCheck = Physics2D.Linecast(CCR.position, CCL.position, 1 << 6 | 1 << 8);
 
             if (NearGroundCheck.collider != null)
             {
@@ -234,10 +235,10 @@ public class IngredientGrabbing : MonoBehaviour
 
     public void Crushed()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
-        crushed = true;
-        rb2d.bodyType = RigidbodyType2D.Static;
-        transform.GetChild(0).gameObject.SetActive(false);
+        //GetComponent<BoxCollider2D>().enabled = false;
+        //crushed = true;
+        //rb2d.bodyType = RigidbodyType2D.Static;
+        //transform.GetChild(0).gameObject.SetActive(false);
         //Instantiate(breakSmoke, transform.position, Quaternion.identity);
 ;    }
 
