@@ -34,6 +34,14 @@ public class MessagesManager : MonoBehaviour
 	bool hasFinishedDialogue = false;
 	Coroutine currentTypingCoroutine;
 
+	//raycast variables
+	Camera cam;
+	RaycastHit2D hitInfo;
+
+	private void Start()
+	{
+		cam = Camera.main;
+	}
 
 	private void Update()
 	{
@@ -47,7 +55,13 @@ public class MessagesManager : MonoBehaviour
 
 		if (Input.GetButtonDown("Fire1") && !isTyping)
 		{
-			NextSentence();
+			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
+			if(hitInfo.collider != null && hitInfo.collider.CompareTag("TextBox"))
+			{
+				NextSentence();
+			}
+
 		}
 	}
 
