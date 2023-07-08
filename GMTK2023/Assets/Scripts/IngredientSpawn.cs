@@ -15,8 +15,6 @@ public class IngredientSpawn : MonoBehaviour
     void Update()
     {
 
-        
-
         //spawn a new ingredient
         if (Input.GetButtonDown("Fire1") && hovering)
         {
@@ -24,10 +22,10 @@ public class IngredientSpawn : MonoBehaviour
             Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
             worldMousePos = Camera.main.ScreenToWorldPoint(screenPoint);
             GameObject newIngredient = Instantiate(spawnedIngredient, worldMousePos, Quaternion.identity);
+            newIngredient.GetComponent<BoxCollider2D>().enabled = false;
             newIngredient.GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.Dragging;
         }
     }
-
 
     private void OnMouseEnter()
     {

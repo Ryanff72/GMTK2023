@@ -48,6 +48,11 @@ public class IngredientGrabbing : MonoBehaviour
     float crushtime;
     public AudioClip landSound;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        ingStatus = ingredientStatus.NotDragging;
+    }
+
     void Start()
     {
         shakeMagnitude = weight;
@@ -55,6 +60,7 @@ public class IngredientGrabbing : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         cam = Camera.main.gameObject;
         initialPosition = cam.transform.position;
+        
     }
 
     public void StateMachine()
@@ -111,6 +117,7 @@ public class IngredientGrabbing : MonoBehaviour
         }
         if (Input.GetButtonUp("Fire1") && ingStatus == ingredientStatus.Dragging)
         {
+            GetComponent<BoxCollider2D>().enabled = true;
             ingStatus = ingredientStatus.NotDragging;
             velocity = new Vector2((transform.position.x-oldPosition.x)/0.2f, (transform.position.y - oldPosition.y) / 0.2f);
         }
@@ -135,14 +142,17 @@ public class IngredientGrabbing : MonoBehaviour
 
     public void syncPosition()
     {
-        transform.position = worldMousePos;
+        Vector2 direction = worldMousePos - transform.position; 
+        Vector2 transitionaryVector = direction.normalized * 45 * Mathf.Sqrt(Mathf.Pow(worldMousePos.x - transform.position.x, 2f) + Mathf.Pow(worldMousePos.y - transform.position.y, 2f)); //makes the squares go to the mouse but not jitter (based)
+        velocity = transitionaryVector;
+        rb2d.velocity = velocity;
     }
 
     public void applyPhysics()
     {
         if (crushed == false)
         {
-            RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << 6 | 1 << 8);
+            RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << 6);
             if (GroundCheck.collider != null)
             {
                 if (!grounded)
@@ -183,10 +193,10 @@ public class IngredientGrabbing : MonoBehaviour
                 hasSpawnedSmoke = false;
                 grounded = false;
             }
-            RaycastHit2D NearGroundCheck = Physics2D.Linecast(leftGc.transform.position + new Vector3(0, -0.1f, 0), rightGc.transform.position + new Vector3(0, -0.1f, 0), 1 << LayerMask.NameToLayer("Ground"));
-            RaycastHit2D WallCheckRight = Physics2D.Linecast(WCLR.position, WCHR.position, 1 << 6 | 1 << 8);
-            RaycastHit2D WallCheckLeft = Physics2D.Linecast(WCLL.position, WCHL.position,  1 << 6 | 1 << 8);
-            RaycastHit2D CeilingCheck = Physics2D.Linecast(CCR.position, CCL.position, 1 << 6 | 1 << 8);
+            RaycastHit2D NearGroundCheck = Physics2D.Linecast(leftGc.transform.position + new Vector3(0, -0.1f, 0), rightGc.transform.position + new Vector3(0, -0.1f, 0), 1 << 6);
+            RaycastHit2D WallCheckRight = Physics2D.Linecast(WCLR.position, WCHR.position, 1 << 6);
+            RaycastHit2D WallCheckLeft = Physics2D.Linecast(WCLL.position, WCHL.position,  1 << 6 );
+            RaycastHit2D CeilingCheck = Physics2D.Linecast(CCR.position, CCL.position, 1 << 6);
 
             if (NearGroundCheck.collider != null)
             {
@@ -284,5 +294,10 @@ public class IngredientGrabbing : MonoBehaviour
         //transform.GetChild(0).gameObject.SetActive(false);
         //Instantiate(breakSmoke, transform.position, Quaternion.identity);
 ;    }
+
+    public void getGrabbed()
+    {
+        ingStatus = IngredientGrabbing.ingredientStatus.Dragging;
+    }
 
  }
