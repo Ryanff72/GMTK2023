@@ -122,6 +122,7 @@ public class RecipeController : MonoBehaviour
         Item demonPepper = new Item("Demon Pepper");
         Item pixieSugar = new Item("Pixie Sugar");
         Item powderedIron = new Item("Powdered Iron");
+        Item veggiePaste = new Item("Veggie Paste");
 
         //created items
         Item handsomeCaramel = new Item("Handsome Caramel");
