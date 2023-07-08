@@ -84,7 +84,7 @@ public class Shaker : MonoBehaviour
                 shakenObjects[i].GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.NotDragging;
                 shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
                 shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
-                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(10, 15), Random.Range(10, 20));
+                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(7, 10), Random.Range(15, 20));
             }
             shakenObjects.Clear();
             yield return new WaitForSeconds(0.5f);
