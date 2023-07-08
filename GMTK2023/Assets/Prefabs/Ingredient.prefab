@@ -166,7 +166,7 @@ Transform:
   - {fileID: 3546710052873994168}
   - {fileID: 8963199401262408807}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6692884703645179657
 SpriteRenderer:
@@ -306,6 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingStatus: 0
   hovering: 0
+  cam: {fileID: 0}
+  weight: 0.05
   velocity: {x: 0, y: 0}
   crushable: 0
   gravity: -30
@@ -330,6 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5800b10759d48469997e8259e7d603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemName: 
+  Mod: 0
 --- !u!1 &6310793256179935320
 GameObject:
   m_ObjectHideFlags: 0

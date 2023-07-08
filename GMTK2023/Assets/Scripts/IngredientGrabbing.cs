@@ -16,6 +16,13 @@ public class IngredientGrabbing : MonoBehaviour
     Vector3 worldMousePos;
     Vector2 oldPosition; //used to calculate throw speed
 
+    // CamShakeStuff
+    public GameObject cam;
+    private float shakeDuration = 0f;
+    private float shakeMagnitude;
+    private float dampingSpeed = 1.0f;
+    Vector3 initialPosition;
+    public float weight;
 
     //god what happened here
     public Vector2 velocity;
@@ -43,8 +50,11 @@ public class IngredientGrabbing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shakeMagnitude = weight;
         //SoundCreator = Instantiate(SoundCreator, transform.position, Quaternion.identity);
         rb2d = GetComponent<Rigidbody2D>();
+        cam = Camera.main.gameObject;
+        initialPosition = cam.transform.position;
     }
 
     public void StateMachine()
@@ -74,6 +84,21 @@ public class IngredientGrabbing : MonoBehaviour
     void Update()
     {
         StateMachine();
+
+        //screen shake
+
+        if (shakeDuration > 0)
+        {
+            Vector3 targetpos = initialPosition + Random.insideUnitSphere * shakeMagnitude; 
+            cam.transform.position = new Vector3(targetpos.x, targetpos.y, cam.transform.localPosition.z);
+            shakeDuration -= Time.deltaTime * dampingSpeed;
+        }
+        else if (shakeDuration < 0)
+        {
+            shakeDuration = 0f;
+            cam.transform.position = initialPosition;
+        }
+
 
         //mousepos to worldpos
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
@@ -120,6 +145,10 @@ public class IngredientGrabbing : MonoBehaviour
             RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << 6 | 1 << 8);
             if (GroundCheck.collider != null)
             {
+                if (!grounded)
+                {
+                    shakeDuration = 0.1f;
+                }
                 grounded = true;
                 if (hasSpawnedSmoke == false)
                 {
@@ -176,6 +205,7 @@ public class IngredientGrabbing : MonoBehaviour
             {
                 if (velocity.y < -15f)
                 {
+                    shakeDuration = 0.1f;
                     velocity.y = Mathf.Abs(velocity.y);
                     velHasDiminished = false;
                 }
@@ -206,6 +236,10 @@ public class IngredientGrabbing : MonoBehaviour
             }
             if (WallCheckLeft.collider != null)
             {
+                if (velocity.x < -0.5f)
+                {
+                    shakeDuration = 0.1f;
+                }
                 velocity.x = Mathf.Abs(velocity.x);
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
                 {
@@ -214,7 +248,12 @@ public class IngredientGrabbing : MonoBehaviour
             }
             if (WallCheckRight.collider != null)
             {
+                if (velocity.x > 0.5f)
+                {
+                    shakeDuration = 0.1f;
+                }
                 velocity.x = -Mathf.Abs(velocity.x);
+
                 if (WallCheckRight.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, 0f);
@@ -222,6 +261,10 @@ public class IngredientGrabbing : MonoBehaviour
             }
             if (CeilingCheck.collider != null)
             {
+                if(velocity.y > 1)
+                {
+                    shakeDuration = 0.1f;
+                }
                 velocity.y = -Mathf.Abs(velocity.y);
             }
             if (nearGrounded == false)//workaround for gravity being wonky

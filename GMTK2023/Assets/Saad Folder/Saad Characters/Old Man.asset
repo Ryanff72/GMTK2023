@@ -16,5 +16,4 @@ MonoBehaviour:
   dialogueLines:
   - Hello there I am an old man in dire need of potion making supplies. Please help
     or else I will die.
-  - 
   preferredPotionType: 1
