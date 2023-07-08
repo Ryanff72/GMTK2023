@@ -22,10 +22,6 @@ public class Item {
 
     public bool isPoisonous()
     {
-        if(Name == "leaf water")
-        {
-            return true;
-        }
         return false;
     }
 }
@@ -65,7 +61,7 @@ public class RecipeBook {
             }
         }
         Debug.Log("Could not get recipe");
-        Item veggiepaste = new Item("veggie paste", Modifier.None);
+        Item veggiepaste = new Item("Veggie Paste", Modifier.None);
         Recipe veggieRecipe = new Recipe(Ingredients, veggiepaste);
         return veggieRecipe;
     }
@@ -123,6 +119,7 @@ public class RecipeController : MonoBehaviour
         Item pixieSugar = new Item("Pixie Sugar");
         Item powderedIron = new Item("Powdered Iron");
         Item veggiePaste = new Item("Veggie Paste");
+        ravensTears.Mod = Modifier.Heated;
 
         //created items
         Item handsomeCaramel = new Item("Handsome Caramel");

@@ -44,8 +44,6 @@ public class MessagesManager : MonoBehaviour
 
 	private void Update()
 	{
-		print(isTyping);
-
 		if(!hasFinishedDialogue && hasStartedBubble && currentRenderer != null) 
 			UpdateTextBox();
 

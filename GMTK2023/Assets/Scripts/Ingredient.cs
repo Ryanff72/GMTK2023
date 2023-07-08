@@ -49,14 +49,20 @@ public class Ingredient : MonoBehaviour
 
     public void Heat()
     {
-        GetComponent<SpriteRenderer>().sprite = heatedSprite;
+        if (heatedSprite)
+        {
+            GetComponent<SpriteRenderer>().sprite = heatedSprite;
+        }
         item.Mod = Modifier.Heated;
         Mod = Modifier.Shaken;
     }
 
     public void Shake()
     {
-        GetComponent<SpriteRenderer>().sprite = shakenSprite;
+        if (shakenSprite)
+        {
+            GetComponent<SpriteRenderer>().sprite = shakenSprite;
+        }
         item.Mod = Modifier.Shaken;
         Mod = Modifier.Shaken;
     }
