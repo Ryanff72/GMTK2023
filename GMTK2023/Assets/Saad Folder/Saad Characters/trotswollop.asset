@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b508e8d1b6cd25449a9063a99f5df89d, type: 3}
   m_Name: trotswollop
   m_EditorClassIdentifier: 
-  name: James
+  name: trotswollop
   dialogueLines:
-  - Hello there I am an old man in dire need of potion making supplies. Please help
-    or else I will die.
-  - Help me pleeeeeeeeease
+  - "a-ah.. greetings; the name\u2019s Trotswollop, The Squire"
+  - "you wouldn\u2019t happen to sell anything useful for a boss, would you?"
+  - "I just started my internship yesterday and I can\u2019t afford enough education
+    to know what these potions do\u2026"
   typingInterval: 0.05
   boxColour: {r: 1, g: 1, b: 1, a: 0}

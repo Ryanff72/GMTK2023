@@ -495,9 +495,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientNames:
-  - veggiePaste
+  - veggie paste
+  - water
+  - courage leaf
+  - angry pepper
+  - leaf water
   Ingredients:
   - {fileID: 5909851974252077864, guid: a2beda7737830fc4b9e845c4ab0ad68a, type: 3}
+  - {fileID: 5909851974252077864, guid: a384af01228b3d94c829bffc889f489f, type: 3}
+  - {fileID: 5909851974252077864, guid: 2516b8af370926d42a80b0230a76c5c4, type: 3}
+  - {fileID: 5909851974252077864, guid: 3cfff466903063947bc1c0ff5649ac02, type: 3}
+  - {fileID: 5909851974252077864, guid: 38495a22de347c34b95856c974af79b8, type: 3}
 --- !u!4 &360103846
 Transform:
   m_ObjectHideFlags: 0
@@ -2686,6 +2694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75aec348d142d34b9e9651a418d90fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cauldronPoof: {fileID: 0}
+  sp: []
+  spsc: []
 --- !u!1 &1709496344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,7 +2979,6 @@ MonoBehaviour:
   SpoonXTraveled: 0
   SpoonStirDistance: 10
   NewItemSpawner: {fileID: 1683821718}
-  createdItemSprites: []
 --- !u!1001 &1820676983
 PrefabInstance:
   m_ObjectHideFlags: 0

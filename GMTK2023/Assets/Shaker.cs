@@ -11,26 +11,21 @@ public class Shaker : MonoBehaviour
 
     public void StateMachine()
     {
-        switch (shk)
-        {
-            case Shaker.NotShaking:
-                goBack();
-                break;
-            case ingredientStatus.Shaking:
-                syncPosition();
-                StartCoroutine("getOldDistance", 0.05f);
-                break;
-        }
+       // switch (shk)
+        //{
+            //case Shaker.NotShaking:
+                //goBack();
+                //break;
+            //case ingredientStatus.Shaking:
+                //syncPosition();
+                //StartCoroutine("getOldDistance", 0.05f);
+                //break;
+        //}
     }
 
     private void Update()
     {
         StateMachine();
-    }
-
-    goBack()
-    {
-
     }
 
 }
