@@ -53,7 +53,6 @@ public class RecipeBook {
             Debug.Log(Ingredients[i].Name);
         }
         for (int i = 0; i < AllRecipes.Count; i++) {
-            Debug.Log(Ingredients[i]);
             if (checkRecipe(AllRecipes[i], Ingredients)) {
                 if(!isRecipeKnown(AllRecipes[i].Output, Ingredients)) {
                     KnownRecipes.Add(AllRecipes[i]);
@@ -70,7 +69,7 @@ public class RecipeBook {
 
     public bool isRecipeKnown(Item Output, List<Item> Ingredients) {
         for(int i = 0; i < KnownRecipes.Count; i++) {
-            if(KnownRecipes[i].Output.Name == Output.Name && KnownRecipes[i].Ingredients == Ingredients) {
+            if(KnownRecipes[i].Output.Name == Output.Name && KnownRecipes[i].Output.Mod == Output.Mod) {
                 return true;
             }
         }
