@@ -45,7 +45,7 @@ public class MessagesManager : MonoBehaviour
 		if(!hasFinishedDialogue && hasStartedBubble) 
 			UpdateTextBox();
 
-		if (Input.GetKeyDown(KeyCode.Return) && !isTyping && !hasFinishedDialogue)
+		if (Input.GetKeyDown(KeyCode.Return) && !isTyping)
 		{
 			NextSentence();
 		}
@@ -103,15 +103,13 @@ public class MessagesManager : MonoBehaviour
 				if(numberOfLineTyping == currentCharacter.dialogueLines.Length - 1)
 				{
 					print("finished dialogue");
-					numberOfLineTyping = 0;
 					//reached end of the entire dialogue and so do nothing
 					hasFinishedDialogue = true;
-					yield return new WaitForSeconds(timeToCloseTextBox);
 					hasStartedBubble = false;
-					Destroy(spawnedTextMessage);
 					StopCoroutine(currentTypingCoroutine);
 
-					
+
+
 				}
 			}
 		}
@@ -120,6 +118,10 @@ public class MessagesManager : MonoBehaviour
 	void NextSentence()
 	{
 		
+		if(hasFinishedDialogue)
+		{
+			Destroy(spawnedTextMessage);
+		}
 		numberOfLineTyping++;
 		if(currentTypingCoroutine != null)
 			currentTypingCoroutine = StartCoroutine(Type(currentSpeaker));
