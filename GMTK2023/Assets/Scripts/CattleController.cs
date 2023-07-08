@@ -53,7 +53,7 @@ public class CattleController : MonoBehaviour
         if (output)
         {
             
-            NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output,null,new Vector3(1,1,1));
+            NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output);
         }
 
         List<GameObject> usedIngredients = new List<GameObject>();

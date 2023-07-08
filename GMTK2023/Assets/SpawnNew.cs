@@ -9,8 +9,11 @@ public class SpawnNew : MonoBehaviour
 
     Animator anim ;
     GameObject go;
-    Sprite sp;
-    Vector3 spsc;
+    public Sprite[] sp;
+    public Vector3[] spsc;
+
+    Sprite chosenSprite;
+    Vector3 chosenVector3;
 
     // Start is called before the first frame update
     void Start()
@@ -18,19 +21,27 @@ public class SpawnNew : MonoBehaviour
         anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
-    public void SpawnItem (GameObject spawnedItem, Sprite AppearanceSprite, Vector3 spriteScale)
+    public void SpawnItem (GameObject spawnedItem)
     {
         go = spawnedItem;
-        sp = AppearanceSprite;
-        spsc = spriteScale;
+
+        //make for each item that can be added to the pot
+        if (spawnedItem.name == "veggiePaste")
+        {
+            chosenSprite = sp[0];
+            chosenVector3 = spsc[0]; 
+        }
+        
+
+
         StartCoroutine("animAndSpawn");
     }
 
 
     public IEnumerator animAndSpawn()
     {
-        transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sp;
-        transform.GetChild(0).transform.GetChild(0).transform.localScale = spsc;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = chosenSprite;
+        transform.GetChild(0).transform.GetChild(0).transform.localScale = chosenVector3;
         anim.Play("NewItem");
         yield return new WaitForSeconds(1.5f);
         anim.Play("Idle");
