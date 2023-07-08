@@ -6,9 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class Customer : ScriptableObject
 {
-	 public new string name;
-	 public string[] dialogueLines;
-	 public PotionTypes preferredPotionType;
+	public new string name;
+
+	[Header("Texting Variables")]
+	public string[] dialogueLines;
+	public float typingInterval = 0.05f;
+	public Color boxColour;
 
 
 
