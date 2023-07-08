@@ -59,6 +59,7 @@ public class ShiftUtility : MonoBehaviour
 
     void kettleActive()
     {
+        shakergo.GetComponent<Shaker>().shksts = Shaker.shakerStatus.Dormant;
         if (firstStageSwapTime > 0)
         {
             firstStageSwapTime -= Time.deltaTime;
@@ -77,6 +78,7 @@ public class ShiftUtility : MonoBehaviour
 
     void heaterActive()
     {
+        shakergo.GetComponent<Shaker>().shksts = Shaker.shakerStatus.Dormant;
         if (firstStageSwapTime > 0)
         {
             firstStageSwapTime -= Time.deltaTime;

@@ -774,7 +774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524999110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3452644, y: -6.41, z: 0.03673289}
+  m_LocalPosition: {x: -1.3452644, y: -1.84, z: 0.03673289}
   m_LocalScale: {x: 3.0754688, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2312,7 +2312,8 @@ GameObject:
   - component: {fileID: 1514645328}
   - component: {fileID: 1514645330}
   - component: {fileID: 1514645329}
-  m_Layer: 6
+  - component: {fileID: 1514645331}
+  m_Layer: 0
   m_Name: Shaker
   m_TagString: Heater
   m_Icon: {fileID: 0}
@@ -2327,7 +2328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514645327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3452644, y: -0.786, z: 0.03673289}
+  m_LocalPosition: {x: -1.3452644, y: -6.88, z: 0.03673289}
   m_LocalScale: {x: 2.4988184, y: 3.5394192, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2369,7 +2370,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.12463087}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2380,7 +2381,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.75073826}
   m_EdgeRadius: 0
 --- !u!212 &1514645330
 SpriteRenderer:
@@ -2434,6 +2435,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1514645331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514645327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cb3adc1ddba2c4c8ed2e2d300b11f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shksts: 0
+  shakeRequired: 120
 --- !u!1 &1640641315
 GameObject:
   m_ObjectHideFlags: 0

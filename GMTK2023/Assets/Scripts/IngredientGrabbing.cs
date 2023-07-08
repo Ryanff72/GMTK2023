@@ -10,7 +10,7 @@ public class IngredientGrabbing : MonoBehaviour
 {
 
     //added stuff
-    public enum ingredientStatus { Dragging, NotDragging, Animating };
+    public enum ingredientStatus { Dragging, NotDragging, Static };
     public ingredientStatus ingStatus;
     public bool hovering = false;
     Vector3 worldMousePos;
@@ -68,7 +68,7 @@ public class IngredientGrabbing : MonoBehaviour
                 syncPosition();
                 StartCoroutine("getOldDistance", 0.05f);
                 break;
-            case ingredientStatus.Animating:
+            case ingredientStatus.Static:
                 break;
         }
     }
