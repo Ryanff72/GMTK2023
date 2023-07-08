@@ -10,11 +10,15 @@ public class AudioManager : MonoBehaviour
 	[Header("Volume")]
 	[Range(0, 1)]
 	public float musicVolume = 1f;
-	PLAYBACK_STATE currentPlaybackstate;
+	[Range(0, 1)]
+	public float sfxVolume = 1f;
 
-	public static bool hasInititatedMusic;
+
+	PLAYBACK_STATE currentPlaybackstate;
+	[HideInInspector]public static bool hasInititatedMusic;
 
 	private Bus musicBus;
+	private Bus sfxBus;
 
 
 	private List<EventInstance> eventInstances;
@@ -31,9 +35,7 @@ public class AudioManager : MonoBehaviour
 	// called second
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-
-		SwitchTracks(scene);
-
+		//does something based on the scene
 	}
 
 	// called when the game is terminated
@@ -49,6 +51,7 @@ public class AudioManager : MonoBehaviour
 		//print(currentPlaybackstate);
 
 		musicBus.setVolume(musicVolume);
+		sfxBus.setVolume(sfxVolume);
 
 		#region Old Code
 		////If the music has stopped, then start a new track 
@@ -60,23 +63,6 @@ public class AudioManager : MonoBehaviour
 
 	}
 
-
-
-	void SwitchTracks(Scene scene)
-	{
-		if(scene.buildIndex == 1)
-		{
-			if(!currentPlaybackstate.Equals(PLAYBACK_STATE.PLAYING))
-				IntializeMusic(FMODEvents.instance.castleTheme);
-
-		}
-
-		if(scene.buildIndex == 0)
-		{
-			musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-		}
-
-	}
 
 	private void Awake()
 	{
@@ -93,6 +79,7 @@ public class AudioManager : MonoBehaviour
 		eventInstances = new List<EventInstance>();
 
 		musicBus = RuntimeManager.GetBus("bus:/Music");
+		sfxBus = RuntimeManager.GetBus("bus:/SFX");
 
 		DontDestroyOnLoad(gameObject);
 	}
