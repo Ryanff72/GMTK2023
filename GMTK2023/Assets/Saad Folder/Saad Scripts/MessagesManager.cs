@@ -24,7 +24,6 @@ public class MessagesManager : MonoBehaviour
 	int numberOfLineTyping;
 
 	[Header("Typing Variables")]
-	[SerializeField] private float timeToCloseTextBox = 1f;
 	float preferredHeight;
 	int numberOfLines;
 	float positionOffset, scaleOffset;

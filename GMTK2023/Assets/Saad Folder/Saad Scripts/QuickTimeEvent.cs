@@ -7,11 +7,22 @@ public class QuickTimeEvent : MonoBehaviour
 	[SerializeField] private QuickTimePrompt[] qtePrompts;
 	[SerializeField] private Transform qteSpawnPos;
 
+	Coroutine currentQTECoroutine;
+	KeyCode currentKeyCode;
+	GameObject currentQTEObject;
+	float timeToQTE = 1f;
+	bool canQTE;
+
 	private void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			RandomQTE();
+		}
+
+		if(currentQTECoroutine != null)
+		{
+			CheckIfQTE();
 		}
 	}
 
@@ -25,18 +36,32 @@ public class QuickTimeEvent : MonoBehaviour
 		{
 			//this has a 20% of occuring
 			GameObject spawnedKey = Instantiate(qtePrompts[0].qtePrefab, qteSpawnPos.position, Quaternion.identity);
-			StartCoroutine(StartQTE(spawnedKey,qtePrompts[0].keyCode));
+			currentQTECoroutine = StartCoroutine(StartQTE(spawnedKey,qtePrompts[0].keyCode));
+		}
+	}
+
+	void CheckIfQTE()
+	{
+		if(canQTE == true && Input.GetKeyDown(currentKeyCode))
+		{
+			//succesfully did QTE
+			Destroy(currentQTEObject);
+		}
+		else if(canQTE == false)
+		{
+			//failed QTE
+			print("Failed QTE");
+			StopCoroutine(currentQTECoroutine);
 		}
 	}
 
 	IEnumerator StartQTE(GameObject spawnedObject , KeyCode keyCode)
 	{
-		if(Input.inputString.Contains(keyCode.ToString())) 
-		{
-			//the person hit the thingie this frame 
-			yield return null;
-
-		}
+		currentKeyCode = keyCode;
+		currentQTEObject = spawnedObject;
+		canQTE = true;
+		yield return new WaitForSeconds(timeToQTE);
+		canQTE = false;
 	}
 }
 [System.Serializable]
