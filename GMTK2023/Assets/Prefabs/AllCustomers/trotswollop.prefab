@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearLerp: 0
-  appearSpeed: 0.08
+  appearSpeed: 0.02
   Hp: 3
   wantedItemName: veggie paste
   wantedItemMod: 0

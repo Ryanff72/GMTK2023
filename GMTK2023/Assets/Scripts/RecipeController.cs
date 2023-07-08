@@ -112,19 +112,13 @@ public class RecipeController : MonoBehaviour
     {
         book = new RecipeBook();
 
-        Item courageLeaf = new Item("courage leaf");
-        Item water = new Item("water");
+        //Item courageLeaf = new Item("courage leaf");
+        //Item water = new Item("water");
 
-        Item leafWater = new Item("leaf water");
+        //Item leafWater = new Item("leaf water");
 
 
-        book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, water}, leafWater));
-    }
-
-    public GameObject getOutcome(List<Item> Ingrdnts)
-    {
-        return null;
-        //
+        //book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, water}, leafWater));
     }
 
     public GameObject getIngredient(string IngrName)

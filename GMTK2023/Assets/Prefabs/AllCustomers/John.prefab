@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b26b8e3f0e5c64ea0ee65e165c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearSpeed: 0.08
+  appearLerp: 0
+  appearSpeed: 0.02
   Hp: 3
   wantedItemName: cake
   wantedItemMod: 0
