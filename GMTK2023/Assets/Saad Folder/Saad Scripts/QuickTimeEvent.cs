@@ -46,11 +46,14 @@ public class QuickTimeEvent : MonoBehaviour
 		{
 			//succesfully did QTE
 			Destroy(currentQTEObject);
+			StopCoroutine(currentQTECoroutine);
 		}
 		else if(canQTE == false)
 		{
 			//failed QTE
-			print("Failed QTE");
+			//do something
+
+
 			StopCoroutine(currentQTECoroutine);
 		}
 	}
