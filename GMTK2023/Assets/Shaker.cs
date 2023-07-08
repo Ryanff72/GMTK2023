@@ -11,10 +11,7 @@ public class Shaker : MonoBehaviour
     Vector3 worldMousePos;
     bool hovering;
 
-    float Xtraveled;
     float Ytraveled;
-
-    float lastPosX;
     float lastPosY;
 
     float totaltraveled;
@@ -127,18 +124,15 @@ public class Shaker : MonoBehaviour
             }
         }
         //sees if the thing has travelled far enough
-        Xtraveled += Mathf.Abs(transform.position.x - lastPosX);
-        lastPosX = transform.position.x;
         Ytraveled += Mathf.Abs(transform.position.y - lastPosY);
         lastPosY = transform.position.y;
 
-        if (Xtraveled + Ytraveled >= shakeRequired)
+        if (Ytraveled >= shakeRequired)
         {
             shksts = shakerStatus.Output;
-            Xtraveled = 0.0f;
             Ytraveled = 0.0f;
         }
-        transform.position = worldMousePos;
+        transform.position = new Vector2(transform.position.x,worldMousePos.y);
     }
 
 
