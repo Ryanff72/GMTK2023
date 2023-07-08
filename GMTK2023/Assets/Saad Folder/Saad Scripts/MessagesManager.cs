@@ -44,10 +44,7 @@ public class MessagesManager : MonoBehaviour
 
 	private void Update()
 	{
-		//if(Input.GetKeyDown(KeyCode.Mouse0) && !hasStartedBubble)
-		//{
-		//	SpawnTextMessageAndStartDialogue(currentSpeaker);
-		//}
+		print(isTyping);
 
 		if(!hasFinishedDialogue && hasStartedBubble && currentRenderer != null) 
 			UpdateTextBox();
@@ -58,7 +55,16 @@ public class MessagesManager : MonoBehaviour
 			hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
 			if(hitInfo.collider != null && hitInfo.collider.CompareTag("TextBox"))
 			{
-				NextSentence();
+				if(isTyping)
+				{
+					SkipTyping();
+					print("skipped");
+				}
+				else
+				{
+					print("next");
+					NextSentence();
+				}
 			}
 
 		}
@@ -85,8 +91,8 @@ public class MessagesManager : MonoBehaviour
 		startYPos = currentRenderer.transform.localPosition.y;
 		startYScale = currentRenderer.transform.localScale.y;
 
-		//Color boxColour = new Color(currentSpeaker.boxColour.r, currentSpeaker.boxColour.g, currentSpeaker.boxColour.b, 255f);
-		//currentRenderer.color = boxColour;
+		Color boxColour = new Color(currentSpeaker.boxColour.r, currentSpeaker.boxColour.g, currentSpeaker.boxColour.b, 255f);
+		currentRenderer.color = boxColour;
 
 		//Sets the text of the message
 		currentText = spawnedTextMessage.GetComponentInChildren<TextMeshProUGUI>();
@@ -126,6 +132,14 @@ public class MessagesManager : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	void SkipTyping()
+	{
+		StopCoroutine(currentTypingCoroutine);
+		currentText.text = "";
+		currentText.text = currentSpeaker.dialogueLines[numberOfLineTyping];
+		isTyping = false;
 	}
 
 	void NextSentence()
