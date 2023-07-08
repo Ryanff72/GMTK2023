@@ -101,16 +101,16 @@ public class RecipeController : MonoBehaviour
     {
         book = new RecipeBook();
 
-        Item egg = new Item("egg");
-        Item coldMilk = new Item("milk");
+        Item courageLeaf = new Item("courageLeaf");
+        Item angryPepper = new Item("angryPepper");
 
-        Item coldCake = new Item("cake");
-
-
-        book.AllRecipes.Add(new Recipe(new List<Item>() {egg, coldMilk}, coldCake));
+        Item veggiePaste = new Item("veggiePaste");
 
 
-        List<Item> CrntIngredients = new List<Item>() {egg, coldMilk};
+        book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, angryPepper}, veggiePaste));
+
+
+        List<Item> CrntIngredients = new List<Item>() { courageLeaf, angryPepper };
     }
 
     public GameObject getOutcome(List<Item> Ingrdnts)
@@ -136,9 +136,4 @@ public class RecipeController : MonoBehaviour
         return null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
