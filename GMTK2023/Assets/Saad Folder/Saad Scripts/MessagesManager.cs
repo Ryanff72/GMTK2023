@@ -133,7 +133,7 @@ public class MessagesManager : MonoBehaviour
 		
 		if(hasFinishedDialogue || (numberOfLineTyping == currentSpeaker.dialogueLines.Length - 1))
 		{
-			numberOfLineTyping = 0;
+			numberOfLineTyping = -1;
 			Destroy(spawnedTextMessage);
 		}
 		StopCoroutine(currentTypingCoroutine);
