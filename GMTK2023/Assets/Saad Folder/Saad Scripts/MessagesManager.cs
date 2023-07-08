@@ -34,6 +34,14 @@ public class MessagesManager : MonoBehaviour
 	bool hasFinishedDialogue = false;
 	Coroutine currentTypingCoroutine;
 
+	//raycast variables
+	Camera cam;
+	RaycastHit2D hitInfo;
+
+	private void Start()
+	{
+		cam = Camera.main;
+	}
 
 	private void Update()
 	{
@@ -45,9 +53,15 @@ public class MessagesManager : MonoBehaviour
 		if(!hasFinishedDialogue && hasStartedBubble) 
 			UpdateTextBox();
 
-		if (Input.GetKeyDown(KeyCode.Return) && !isTyping && !hasFinishedDialogue)
+		if (Input.GetButtonDown("Fire1") && !isTyping)
 		{
-			NextSentence();
+			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
+			if(hitInfo.collider != null && hitInfo.collider.CompareTag("TextBox"))
+			{
+				NextSentence();
+			}
+
 		}
 	}
 
@@ -103,15 +117,13 @@ public class MessagesManager : MonoBehaviour
 				if(numberOfLineTyping == currentCharacter.dialogueLines.Length - 1)
 				{
 					print("finished dialogue");
-					numberOfLineTyping = 0;
 					//reached end of the entire dialogue and so do nothing
 					hasFinishedDialogue = true;
-					yield return new WaitForSeconds(timeToCloseTextBox);
 					hasStartedBubble = false;
-					Destroy(spawnedTextMessage);
 					StopCoroutine(currentTypingCoroutine);
 
-					
+
+
 				}
 			}
 		}
@@ -120,6 +132,10 @@ public class MessagesManager : MonoBehaviour
 	void NextSentence()
 	{
 		
+		if(hasFinishedDialogue)
+		{
+			Destroy(spawnedTextMessage);
+		}
 		numberOfLineTyping++;
 		if(currentTypingCoroutine != null)
 			currentTypingCoroutine = StartCoroutine(Type(currentSpeaker));

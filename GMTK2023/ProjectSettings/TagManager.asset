@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spoon
   - Heater
+  - TextBox
   layers:
   - Default
   - TransparentFX

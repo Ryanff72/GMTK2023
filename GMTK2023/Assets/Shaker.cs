@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
@@ -21,6 +20,9 @@ public class Shaker : MonoBehaviour
     float totaltraveled;
     public float shakeRequired;
 
+    bool hasOutputItems;
+    public List<GameObject> shakenObjects = new List<GameObject>();
+
     private void Start()
     {
         shksts = shakerStatus.Dormant;
@@ -31,8 +33,6 @@ public class Shaker : MonoBehaviour
         {
             case shakerStatus.Dormant:
                 break;
-
-
             case shakerStatus.NotShaking:
                 goBack();
                 break;
@@ -41,6 +41,7 @@ public class Shaker : MonoBehaviour
                 break;
             case shakerStatus.Output:
                 goBack();
+                StartCoroutine("SpawnOutputs");
                 break;
         }
     }
@@ -72,7 +73,36 @@ public class Shaker : MonoBehaviour
         hovering = false;
     }
 
+    private IEnumerator SpawnOutputs()
+    {
+        if (!hasOutputItems)
+        {
+            hasOutputItems = true;
+            for (int i = 0; i < shakenObjects.Count; i++)
+            {
+                yield return new WaitForSeconds(0.5f);
+                shakenObjects[i].GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.NotDragging;
+                shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
+                shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
+                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(10, 15), Random.Range(10, 20));
+            }
+            shakenObjects.Clear();
+            yield return new WaitForSeconds(0.5f);
+            shksts = shakerStatus.NotShaking;
+        }
+        
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8 && (shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant) && collision.gameObject.GetComponent<IngredientGrabbing>().shakeable == true)
+        {
+            hasOutputItems = false;
+            shakenObjects.Add(collision.gameObject);
+            collision.gameObject.GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.Static;
+            
+        }
+    }
     void goBack()
     {
 

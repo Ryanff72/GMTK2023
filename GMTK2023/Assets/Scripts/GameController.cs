@@ -12,14 +12,37 @@ public class GameController : MonoBehaviour
     public GameObject serveItem;
     bool canServe = true;
     bool endedDay = false;
+    public int CharactersPerDay = 6;
+    public float newDayWaitTime = 5.0f;
     
     // Start is called before the first frame update
     void Start()
     {
-        currentCustomers = new List<GameObject>();
+        StartCoroutine(startDay());
+    }
+
+    public IEnumerator startDay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        currentCustomers = new List<GameObject>(Customers.Count);
         for(int i = 0; i < Customers.Count; i++)
         {
-            currentCustomers.Add(Instantiate(Customers[i], CustomerPos, Quaternion.identity));
+            currentCustomers.Add(null);
+        }
+        for (int i = 0; i < Customers.Count; i++)
+        {
+            if (GameObject.Find(Customers[i].name + "(Clone)"))
+            {
+                currentCustomers[i] = GameObject.Find(Customers[i].name + "(Clone)");
+            }
+            else if(GameObject.Find(Customers[i].name))
+            {
+                currentCustomers[i] = GameObject.Find(Customers[i].name);
+            }
+            else
+            {
+                currentCustomers[i] = (Instantiate(Customers[i], CustomerPos, Quaternion.identity));
+            }
         }
         currentCustomers[0].GetComponent<Client>().appear();
         DialogueParser.initDialogue();
@@ -48,7 +71,11 @@ public class GameController : MonoBehaviour
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
-            Debug.Log("a");
+            if(CustomerIndex % CharactersPerDay == 0)
+            {
+                day++;
+            }
+            yield return new WaitForSeconds(newDayWaitTime);
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
         } else
         {

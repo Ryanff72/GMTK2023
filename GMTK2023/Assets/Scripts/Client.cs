@@ -12,7 +12,7 @@ public class Client : MonoBehaviour
 {
     bool appearing = false;
     bool disappearing = false;
-    float appearLerp = 0.0f;
+    public float appearLerp = 0.0f;
     public float appearSpeed;
     SpriteRenderer sprite;
     public int Hp = 3;
@@ -21,7 +21,7 @@ public class Client : MonoBehaviour
     public Modifier wantedItemMod;
     public GameObject holdingItem;
     [SerializeField] Customer dialogueObject;
-    string lastPotion;
+    string lastPotion = "god";
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,10 @@ public class Client : MonoBehaviour
     void initChar()
     {
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
-        Debug.Log("day: " + GameObject.Find("GameController").GetComponent<GameController>().day);
+    }
+
+    void initDialogue()
+    {
         dialogueObject.dialogueLines = DialogueParser.LoadDialogue(dialogueObject.name, Hp, GameObject.Find("GameController").GetComponent<GameController>().day, lastPotion).ToArray();
     }
 
@@ -46,6 +49,7 @@ public class Client : MonoBehaviour
 
     public void startDialogue()
     {
+        initDialogue();
         //Do Dialogue(day, name, hp, lastPotion)
         FindObjectOfType<MessagesManager>().SpawnTextMessageAndStartDialogue(dialogueObject);
         endDialogue();
@@ -84,7 +88,7 @@ public class Client : MonoBehaviour
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, appearLerp);
             appearLerp += appearSpeed;
-            if(appearLerp >= 255)
+            if (appearLerp >= 1.0)
             {
                 appearing = false;
                 startDialogue();
