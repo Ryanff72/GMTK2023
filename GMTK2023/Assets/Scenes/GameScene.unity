@@ -2505,6 +2505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75aec348d142d34b9e9651a418d90fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sp: []
+  spsc:
+  - {x: 1, y: 1, z: 1}
 --- !u!1 &1709496344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,7 +2790,6 @@ MonoBehaviour:
   SpoonXTraveled: 0
   SpoonStirDistance: 10
   NewItemSpawner: {fileID: 1683821718}
-  createdItemSprites: []
 --- !u!1001 &1820676983
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class CattleController : MonoBehaviour
     bool SpoonInPot = false;
     public float SpoonStirDistance = 10.0f;
     public GameObject NewItemSpawner; // cauldron
-    public Sprite[] createdItemSprites; 
 
 
     // Start is called before the first frame update
