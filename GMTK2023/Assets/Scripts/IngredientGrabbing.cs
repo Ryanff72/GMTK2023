@@ -106,6 +106,10 @@ public class IngredientGrabbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y > 6.1f && ingStatus == ingredientStatus.NotDragging)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().serveItem = gameObject;
+        }
         currentShadowCircle.transform.position = new Vector2(transform.position.x, currentShadowCircle.transform.position.y);
         currentShadowCircle.transform.localScale = new Vector2(1.6f, 0.46f) * Mathf.Clamp((4 / (transform.position.y + 1.5f)), 0.1f, 1.0f);
         StateMachine();

@@ -21,6 +21,7 @@ public class Ingredient : MonoBehaviour
     public Vector3 characterHandPos;
     public float lerpSpeed = 0.01f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +31,7 @@ public class Ingredient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D GroundCheck = Physics2D.Linecast(leftGc.position, rightGc.position, 1 << 6);
-        if(GroundCheck && GroundCheck.collider.tag == "Heater" && canHeat)
-        {
-            Mod = Modifier.Heated;
-            GetComponent<SpriteRenderer>().sprite = heatedSprite;
-        }
+
     }
 
     void FixedUpdate()
@@ -49,6 +45,20 @@ public class Ingredient : MonoBehaviour
                 isServing = false;
             }
         }
+    }
+
+    public void Heat()
+    {
+        GetComponent<SpriteRenderer>().sprite = heatedSprite;
+        item.Mod = Modifier.Heated;
+        Mod = Modifier.Shaken;
+    }
+
+    public void Shake()
+    {
+        GetComponent<SpriteRenderer>().sprite = shakenSprite;
+        item.Mod = Modifier.Shaken;
+        Mod = Modifier.Shaken;
     }
 
     public void serve()

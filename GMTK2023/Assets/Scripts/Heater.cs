@@ -41,9 +41,7 @@ public class Heater : MonoBehaviour
 
     void heatItem(GameObject heatedObject)
     {
-        heatedObject.GetComponent<Ingredient>().Mod = Modifier.Heated;
-        heatedObject.GetComponent<Ingredient>().item.Mod = Modifier.Heated;
-
+        heatedObject.GetComponent<Ingredient>().Heat();
         Instantiate(smokeEffect, heatedObject.transform.position, Quaternion.Euler(-90, 0, 0));
     }
 
