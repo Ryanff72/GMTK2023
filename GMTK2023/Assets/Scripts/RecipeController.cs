@@ -19,6 +19,15 @@ public class Item {
         Name = name;
         Mod = mod;
     }
+
+    public bool isPoisonous()
+    {
+        if(Name == "Leaf water")
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 public class Recipe {
@@ -115,13 +124,8 @@ public class RecipeController : MonoBehaviour
 
     public GameObject getOutcome(List<Item> Ingrdnts)
     {
-        Recipe recipe = book.getRecipe(Ingrdnts);
-        if(recipe == null)
-        {
-            Debug.Log("Recipe not found");
-            return null;
-        }
-        return getIngredient(recipe.Output.Name);
+        return null;
+        //
     }
 
     public GameObject getIngredient(string IngrName)
