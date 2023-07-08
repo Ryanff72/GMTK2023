@@ -292,8 +292,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../FMOD PROJECT/GMTK2023 FMOD PROJECT/GMTK2023 FMOD PROJECT.fspro
-  sourceBankPath: ../FMOD PROJECT/GMTK2023 FMOD PROJECT/Build
+  sourceProjectPath: FMOD PROJECT/GMTK2023 FMOD PROJECT.fspro
+  sourceBankPath: FMOD PROJECT/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

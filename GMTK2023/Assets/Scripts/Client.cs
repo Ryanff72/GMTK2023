@@ -52,12 +52,11 @@ public class Client : MonoBehaviour
         initDialogue();
         //Do Dialogue(day, name, hp, lastPotion)
         FindObjectOfType<MessagesManager>().SpawnTextMessageAndStartDialogue(dialogueObject);
-        endDialogue();
     }
 
     public void endDialogue()
     {
-
+        FindObjectOfType<MessagesManager>().CloseTextBox();
     }
 
     public void receiveItem(GameObject holdItem)
@@ -121,5 +120,6 @@ public class Client : MonoBehaviour
         disappearing = true;
         appearing = false;
         appearLerp = 1.0f;
+        endDialogue();
     }
 }

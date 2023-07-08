@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
 	{
 		//Gets the current playback state
 		musicEventInstance.getPlaybackState(out currentPlaybackstate);
-		print(currentPlaybackstate);
+		//print(currentPlaybackstate);
 
 		musicBus.setVolume(musicVolume);
 		sfxBus.setVolume(sfxVolume);

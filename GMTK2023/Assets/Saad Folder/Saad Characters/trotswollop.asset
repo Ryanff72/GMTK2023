@@ -18,5 +18,5 @@ MonoBehaviour:
   - "you wouldn\u2019t happen to sell anything useful for a boss, would you?"
   - "I just started my internship yesterday and I can\u2019t afford enough education
     to know what these potions do\u2026"
-  typingInterval: 0.05
-  boxColour: {r: 1, g: 1, b: 1, a: 0}
+  typingInterval: 0.03
+  boxColour: {r: 0, g: 0, b: 0, a: 0}

@@ -14,7 +14,13 @@ public class GameController : MonoBehaviour
     bool endedDay = false;
     public int CharactersPerDay = 6;
     public float newDayWaitTime = 5.0f;
-    
+
+    public Sprite MorningBg;
+    public Sprite SunsetBg;
+    public Sprite NightBg;
+    public List<Sprite> tablesTops;
+    public List<Sprite> tablesBots;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +29,11 @@ public class GameController : MonoBehaviour
 
     public IEnumerator startDay()
     {
-        yield return new WaitForSeconds(1.0f);
+        GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
+        GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
+        GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
+
+        yield return new WaitForSeconds(2.5f);
         currentCustomers = new List<GameObject>(Customers.Count);
         for(int i = 0; i < Customers.Count; i++)
         {
@@ -65,19 +75,31 @@ public class GameController : MonoBehaviour
         serveItem.GetComponent<Ingredient>().serve();
         yield return new WaitForSeconds(0.5f);
         currentCustomers[CustomerIndex].GetComponent<Client>().receiveItem(serveItem);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
 
-        yield return new WaitForSeconds(1.5f);
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
+            if(CustomerIndex == 2)
+            {
+                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
+                GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
+                GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
+            }
+            else if(CustomerIndex == 4)
+            {
+                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
+                GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
+                GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
+            }
             if(CustomerIndex % CharactersPerDay == 0)
             {
                 day++;
+                yield return new WaitForSeconds(newDayWaitTime);
             }
-            yield return new WaitForSeconds(newDayWaitTime);
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
-        } else
+        } 
+        else
         {
             endedDay = true;
         }

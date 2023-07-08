@@ -49,6 +49,10 @@ public class IngredientGrabbing : MonoBehaviour
     float crushtime;
     public AudioClip landSound;
     GameObject currentShadowCircle;
+    Sprite MorningBg;
+    Sprite SunsetBg;
+    Sprite NightBg;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -106,6 +110,10 @@ public class IngredientGrabbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y > 5.6f && ingStatus == ingredientStatus.NotDragging)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().serveItem = gameObject;
+        }
         currentShadowCircle.transform.position = new Vector2(transform.position.x, currentShadowCircle.transform.position.y);
         currentShadowCircle.transform.localScale = new Vector2(1.6f, 0.46f) * Mathf.Clamp((4 / (transform.position.y + 1.5f)), 0.1f, 1.0f);
         StateMachine();
@@ -132,10 +140,12 @@ public class IngredientGrabbing : MonoBehaviour
         //pick up the object
         if (Input.GetButtonDown("Fire1") && hovering)
         {
+            GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = true;
             ingStatus = ingredientStatus.Dragging;
         }
         if (Input.GetButtonUp("Fire1") && ingStatus == ingredientStatus.Dragging)
         {
+            GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             ingStatus = ingredientStatus.NotDragging;
             velocity = new Vector2((transform.position.x-oldPosition.x)/0.2f, (transform.position.y - oldPosition.y) / 0.2f);
