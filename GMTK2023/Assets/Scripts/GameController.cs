@@ -16,10 +16,27 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(startDay());
+    }
+
+    public IEnumerator startDay()
+    {
+        yield return new WaitForSeconds(1.0f);
         currentCustomers = new List<GameObject>();
-        for(int i = 0; i < Customers.Count; i++)
+        for (int i = 0; i < Customers.Count; i++)
         {
-            currentCustomers.Add(Instantiate(Customers[i], CustomerPos, Quaternion.identity));
+            if (GameObject.Find(Customers[i].name + "(Clone)"))
+            {
+                currentCustomers[i] = GameObject.Find(Customers[i].name + "(Clone)");
+            }
+            else if(GameObject.Find(Customers[i].name))
+            {
+                currentCustomers[i] = GameObject.Find(Customers[i].name);
+            }
+            else
+            {
+                currentCustomers.Add(Instantiate(Customers[i], CustomerPos, Quaternion.identity));
+            }
         }
         currentCustomers[0].GetComponent<Client>().appear();
         DialogueParser.initDialogue();
@@ -48,7 +65,6 @@ public class GameController : MonoBehaviour
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
-            Debug.Log("a");
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
         } else
         {

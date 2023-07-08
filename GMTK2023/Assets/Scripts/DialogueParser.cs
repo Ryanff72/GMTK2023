@@ -18,7 +18,6 @@ public static class DialogueParser
         {
             Dialogue = streamReader.ReadToEnd();
         }
-        Debug.Log(Dialogue);
     }
     public static List<string> LoadDialogue(string Name, int Hp, int Day, string LastPotion)
     {
