@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingStatus: 0
   hovering: 0
-  shakeable: 0
+  shakeable: 1
   cam: {fileID: 0}
   weight: 0.02
   velocity: {x: 0, y: 0}

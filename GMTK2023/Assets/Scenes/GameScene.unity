@@ -206,7 +206,7 @@ PrefabInstance:
     - target: {fileID: 2841977906257070208, guid: f72f3be752546a949a525ecf04749f1c, type: 3}
       propertyPath: spawnedIngredient
       value: 
-      objectReference: {fileID: 5909851974252077864, guid: 3cfff466903063947bc1c0ff5649ac02, type: 3}
+      objectReference: {fileID: 5909851974252077864, guid: 26a8eae589191274f86dcff443352fd1, type: 3}
     - target: {fileID: 6478838771605131737, guid: f72f3be752546a949a525ecf04749f1c, type: 3}
       propertyPath: m_LayerOverridePriority
       value: 42
@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 2841977906257070208, guid: f72f3be752546a949a525ecf04749f1c, type: 3}
       propertyPath: spawnedIngredient
       value: 
-      objectReference: {fileID: 5909851974252077864, guid: 2516b8af370926d42a80b0230a76c5c4, type: 3}
+      objectReference: {fileID: 5909851974252077864, guid: abe8e06b07d719a4f8f636bfdc7b7b0f, type: 3}
     - target: {fileID: 6478838771605131737, guid: f72f3be752546a949a525ecf04749f1c, type: 3}
       propertyPath: m_LayerOverridePriority
       value: 42

@@ -47,7 +47,6 @@ public class CattleController : MonoBehaviour
         Recipe recipe = RecipeController.book.getRecipe(Items);
         if (recipe == null && IngredientsInPot != null)
         {
-
             Debug.Log("Recipe not found");
             return;
         }
@@ -55,6 +54,7 @@ public class CattleController : MonoBehaviour
         if (output)
         {
             NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output);
+
         }
 
         List<GameObject> usedIngredients = new List<GameObject>();
