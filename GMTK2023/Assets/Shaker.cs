@@ -8,7 +8,7 @@
 //    //public enum shakerStatus { Shaking, NotShaking };
 //    //public shakerStatus shksts;
 
-
+/*
     public void StateMachine()
     {
         switch (shk)
@@ -34,3 +34,4 @@
     }
 
 }
+*/
