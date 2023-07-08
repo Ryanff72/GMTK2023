@@ -12,6 +12,9 @@ public class CattleController : MonoBehaviour
     float lastSpoonX;
     bool SpoonInPot = false;
     public float SpoonStirDistance = 10.0f;
+    public GameObject NewItemSpawner; // cauldron
+    public Sprite[] createdItemSprites; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +52,8 @@ public class CattleController : MonoBehaviour
         GameObject output = RecipeController.getIngredient(recipe.Output.Name);
         if (output)
         {
-            Instantiate(output, new Vector2(0, 0), Quaternion.identity);
+            
+            NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output,null,new Vector3(1,1,1));
         }
 
         List<GameObject> usedIngredients = new List<GameObject>();

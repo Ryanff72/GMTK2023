@@ -334,6 +334,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: 
   Mod: 0
+  canHeat: 0
+  canShake: 0
+  leftGc: {fileID: 1884003965584529344}
+  rightGc: {fileID: 6746220002989633174}
+  heatedSprite: {fileID: 0}
+  shakenSprite: {fileID: 0}
 --- !u!1 &6310793256179935320
 GameObject:
   m_ObjectHideFlags: 0

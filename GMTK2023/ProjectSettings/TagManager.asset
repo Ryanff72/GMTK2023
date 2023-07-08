@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spoon
+  - Heater
   layers:
   - Default
   - TransparentFX

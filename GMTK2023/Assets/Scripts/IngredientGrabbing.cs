@@ -10,7 +10,7 @@ public class IngredientGrabbing : MonoBehaviour
 {
 
     //added stuff
-    public enum ingredientStatus { Dragging, NotDragging };
+    public enum ingredientStatus { Dragging, NotDragging, Animating };
     public ingredientStatus ingStatus;
     public bool hovering = false;
     Vector3 worldMousePos;
@@ -51,16 +51,10 @@ public class IngredientGrabbing : MonoBehaviour
     private void Awake()
     {
         ingStatus = ingredientStatus.NotDragging;
-    }
-
-    void Start()
-    {
         shakeMagnitude = weight;
-        //SoundCreator = Instantiate(SoundCreator, transform.position, Quaternion.identity);
         rb2d = GetComponent<Rigidbody2D>();
         cam = Camera.main.gameObject;
         initialPosition = cam.transform.position;
-        
     }
 
     public void StateMachine()
@@ -74,6 +68,8 @@ public class IngredientGrabbing : MonoBehaviour
                 syncPosition();
                 StartCoroutine("getOldDistance", 0.05f);
                 break;
+            case ingredientStatus.Animating:
+                break;
         }
     }
 
@@ -83,6 +79,7 @@ public class IngredientGrabbing : MonoBehaviour
         {
             float yspeed = rb2d.velocity.y - gravity * Time.deltaTime;
             rb2d.velocity = new Vector2(rb2d.velocity.x, yspeed);
+            ingStatus = ingredientStatus.NotDragging;
         }
     }
 
