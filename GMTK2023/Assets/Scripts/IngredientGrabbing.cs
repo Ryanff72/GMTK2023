@@ -73,7 +73,7 @@ public class IngredientGrabbing : MonoBehaviour
         switch (ingStatus)
         {
             case ingredientStatus.NotDragging:
-                GetComponent<SpriteRenderer>().enabled = true;
+                transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = true;
                 rb2d.bodyType = RigidbodyType2D.Dynamic;
                 applyPhysics();
                 break;
@@ -91,7 +91,7 @@ public class IngredientGrabbing : MonoBehaviour
     {
         if(shakeable == true)
         {
-            GetComponent<SpriteRenderer>().enabled = false;
+            transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = false;
             rb2d.bodyType = RigidbodyType2D.Static;
         }
         

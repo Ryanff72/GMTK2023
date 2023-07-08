@@ -6,6 +6,7 @@ public class RecipieBookObject : MonoBehaviour
 {
 
     public GameObject recc;
+    public GameObject[] recipieCanvas;
 
     int pageRecepieCount = 0;
     int pagePairCount = 0;
@@ -25,13 +26,20 @@ public class RecipieBookObject : MonoBehaviour
         if (recc.GetComponent<RecipeController>().book.KnownRecipes.Count > totalRecepieCount) 
         {
             totalRecepieCount++;
-            Debug.Log("new recepie: "+recc.GetComponent<RecipeController>().book.KnownRecipes[0].Output.Name);
+            string newRecepieName = recc.GetComponent<RecipeController>().book.KnownRecipes[totalRecepieCount].Output.Name;
+            addNewRecipe(newRecepieName);
         }
     }
 
-    public void addNewRecipe(string RecipeName, string Buffs, Sprite Mod1, Sprite Mod2, Sprite Item1, Sprite Item2)
+    public void addNewRecipe(string newRec)
     {
-        //gameObject.getch
+        for( int i = 0; i < recipieCanvas.Length; i++)
+        {
+            if (newRec == recipieCanvas[i].name)
+            {
+                Instantiate(recipieCanvas[i]);
+            }
+        }
     }
 
 
