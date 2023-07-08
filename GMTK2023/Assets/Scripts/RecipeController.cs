@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public enum Modifier {
     None,
@@ -36,16 +37,21 @@ public class RecipeBook {
     public List<Recipe> KnownRecipes;
 
     public Recipe getRecipe(List<Item> Ingredients) {    // Gets corresponding recipe to list of items
+        Debug.Log("Getting recipe with ingredients...");
+        for(int i = 0; i < Ingredients.Count; i++)
+        {
+            Debug.Log(Ingredients[i].Name);
+        }
         for (int i = 0; i < AllRecipes.Count; i++) {
-            if(checkRecipe(AllRecipes[i], Ingredients)) {
+            if (checkRecipe(AllRecipes[i], Ingredients)) {
                 if(!isRecipeKnown(AllRecipes[i].Output, Ingredients)) {
                     KnownRecipes.Add(AllRecipes[i]);
                 }
-
+                Debug.Log("found recipe for: " + AllRecipes[i].Output.Name);
                 return AllRecipes[i];
             }
         }
-
+        Debug.Log("Could not get recipe");
         return null;
     }
 
@@ -59,15 +65,12 @@ public class RecipeBook {
     }
 
     public bool checkRecipe(Recipe Rcp, List<Item> Ingrdns) {  // Checks for specific recipe if the items match it
-        if(Rcp.Ingredients.Count != Ingrdns.Count) {
-            return false;
-        }
-        for(int i = 0; i < Ingrdns.Count; i++)
+        for(int i = 0; i < Rcp.Ingredients.Count; i++)
         {
             bool found = false;
-            for(int j = 0; j < Rcp.Ingredients.Count; j++)
+            for(int j = 0; j < Ingrdns.Count; j++)
             {
-                if (Ingrdns[i].Name == Rcp.Ingredients[i].Name && Ingrdns[i].Mod == Rcp.Ingredients[i].Mod)
+                if (Ingrdns[j].Name == Rcp.Ingredients[i].Name && Ingrdns[j].Mod == Rcp.Ingredients[i].Mod)
                 {
                     found = true;
                     break;
@@ -78,7 +81,6 @@ public class RecipeBook {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -110,12 +112,17 @@ public class RecipeController : MonoBehaviour
 
 
         List<Item> CrntIngredients = new List<Item>() {egg, coldMilk};
-        Debug.Log(getIngredient(book.getRecipe(CrntIngredients).Output.Name));
     }
 
     public GameObject getOutcome(List<Item> Ingrdnts)
     {
-        return getIngredient(book.getRecipe(Ingrdnts).Output.Name);
+        Recipe recipe = book.getRecipe(Ingrdnts);
+        if(recipe == null)
+        {
+            Debug.Log("Recipe not found");
+            return null;
+        }
+        return getIngredient(recipe.Output.Name);
     }
 
     public GameObject getIngredient(string IngrName)

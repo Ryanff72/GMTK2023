@@ -40,8 +40,33 @@ public class CattleController : MonoBehaviour
         for(int i = 0; i < IngredientsInPot.Count; i++) {
             Items.Add(IngredientsInPot[i].GetComponent<Ingredient>().item);
         }
+        Recipe recipe = RecipeController.book.getRecipe(Items);
+        if (recipe == null)
+        {
+            Debug.Log("Recipe not found");
+            return;
+        }
+        GameObject output = RecipeController.getIngredient(recipe.Output.Name);
+        if (output)
+        {
+            Instantiate(output, new Vector2(0, 0), Quaternion.identity);
+        }
 
-        Instantiate(RecipeController.getOutcome(Items), new Vector2(0, 0), Quaternion.identity);
+        List<GameObject> usedIngredients = new List<GameObject>();
+        for(int i = 0; i < recipe.Ingredients.Count; i++)
+        {
+            for(int j = 0; j < Items.Count; j++)
+            {
+                if (recipe.Ingredients[i].Name == Items[j].Name && recipe.Ingredients[i].Mod == Items[j].Mod)
+                {
+                    usedIngredients.Add(IngredientsInPot[j]);
+                }
+            }
+        }
+        for(int i = 0; i < usedIngredients.Count; i++)
+        {
+            Destroy(usedIngredients[i]);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
