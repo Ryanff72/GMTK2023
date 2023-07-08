@@ -15,6 +15,7 @@ public class IngredientGrabbing : MonoBehaviour
     public bool hovering = false;
     Vector3 worldMousePos;
     Vector2 oldPosition; //used to calculate throw speed
+    public bool shakeable;
 
     // CamShakeStuff
     public GameObject cam;
@@ -63,6 +64,8 @@ public class IngredientGrabbing : MonoBehaviour
         switch (ingStatus)
         {
             case ingredientStatus.NotDragging:
+                GetComponent<SpriteRenderer>().enabled = true;
+                rb2d.bodyType = RigidbodyType2D.Dynamic;
                 applyPhysics();
                 break;
             case ingredientStatus.Dragging:
@@ -70,8 +73,19 @@ public class IngredientGrabbing : MonoBehaviour
                 StartCoroutine("getOldDistance", 0.05f);
                 break;
             case ingredientStatus.Static:
+                hideAndDisable();
                 break;
         }
+    }
+
+    void hideAndDisable()
+    {
+        if(shakeable == true)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            rb2d.bodyType = RigidbodyType2D.Static;
+        }
+        
     }
 
     public void applyGravity()
