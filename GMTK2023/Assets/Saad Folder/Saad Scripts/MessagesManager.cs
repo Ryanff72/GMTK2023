@@ -147,13 +147,18 @@ public class MessagesManager : MonoBehaviour
 		
 		if(hasFinishedDialogue || (numberOfLineTyping == currentSpeaker.dialogueLines.Length - 1))
 		{
-			numberOfLineTyping = -1;
-			Destroy(spawnedTextMessage);
+			CloseTextBox();
 		}
 		StopCoroutine(currentTypingCoroutine);
 		numberOfLineTyping++;
 		if(currentTypingCoroutine != null)
 			currentTypingCoroutine = StartCoroutine(Type(currentSpeaker));
+	}
+
+	public void CloseTextBox()
+	{
+		numberOfLineTyping = -1;
+		Destroy(spawnedTextMessage);
 	}
 
 	void UpdateTextBox()
