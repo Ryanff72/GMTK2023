@@ -22,7 +22,7 @@ public class Item {
 
     public bool isPoisonous()
     {
-        if(Name == "leafWater")
+        if(Name == "leaf water")
         {
             return true;
         }
@@ -60,7 +60,9 @@ public class RecipeBook {
             }
         }
         Debug.Log("Could not get recipe");
-        return null;
+        Item veggiepaste = new Item("veggie paste", Modifier.None);
+        Recipe veggieRecipe = new Recipe(Ingredients, veggiepaste);
+        return veggieRecipe;
     }
 
     public bool isRecipeKnown(Item Output, List<Item> Ingredients) {
@@ -110,16 +112,13 @@ public class RecipeController : MonoBehaviour
     {
         book = new RecipeBook();
 
-        Item courageLeaf = new Item("courageLeaf");
-        Item angryPepper = new Item("angryPepper");
+        Item courageLeaf = new Item("courage leaf");
+        Item water = new Item("water");
 
-        Item veggiePaste = new Item("veggiePaste");
-
-
-        book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, angryPepper}, veggiePaste));
+        Item leafWater = new Item("leaf water");
 
 
-        List<Item> CrntIngredients = new List<Item>() { courageLeaf, angryPepper };
+        book.AllRecipes.Add(new Recipe(new List<Item>() {courageLeaf, water}, leafWater));
     }
 
     public GameObject getOutcome(List<Item> Ingrdnts)

@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4238167281473492154
 SpriteRenderer:
@@ -102,3 +102,4 @@ MonoBehaviour:
   wantedItemName: veggiePaste
   wantedItemMod: 0
   holdingItem: {fileID: 0}
+  dialogueObject: {fileID: 11400000, guid: 3a83e1cab8eb0334d871a0374e4cc498, type: 2}

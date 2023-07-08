@@ -52,7 +52,7 @@ public class MessagesManager : MonoBehaviour
 	}
 
 
-	void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
+	public void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
 	{
 		currentSpeaker = dialogueObject;
 

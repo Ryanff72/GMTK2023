@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7089760618613527888}
   - component: {fileID: 8678009617433877418}
   m_Layer: 0
-  m_Name: James
+  m_Name: trotswollop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7089760618613527888
 SpriteRenderer:
@@ -102,3 +102,4 @@ MonoBehaviour:
   wantedItemName: onion
   wantedItemMod: 0
   holdingItem: {fileID: 0}
+  dialogueObject: {fileID: 11400000, guid: a15cf1fe2c2b9984aaae52be8470b359, type: 2}

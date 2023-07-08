@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     List<GameObject> currentCustomers;
     public int CustomerIndex = 0;
     public Vector2 CustomerPos;
-    int day = 1;
+    public int day = 1;
     public GameObject serveItem;
     bool canServe = true;
     bool endedDay = false;
@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
             currentCustomers.Add(Instantiate(Customers[i], CustomerPos, Quaternion.identity));
         }
         currentCustomers[0].GetComponent<Client>().appear();
+        DialogueParser.initDialogue();
     }
 
 
