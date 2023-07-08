@@ -86,13 +86,19 @@ public class AudioManager : MonoBehaviour
 
 	private void Start()
 	{
-		IntializeMusic(FMODEvents.instance.introMusic);
+		IntializeMusic(FMODEvents.instance.nightMusic);
+		//AudioManager.instance.PlayOneShot(FMODEvents.instance.newPotion, transform.position);
 	}
 
 	public void IntializeMusic(EventReference musicEventReference)
 	{
 		musicEventInstance = CreateEventInstance(musicEventReference);
 		musicEventInstance.start();
+	}
+
+	public void PlayOneShot(EventReference sound, Vector3 worldPos)
+	{
+		RuntimeManager.PlayOneShot(sound, worldPos);
 	}
 
 	#region Old Code
