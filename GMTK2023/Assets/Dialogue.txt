@@ -1,4 +1,4 @@
-__trotswollop
+__Trotswollop
 
 _day 1
 _all
@@ -48,3 +48,322 @@ and apparently i need a “happiness potion”…
 ...does that even exist?
 _itm
 potion of satisfaction
+
+
+
+
+
+__Clove
+
+_day 1
+_all
+You. Vendor. 
+
+I’m exhausted, and I’m not here to make friends.
+
+I’m here because I’ve got money and a problem, and you’ve got the solution.
+
+So, fix me something that’ll keep me alert. I’ll be needing my head later.
+
+If you happen to have any pixie sugar, it may pair well with warm vegetables.
+
+_itm
+HC
+
+_day 2
+
+_awf
+You again. 
+
+I don’t know what you gave me last time, but I think it made me sick. So, good first impression.
+
+Listen, I don’t know who you think I am, but I am DEFINITELY not an idiot.
+
+Well, since you’re the only person in this town that sells what I need, I guess I’ve got to get along.
+
+_mid
+
+So.
+
+Whatever you gave me yesterday didn’t quite do it, but at least it wasn’t a total disaster. 
+
+I guess I respect your.. courage.. in not listening to my suggested recipe.
+
+Maybe you thought it would work out. Well, it didn’t. So this time, let’s stick to what works.
+
+... 
+
+I guess I should introduce myself.
+
+_god
+
+Well, I have to hand it to you. You make a good coffee.
+
+Maybe I just think that because you’re the only place around here that sells coffee.
+
+...
+
+No, you’ve got good coffee.
+
+_all
+You can call me Clove. It isn’t short for anything, so don’t bother asking.
+
+I’m a healer. Maybe the most vital component of a team of adventurers, but also the least respected. 
+
+You see, these big burly idiots rush into battle and nearly get themselves killed every time!
+
+And what would be the reason they make it out alive?
+
+...
+
+It’s me. 
+
+I thought that was obvious, but I guess you were either too shy to blurt out a guess or just the quiet type.
+
+Well. Guess what the team has me up to now?
+
+That’s right, running errands. Like I’m their mother.
+
+Our alchemist is looking for some sort of corrosive substance, I guess to be used in some sort of weaponry.
+
+For what exactly, I don’t know, but I’ll have to be the one to construct new flesh around their bones.
+
+...
+
+It’s for the greater good.
+
+So yeah, something corrosive. 
+
+
+_itm
+AG
+
+_day 3
+
+_hp 1 
+...
+
+Incredible.
+
+I’ve never seen someone with such dangerous incompetence.
+
+This is the first that anyone on my team has suffered irreparable damage. 
+
+Apparently, that order from the alchemist was VERY important.
+
+I don’t even know what exactly we were fighting.. Memories are hazy..
+
+It took everything we threw at it and dished it back at us. No blade or arrow could pierce its thick coat. 
+
+Maybe if we could’ve melted away some of its protective layers we would’ve come out in better shape.
+
+But at this point, I don’t think the team will be ready for another fight for quite some time.
+
+Some of us may be out for good.
+
+So thanks for that, genius..
+
+It’s a shame the biggest moron in town is also the only one with the goods I need.
+
+_awf
+
+.. 
+
+So, the most I can say is that nobody’s dead.
+
+And it looks like everyone’s going to be ok.
+
+No thanks to you.
+
+No thanks to our alchemist, either. 
+
+If he wanted something acidic he should’ve bought your ingredients and made it himself.
+
+But I guess we all don’t think before we act.
+
+You’re especially guilty of that, as evidenced by your no-brainer concoction you served me yesterday.
+
+However, and despite your mistakes, everyone is going to be ok.
+
+So, I’ll suck it up and fork over some money for one more item.
+
+_mid
+
+Shopkeep.
+
+I appreciate your willingness to experiment, but please don’t treat my requests as a testing opportunity.
+
+I’ve got people that rely on me. 
+
+People that don’t know that they rely on me, yes, but they need me just the same.
+
+So this time, I beg you, please use your head. 
+
+_god
+
+Hello..
+
+Uhh.. You did good.
+
+Sorry, I’m no good at giving thanks because I never get any.
+
+You had just what our alchemist was looking for and we got away from our adventure in pretty good shape.
+
+Though the acid did become a friendly fire problem, as predicted.
+
+So, once again, I had to save their asses..
+
+Really, we couldn’t have done it without you.
+
+I imagine you go pretty unappreciated as a shopkeep yourself.
+
+Thanks. 
+
+I mean that. I think..
+
+_all
+
+Look, what I need from you might be a little bit more complicated than what you’re used to, but I need it.
+
+I think my job is important. 
+
+But I hate it. I honestly do.
+
+I feel so underappreciated, but at the same time I know this town would be rubble without people in my position.
+
+Because without these unruly, moronic “heroes,” all hell would break loose.
+
+All in all, I’m just a bit lost at the moment. I need something to enlighten me. 
+
+Something primitive, in touch with the origins of life itself.
+
+_itm
+PrSp
+
+__Broadbean
+
+_day 1
+
+_all
+
+Neigh-hey there, shopkeep! 
+
+Name’s Broadbean, an’ I own the farm jus’ up the road.
+
+Last night we was overrun by a gaggle o’ ghouls, and them bastards nearly nibbled my pea shooters to death!
+
+Ouuwwww.. My boys are gonna need somethin’ ta chew on ta get em thru tonight.
+
+Please, if ya could gimme anythin’ like that!?
+
+_itm
+VG
+
+_day 2
+
+_awf
+
+Bwah.. Shopkeep, what was that malarkey ya sold me?
+
+My boys didn’ feel no better with that crap ya fixed up.
+
+Matter o’ fact, they was hardly able to protect me! Old Broadbean had to get his hooves dirty.. But no matter.
+
+Picked some vitamins up at the pharmacy on the way ta yer shop this morn.
+
+
+_mid
+
+Well, shopkeep, thanks fer nuthin!
+
+My boys jus’ BARELY made it thru last night and they still need somethin’ ta get ‘em back shootin.
+
+Luckily, I got some vitamins at the pharmacy on the way ta yer shop this morn.
+
+And I ain’t too peeved about las’ night neither, so I don’ mind doin’ business with ya once more.
+
+_god
+
+Howdy, NEIGH-bor!! 
+
+I gotta say, yer concoction worked like a charm! My boys felt ready ta take on them ghouls!
+
+Ya got yerself a regular customer now, shopkeep. Congrat-ya-lations!!
+
+But neigh-hey, let’s get down ta business.
+
+_all
+
+I got a feelin’ those ghouls gonna be back tonight with a vengeance..
+
+..and my pea shooters ain’t gonna cover it this time. Broadbean’s gonna have ta find a way ta step in.
+
+Shopkeep, if ya could, help me and my boys survive tonight!
+
+_itm
+GP
+
+_day 3
+
+_hp 1 
+
+...
+
+Shopkeep.. I beg ya..
+
+Yer poor service.. It’s killin’ yer pal Broadbean.
+
+Ma boys are droppin’ left and right, leavin’ me helpless..
+
+I’s hurt, in a physical kinda way. But that ain’t even the worst of it..
+
+_awf
+
+...
+
+BY GOD, how are ya the only shopkeep in town?
+
+Never in my ELEVEN YEARS of age have I been swindled like this!!
+
+Yer actions have con-sequences mister.. CON-SEQUENCES!!!
+
+Tragic con-sequences...
+
+_mid
+
+Hiya, shopkeep. 
+
+Now, I understand yer tryin’, but yer wares ain’t doin’ me no good! 
+
+If yer stone-cold, silent demeanor weren’t so charmin’, I’d be squealin’ at ya..
+
+But Broadbean ain’t got no time to squeal today.. There’s more important matters at hand..
+
+_god
+
+Howdy, howdy, howdy, shopkeep! 
+
+Huh.. Ain’t that funny. We’s practically stable-mates and I don’t even know yer name!!
+
+Well, that ain’t too important. We got a problem to sort out.
+
+Ya see, ya did all ya could to help, but some things jus’ can’t be helped..
+
+Some things is in-evitable..
+
+_all
+
+Ya see, I’m real beat up over somethin..
+
+My oldest and most prized pea shootin’ boy perished last night.. Ain’t nothin’ nobody could do ta stop it.
+
+OH SHOPKEEP, WON’T YA HELP A SAD OLD HORSE GET BACK TA NORMAL?
+
+Yer pal Broadbean’s not gonna survive another ghoul attack without the right mindset..
+
+_itm
+
+HP
+
+
+

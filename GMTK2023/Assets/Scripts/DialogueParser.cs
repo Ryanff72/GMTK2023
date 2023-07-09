@@ -22,6 +22,7 @@ public static class DialogueParser
     public static List<string> LoadDialogue(string Name, int Hp, int Day, string LastPotion)
     {
         int CharacterDlgIndex = Dialogue.IndexOf("__" + Name) + Name.Length + 6;
+        Debug.Log("Loading " + Name + " at HP " + Hp + " on day " + Day + " last potion was " + LastPotion);
         string CharacterStr = "";
 
         for (int i = CharacterDlgIndex; i < Dialogue.Length; i++)
@@ -49,16 +50,18 @@ public static class DialogueParser
             }
             if (CharacterStrSplit[i][0] == '_')
             {
-
+                Debug.Log("found _ ");
                 switch (CharacterStrSplit[i].Substring(0, 4))
                 {
                     case "_day":
+                        Debug.Log("found day: " + (CharacterStrSplit[i][5] - '0'));
                         if (foundDay)
                         {
                             return loadedDialogue;
                         }
                         if (CharacterStrSplit[i][5] - '0' != Day)
                         {
+                            Debug.Log("does not match");
                             skipping = true;
                             skippingDay = true;
                             continue;

@@ -21,7 +21,7 @@ public class Client : MonoBehaviour
     public Modifier wantedItemMod;
     public GameObject holdingItem;
     [SerializeField] Customer dialogueObject;
-    string lastPotion = "god";
+    public string lastPotion = "god";
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class Client : MonoBehaviour
 
     void initDialogue()
     {
+        Debug.Log("init dialogue wqith day: " + GameObject.Find("GameController").GetComponent<GameController>().day);
         dialogueObject.dialogueLines = DialogueParser.LoadDialogue(dialogueObject.name, Hp, GameObject.Find("GameController").GetComponent<GameController>().day, lastPotion).ToArray();
     }
 

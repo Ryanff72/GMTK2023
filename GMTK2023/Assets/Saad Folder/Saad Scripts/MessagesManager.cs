@@ -56,11 +56,9 @@ public class MessagesManager : MonoBehaviour
 				if(isTyping)
 				{
 					SkipTyping();
-					print("skipped");
 				}
 				else
 				{
-					print("next");
 					NextSentence();
 				}
 			}
