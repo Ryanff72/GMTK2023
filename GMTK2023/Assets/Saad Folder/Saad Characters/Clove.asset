@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Clove
   dialogueLines:
-  - Hello there I am an old man in dire need of potion making supplies. Please help
-    or else I will die.
-  - Help me pleeeeeeeeease
+  - 'You. Vendor. '
+  - "I\u2019m exhausted, and I\u2019m not here to make friends."
+  - "I\u2019m here because I\u2019ve got money and a problem, and you\u2019ve got
+    the solution."
+  - "So, fix me something that\u2019ll keep me alert. I\u2019ll be needing my head
+    later."
+  - If you happen to have any pixie sugar, it may pair well with warm vegetables.
   typingInterval: 0.05
-  boxColour: {r: 1, g: 1, b: 1, a: 0}
+  boxColour: {r: 0, g: 0, b: 0, a: 1}
