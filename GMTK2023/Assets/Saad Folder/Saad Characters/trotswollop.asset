@@ -22,8 +22,8 @@ MonoBehaviour:
   boxColour: {r: 0, g: 0, b: 0, a: 1}
   letterSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -598671904
+      Data2: 1162503550
+      Data3: 707222716
+      Data4: -989617673
+    Path: event:/CharacterSFX/turtle
