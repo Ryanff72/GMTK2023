@@ -117,7 +117,6 @@ public class MessagesManager : MonoBehaviour
 				//Then the text has reached its end
 				if(numberOfLineTyping == currentCharacter.dialogueLines.Length - 1)
 				{
-					print("finished dialogue");
 					//reached end of the entire dialogue and so do nothing
 					hasFinishedDialogue = true;
 					hasStartedBubble = false;

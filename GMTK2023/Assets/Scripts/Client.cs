@@ -70,19 +70,19 @@ public class Client : MonoBehaviour
         {
             lastPotion = "god";
             disappear();
-            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = goodReview;
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshProUGUI>().text = goodReview;
             return;
         }
         if (item.isPoisonous())
         {
             lastPotion = "awf";
             Hp-=2;
-            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = awfReview;
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshProUGUI>().text = awfReview;
         } else
         {
             lastPotion = "mid";
             Hp--;
-            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = midReview;
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshProUGUI>().text = midReview;
         }
 
         disappear();
