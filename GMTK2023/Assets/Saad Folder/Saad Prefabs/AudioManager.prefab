@@ -100,6 +100,34 @@ MonoBehaviour:
       Data3: -453233223
       Data4: -616660436
     Path: event:/glassBounceClink
+  <pouchOpen>k__BackingField:
+    Guid:
+      Data1: -1626153053
+      Data2: 1091412015
+      Data3: 1998232233
+      Data4: 1712449148
+    Path: event:/pouchOpen
+  <potSFX>k__BackingField:
+    Guid:
+      Data1: -1222962497
+      Data2: 1088960575
+      Data3: 1193730193
+      Data4: 1476334125
+    Path: event:/potSFX
+  <heaterSFX>k__BackingField:
+    Guid:
+      Data1: 850990681
+      Data2: 1216474281
+      Data3: -1760000348
+      Data4: -62787179
+    Path: event:/heaterSFX
+  <metalThingSFX>k__BackingField:
+    Guid:
+      Data1: 1204476744
+      Data2: 1267759315
+      Data3: 602219945
+      Data4: 2047132021
+    Path: event:/metalThingSFX
 --- !u!1 &9047965825978951282
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,4 +174,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicVolume: 0.505
-  sfxVolume: 1
+  sfxVolume: 0.54

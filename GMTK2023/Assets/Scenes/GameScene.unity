@@ -5775,10 +5775,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2291332834358698383, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
-      propertyPath: sfxVolume
-      value: 0.54
-      objectReference: {fileID: 0}
     - target: {fileID: 5586028980807963539, guid: be36e152a7b179141be039ee1cd1f12b, type: 3}
       propertyPath: m_RootOrder
       value: 15

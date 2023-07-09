@@ -23,6 +23,7 @@ public class ShiftUtility : MonoBehaviour
         secondStageSwapTime = 0.2f;
         if(utilityName == "kettle")
         {
+            print("kettle");
             activeUtil = activeUtility.Kettle;
         }
         if (utilityName == "heater")
