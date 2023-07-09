@@ -6,7 +6,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using Unity.VisualScripting;
-
+using TMPro;
 
 public class Client : MonoBehaviour
 {
@@ -16,18 +16,21 @@ public class Client : MonoBehaviour
     public float appearSpeed;
     SpriteRenderer sprite;
     public int Hp = 3;
-    string Name;
     public string wantedItemName;
     public Modifier wantedItemMod;
     public GameObject holdingItem;
     [SerializeField] Customer dialogueObject;
     public string lastPotion = "god";
+    public string goodReview = "goodReview";
+    public string midReview = "midReview";
+    public string awfReview = "awfulReview";
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-
         initChar();
     }
 
@@ -67,14 +70,19 @@ public class Client : MonoBehaviour
         {
             lastPotion = "god";
             disappear();
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = goodReview;
             return;
         }
-        lastPotion = "mid";
-        Hp--;
         if (item.isPoisonous())
         {
             lastPotion = "awf";
+            Hp-=2;
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = awfReview;
+        } else
+        {
+            lastPotion = "mid";
             Hp--;
+            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshPro>().text = midReview;
         }
 
         disappear();
