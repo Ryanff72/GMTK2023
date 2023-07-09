@@ -23,18 +23,23 @@ public class ShiftUtility : MonoBehaviour
         secondStageSwapTime = 0.2f;
         if(utilityName == "kettle")
         {
-            print("kettle");
             activeUtil = activeUtility.Kettle;
-        }
-        if (utilityName == "heater")
+			AudioManager.instance.PlayOneShot(FMODEvents.instance.potSFX, transform.position);
+
+		}
+		if (utilityName == "heater")
         {
             activeUtil = activeUtility.Heater;
-        }
-        if (utilityName == "shaker")
+			AudioManager.instance.PlayOneShot(FMODEvents.instance.heaterSFX, transform.position);
+
+		}
+		if (utilityName == "shaker")
         {
             activeUtil = activeUtility.Shaker;
-        }
-    }
+			AudioManager.instance.PlayOneShot(FMODEvents.instance.metalThingSFX, transform.position);
+
+		}
+	}
 
     // Update is called once per frame
     void Update()
