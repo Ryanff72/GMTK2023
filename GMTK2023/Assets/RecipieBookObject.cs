@@ -82,7 +82,7 @@ public class RecipieBookObject : MonoBehaviour
                 Debug.Log("page pair count: " + pagePairCount);
                 Debug.Log("pageRecepieCount: " + pageRecepieCount);
                 newElem.transform.SetParent(transform.GetChild(pagePairCount).transform.GetChild(pageCount));
-                newElem.GetComponent<RectTransform>().position = new Vector2(7.35f + (2.95f * pageCount), 7.1f - (1.1f * pageRecepieCount));
+                newElem.GetComponent<RectTransform>().position = new Vector2(7.35f + (2.92f * pageCount), 7.1f - (1.05f * pageRecepieCount));
             }
         }
     }
