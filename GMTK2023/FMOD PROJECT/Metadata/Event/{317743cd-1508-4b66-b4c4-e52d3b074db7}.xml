@@ -49,6 +49,7 @@
 			<destination>{d706f69d-c144-42b9-80a3-817f6a5e68bb}</destination>
 			<destination>{1c3fb423-bec4-4fab-b0a8-a4f1fb5c7001}</destination>
 			<destination>{c3498808-6fc2-4ec4-b949-7a4f6aa3ca37}</destination>
+			<destination>{0a080c82-e1e7-4ecb-8c7f-3a2283262888}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{edff0726-8963-4d0f-b473-ad01ce4e7507}</destination>
@@ -81,6 +82,7 @@
 			<destination>{d706f69d-c144-42b9-80a3-817f6a5e68bb}</destination>
 			<destination>{1c3fb423-bec4-4fab-b0a8-a4f1fb5c7001}</destination>
 			<destination>{c3498808-6fc2-4ec4-b949-7a4f6aa3ca37}</destination>
+			<destination>{0a080c82-e1e7-4ecb-8c7f-3a2283262888}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{14a14f7b-771a-474f-b342-50abf795c41f}</destination>
@@ -171,6 +173,18 @@
 			<destination>{424a5c37-8001-4da3-af2b-dfe686f67de4}</destination>
 		</relationship>
 	</object>
+	<object class="EventSound" id="{0a080c82-e1e7-4ecb-8c7f-3a2283262888}">
+		<property name="start">
+			<value>7</value>
+		</property>
+		<property name="name" />
+		<relationship name="modulators">
+			<destination>{d81a878e-6d53-4128-a626-720b8f81811b}</destination>
+		</relationship>
+		<relationship name="event">
+			<destination>{88f5fe22-c2d3-49c4-971b-06568e6a584c}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{58fd5bf2-feb3-41aa-b548-a061c493b6ae}">
 		<relationship name="effects">
 			<destination>{c1a4fb0e-8827-4f31-9bf8-c4312462e26b}</destination>
@@ -250,6 +264,17 @@
 		</property>
 	</object>
 	<object class="ADSRModulator" id="{90503670-7504-4b22-8032-d8e3b4fd1d7e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{d81a878e-6d53-4128-a626-720b8f81811b}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>

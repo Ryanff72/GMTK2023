@@ -63,7 +63,7 @@ MonoBehaviour:
   Name: MusicType
   StudioPath: 
   Min: 0
-  Max: 6
+  Max: 7
   Default: 0
   ID:
     data1: 4074891940
@@ -78,6 +78,7 @@ MonoBehaviour:
   - Night
   - Bad Ending
   - Good Ending
+  - General Ending
   Exists: 1
 --- !u!114 &-3278308639309609035
 MonoBehaviour:
@@ -94,7 +95,7 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244959473560698
+  lastModified: 638244970952657861
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -122,7 +123,7 @@ MonoBehaviour:
   - {fileID: 6418379986746939691}
   StringsBanks:
   - {fileID: -5206584847609663218}
-  cacheTime: 638244959473914958
+  cacheTime: 638244970952657861
   cacheVersion: 131605
 --- !u!114 &954403018770300999
 MonoBehaviour:

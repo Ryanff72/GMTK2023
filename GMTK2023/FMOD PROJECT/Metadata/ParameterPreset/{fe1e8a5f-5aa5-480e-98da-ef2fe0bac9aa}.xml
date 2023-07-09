@@ -16,7 +16,7 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>7</value>
+			<value>8</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>Intro</value>
@@ -26,6 +26,7 @@
 			<value>Night</value>
 			<value>Bad Ending</value>
 			<value>Good Ending</value>
+			<value>General Ending</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
