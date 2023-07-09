@@ -108,3 +108,18 @@ MonoBehaviour:
   goodReview: This place is awesome.... wouldn't mind working here.
   midReview: Shop is neat, my boss is disappointed though.
   awfReview: Ah... my boss is going to kill me.
+  wantedItemNamesDayOne:
+  - Handsome Caramel
+  - Handsome Caramel
+  - Handsome Caramel
+  wantedItemModsDayOne: 000000000100000002000000
+  wantedItemNamesDayTwo:
+  - Paint Bomb
+  - Paint Bomb
+  - Paint Bomb
+  wantedItemModsDayTwo: 000000000100000002000000
+  wantedItemNamesDayThree:
+  - Rust Catalyst
+  - Rust Catalyst
+  - Rust Catalyst
+  wantedItemModsDayThree: 000000000100000002000000

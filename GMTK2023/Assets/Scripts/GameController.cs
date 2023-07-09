@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
 
     public IEnumerator startDay()
     {
+        AudioManager.instance.SetMusic(MusicEnum.MORNING);
         GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
         GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
         GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
@@ -80,19 +82,21 @@ public class GameController : MonoBehaviour
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
-            if(CustomerIndex == 2)
+            if(CustomerIndex == 2 || CustomerIndex == 5 || CustomerIndex == 8 || CustomerIndex == 11)
             {
+                AudioManager.instance.SetMusic(MusicEnum.NOON);
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
             }
-            else if(CustomerIndex == 3)
+            else if(CustomerIndex == 3 || CustomerIndex == 6 || CustomerIndex == 9 || CustomerIndex == 12)
             {
+                AudioManager.instance.SetMusic(MusicEnum.NIGHT);
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
             }
-            if(CustomerIndex % CharactersPerDay == 0)
+            if(CustomerIndex % CharactersPerDay == 0 || CustomerIndex == 11)
             {
                 day++;
                 if(day == 4)
@@ -106,11 +110,13 @@ public class GameController : MonoBehaviour
                     }
                     if(sumOfHealth <= 5)
                     {
-                        // bad ending
+                        AudioManager.instance.SetMusic(MusicEnum.BAD_ENDING);
+                        SceneManager.LoadScene("endingSceneBad");
                     }
                     else
                     {
-                        // good ending
+                        AudioManager.instance.SetMusic(MusicEnum.GOOD_ENDING);
+                        SceneManager.LoadScene("endingSceneWin");
                     }
                 }
                 yield return new WaitForSeconds(newDayWaitTime / 3);
@@ -119,6 +125,7 @@ public class GameController : MonoBehaviour
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
+                AudioManager.instance.SetMusic(MusicEnum.MORNING);
                 yield return new WaitForSeconds(newDayWaitTime);
 
             }

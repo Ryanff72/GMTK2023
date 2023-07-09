@@ -59,6 +59,7 @@ public class endingScene : MonoBehaviour
         if(boardIndex >= boards.Count)
         {
             yield return new WaitForSeconds(4.0f);
+            AudioManager.instance.SetMusic(MusicEnum.TITLE_SCREEN);
             SceneManager.LoadScene("Menu");
         }
         Board.sprite = boards[boardIndex];

@@ -34,6 +34,7 @@ public class StartScene : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            AudioManager.instance.SetMusic(MusicEnum.TITLE_SCREEN);
             SceneManager.LoadScene("Menu");
         }
     }

@@ -8,12 +8,15 @@ a-ah.. greetings; the name’s Trotswollop, The Squire
 
 you wouldn’t happen to sell anything useful for a boss, would you?
 
-I just started my internship yesterday and I can’t afford enough education to know what these potions do…
+I just started my internship yesterday and I really want to leave a great impression on him…
+
+for one thing, he’s REALLY buff and terrifying. he seems to care about looking friendly but doesn’t seem to realize that everyone’s terrified of him..
+
+i’d like to give him something that’d really make everyone forget that he’s 8 feet tall.
 
 _itm
 
-charisma potion
-
+handsome caramel
 
 _day 2
 
@@ -21,54 +24,66 @@ _awf
 
 ah… my boss didn’t like that last one i bought… had to shield myself from his wrath..
 
-he said something about needing to boost his image…? I couldn’t hear through the shell.
+
+there were papers and tables flying everywhere… he seemed really pissed.
+
 _mid
 
-my boss didn’t yell at me yesterday, i think you picked a pretty good one!
+my boss didn’t yell at me yesterday, he seemed to not be bothered by it but then he suddenly started flailing papers and knocking over tables???
+
+i’m not sure if he was mad at me…
 
 _god
 
-I owe you one! my boss gave me a “good job” yesterday! 
+oh, i owe you one… my boss gave me a “good job” yesterday! I have never felt more happy in my life.
 
-I have never felt more happy in my life.
+though i was a bit confused when he started thrashing the office afterwards…
 
 _all
 
-anyhow, do you happen to have another one? I’m really counting on you for this one.
+anyway, i was hiding in the janitor’s closet when he suddenly burst the door open and tried to fit inside…
+
+i’m not sure if he noticed me while i was suffocating from the weight of his body but he was trying to collect the chemicals and paint buckets for some reason..
+
+maybe i could bring him more stuff like that, if you have one.
 
 _itm
-charisma potion
 
+paint bomb
 
 _day 3
 
 _hp 1
-...
 
-not doing so great right now...
+...
+i don’t think i’ll survive another failure again…
 
 _awf
 
-i think i’m about to lose my job… hope i pick a good one this time...
+i’m pretty sure i’m about to lose my job..
 
 _mid
 
-you have a really neat shop, would love to work here if I wasn’t already a squire
+oh, you’re a lifesaver... i don’t know what would’ve happened if I had irritated my boss again...
 
 _god
 
-oh heavens you’re a lifesaver, shopkeep. my boss is no longer constantly yelling
+oh, you’re a lifesaver... i don’t know what would’ve happened if I had irritated my boss again…
 
 _all
 
-and apparently i need a “happiness potion”…
+i walked up to work and found the whole building covered in paint and other stuff…
 
-...does that even exist?
+not sure if that’s a normal job occurrence but I slipped on something and slid down an unfamiliar passage and found myself in a dark room with the boss…
+
+he was muttering something about “The Prophecy” and “The Old One will Rise Again” or something…? he asked me to “Bring the Destroyer” to “Shake Down the Institution”?
+ 
+i don’t know what that means
+
 
 _itm
 
-potion of satisfaction
-
+rust catalyst
 
 
 __Clove
