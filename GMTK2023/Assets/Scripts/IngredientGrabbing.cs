@@ -149,6 +149,7 @@ public class IngredientGrabbing : MonoBehaviour
         {
             GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = true;
             ingStatus = ingredientStatus.Dragging;
+            transform.position = worldMousePos;
         }
         if (Input.GetButtonUp("Fire1") && ingStatus == ingredientStatus.Dragging)
         {
