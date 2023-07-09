@@ -66,6 +66,7 @@ public class IngredientGrabbing : MonoBehaviour
     private void Start()
     {
         currentShadowCircle = Instantiate(GameObject.Find("ShadowCircle"), new Vector2(transform.position.x, -1.5f), Quaternion.identity);
+        currentShadowCircle.GetComponent<shadowScript>().followObject = gameObject;
     }
 
     public void StateMachine()

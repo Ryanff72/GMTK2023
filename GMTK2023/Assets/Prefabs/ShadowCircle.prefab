@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5965585890672486114}
   - component: {fileID: 6688022079876202348}
+  - component: {fileID: 6748549098111451427}
   m_Layer: 0
   m_Name: ShadowCircle
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6688022079876202348
 SpriteRenderer:
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6748549098111451427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647005937214035884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6d18019fd2e484b9ca9714406835d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followObject: {fileID: 0}
