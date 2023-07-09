@@ -38,7 +38,6 @@ public class Client : MonoBehaviour
 
     void initDialogue()
     {
-        Debug.Log("init dialogue wqith day: " + GameObject.Find("GameController").GetComponent<GameController>().day);
         dialogueObject.dialogueLines = DialogueParser.LoadDialogue(dialogueObject.name, Hp, GameObject.Find("GameController").GetComponent<GameController>().day, lastPotion).ToArray();
     }
 
