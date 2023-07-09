@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +32,10 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     IEnumerator nextChar()
@@ -55,7 +59,6 @@ public class StartScene : MonoBehaviour
         if(boardIndex >= boards.Count)
         {
             yield return new WaitForSeconds(4.0f);
-            SceneManager.LoadScene("Menu");
         }
         Board.sprite = boards[boardIndex];
         StartCoroutine(nextBoard());
