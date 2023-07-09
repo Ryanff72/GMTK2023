@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b508e8d1b6cd25449a9063a99f5df89d, type: 3}
-  m_Name: Trotswollop
+  m_Name: Madame Coco
   m_EditorClassIdentifier: 
-  name: Trotswollop
+  name: Madame Coco
   dialogueLines:
   - "a-ah.. greetings; the name\u2019s Trotswollop, The Squire"
   - "you wouldn\u2019t happen to sell anything useful for a boss, would you?"
