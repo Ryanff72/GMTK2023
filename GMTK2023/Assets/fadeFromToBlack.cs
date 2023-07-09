@@ -50,6 +50,6 @@ public class fadeFromToBlack : MonoBehaviour
     IEnumerator Go()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("GameScene");
     }
 }
