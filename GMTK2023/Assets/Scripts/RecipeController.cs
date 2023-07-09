@@ -202,7 +202,6 @@ public class RecipeController : MonoBehaviour
         book.AllRecipes.Add(new Recipe(new List<Item>() { HotDemonPepper, powderedIron }, gunpowder));
         book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenDemonPepper, ShakenPowderedIron }, gunpowder));
         book.AllRecipes.Add(new Recipe(new List<Item>() { HotDemonPepper, HotPowderedIron }, gunpowder));
-        book.AllRecipes.Add(new Recipe(new List<Item>() { demonPepper, powderedIron }, gunpowder));
         book.AllRecipes.Add(new Recipe(new List<Item>() { demonPepper, ShakenPowderedIron }, gunpowder));
 
 
@@ -244,7 +243,7 @@ public class RecipeController : MonoBehaviour
         book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenPixieSugar, ravensTears }, happyPill));
         book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenPixieSugar, ShakenRavensTears }, happyPill));
         book.AllRecipes.Add(new Recipe(new List<Item>() { pixieSugar, HotRavensTears }, happyPill));
-        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPixieSugar, HotRavensTears }, happyPill));
+        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPixieSugar, ShakenRavensTears }, happyPill));
 
 
 

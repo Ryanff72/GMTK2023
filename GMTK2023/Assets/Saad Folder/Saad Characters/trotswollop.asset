@@ -20,3 +20,10 @@ MonoBehaviour:
     to know what these potions do\u2026"
   typingInterval: 0.03
   boxColour: {r: 0, g: 0, b: 0, a: 1}
+  letterSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
