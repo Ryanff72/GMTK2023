@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6ec7735d-c375-4ae8-ae4a-42eeaeca8c7f}">
+		<property name="assetPath">
+			<value>glass_bounce2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1609977324263039</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c91aa35-db83-48f7-b48a-c0640592ade9}</destination>
+		</relationship>
+	</object>
+</objects>

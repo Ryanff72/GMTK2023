@@ -13,6 +13,12 @@ public class FMODEvents : MonoBehaviour
 
 	[field: Header("SFX")]
 	[field: SerializeField] public EventReference newPotion { get; private set; }
+	[field: SerializeField] public EventReference objectBounce { get; private set; }
+	[field: SerializeField] public EventReference pageTurn { get; private set; }
+	[field: SerializeField] public EventReference potionPoof { get; private set; }
+	[field: SerializeField] public EventReference doorOpen { get; private set; }
+	[field: SerializeField] public EventReference cauldronSplash { get; private set; }
+	[field: SerializeField] public EventReference glassBounceClink { get; private set; }
 
 
 	private void Awake()

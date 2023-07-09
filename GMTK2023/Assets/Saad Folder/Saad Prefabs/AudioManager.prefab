@@ -44,27 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffd5bb1c9fea0b4d93fa0e56452964e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <introMusic>k__BackingField:
+  <music>k__BackingField:
     Guid:
-      Data1: -700606089
-      Data2: 1293618267
-      Data3: 577057444
-      Data4: -51433230
-    Path: event:/introductionMusic
-  <nightMusic>k__BackingField:
-    Guid:
-      Data1: -170780466
-      Data2: 1102344806
-      Data3: -1424337770
-      Data4: 1229779136
-    Path: event:/night
-  <badEnding>k__BackingField:
-    Guid:
-      Data1: -1754773647
-      Data2: 1128501049
-      Data3: -218149195
-      Data4: 655596012
-    Path: event:/badEnding
+      Data1: 829899725
+      Data2: 1264981256
+      Data3: 770032820
+      Data4: -1219688645
+    Path: event:/Music
   <newPotion>k__BackingField:
     Guid:
       Data1: 1229776259
@@ -72,6 +58,48 @@ MonoBehaviour:
       Data3: 2061104295
       Data4: -444125329
     Path: event:/newPotion
+  <objectBounce>k__BackingField:
+    Guid:
+      Data1: -1882641958
+      Data2: 1091138128
+      Data3: -1137767752
+      Data4: -1354135454
+    Path: event:/objectBounce
+  <pageTurn>k__BackingField:
+    Guid:
+      Data1: -1125034940
+      Data2: 1240745074
+      Data3: 1592382607
+      Data4: -1366615411
+    Path: event:/pageTurn
+  <potionPoof>k__BackingField:
+    Guid:
+      Data1: 1379879916
+      Data2: 1110144210
+      Data3: -1404366427
+      Data4: 811341779
+    Path: event:/potionPoof
+  <doorOpen>k__BackingField:
+    Guid:
+      Data1: 98856384
+      Data2: 1123003762
+      Data3: 1471312294
+      Data4: 980235346
+    Path: event:/doorOpen
+  <cauldronSplash>k__BackingField:
+    Guid:
+      Data1: 966541388
+      Data2: 1125033676
+      Data3: -198423889
+      Data4: 1248423068
+    Path: event:/cauldronSplash
+  <glassBounceClink>k__BackingField:
+    Guid:
+      Data1: -1756232961
+      Data2: 1098343400
+      Data3: -453233223
+      Data4: -616660436
+    Path: event:/glassBounceClink
 --- !u!1 &9047965825978951282
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,5 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a944ace8fc29641961a386dcd37298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 1
+  musicVolume: 0.505
   sfxVolume: 1
