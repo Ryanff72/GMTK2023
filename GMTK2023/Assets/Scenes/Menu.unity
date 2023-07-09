@@ -1939,7 +1939,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 841323439}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
