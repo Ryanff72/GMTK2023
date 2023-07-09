@@ -290,8 +290,9 @@ MonoBehaviour:
   rightGc: {fileID: 6746220002989633174}
   heatedSprite: {fileID: 21300000, guid: 3897a966f2409e2468e37caaac05a24d, type: 3}
   shakenSprite: {fileID: 21300000, guid: e678b5dc6d5756544aac869507a02eb0, type: 3}
-  characterHandPos: {x: 5.07, y: 1.5, z: 0}
-  lerpSpeed: 0.01
+  characterHandPos: {x: 3.24, y: 1.5, z: 0}
+  lerpSpeed: 0.05
+  popSpeed: 0.08
   statusIndicatorPrefab: {fileID: 6620644369879636899, guid: 74fb5f5a977d15b4ca699f36c8749b55, type: 3}
 --- !u!1 &6310793256179935320
 GameObject:

@@ -52,6 +52,8 @@ public class IngredientGrabbing : MonoBehaviour
     Sprite MorningBg;
     Sprite SunsetBg;
     Sprite NightBg;
+    bool inSubmitBox = false;
+    ingredientStatus lastState;
 
     // Start is called before the first frame update
     private void Awake()
@@ -117,13 +119,13 @@ public class IngredientGrabbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > 5.6f && ingStatus == ingredientStatus.NotDragging)
+        StateMachine();
+        if (inSubmitBox && ingStatus == ingredientStatus.NotDragging && lastState == ingredientStatus.Dragging)
         {
             GameObject.Find("GameController").GetComponent<GameController>().serveItem = gameObject;
         }
         currentShadowCircle.transform.position = new Vector2(transform.position.x, currentShadowCircle.transform.position.y);
         currentShadowCircle.transform.localScale = new Vector2(1.6f, 0.46f) * Mathf.Clamp((4 / (transform.position.y + 1.5f)), 0.1f, 1.0f);
-        StateMachine();
 
         //screen shake
 
@@ -139,6 +141,7 @@ public class IngredientGrabbing : MonoBehaviour
             cam.transform.position = initialPosition;
         }
 
+        lastState = ingStatus;
 
         //mousepos to worldpos
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
@@ -317,6 +320,22 @@ public class IngredientGrabbing : MonoBehaviour
                 velocity.y += gravity * Time.deltaTime;
             }
             rb2d.velocity = velocity;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "SubmitBoxCollider")
+        {
+            inSubmitBox = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "SubmitBoxCollider")
+        {
+            inSubmitBox = true;
         }
     }
 

@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
     IEnumerator nextCustomer()
     {
         serveItem.GetComponent<Ingredient>().serve();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.3f);
         currentCustomers[CustomerIndex].GetComponent<Client>().receiveItem(serveItem);
         yield return new WaitForSeconds(2f);
 

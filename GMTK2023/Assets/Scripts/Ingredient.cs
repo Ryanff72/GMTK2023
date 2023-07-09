@@ -19,9 +19,13 @@ public class Ingredient : MonoBehaviour
     bool isServing = false;
     Vector3 startPos;
     public Vector3 characterHandPos;
-    public float lerpSpeed = 0.01f;
+    public float lerpSpeed = 0.03f;
+    public float popSpeed = 0.03f;
+
     public GameObject statusIndicatorPrefab;
     private GameObject statusIndicator;
+    bool isPopping = false;
+    Vector3 startScale;
 
 
 
@@ -31,6 +35,7 @@ public class Ingredient : MonoBehaviour
         statusIndicator = Instantiate(statusIndicatorPrefab,transform.position + new Vector3(-.5f,0.8f,0), Quaternion.identity);
         statusIndicator.transform.parent = transform;
         item = new Item(ItemName, Mod);
+        startScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -51,10 +56,26 @@ public class Ingredient : MonoBehaviour
         if(isServing)
         {
             transform.position = Vector3.Lerp(startPos, characterHandPos, lerpIndex);
-            lerpIndex += lerpSpeed;
-            if(lerpIndex > 1.0)
+            lerpIndex += (-Mathf.Pow(lerpIndex, 2) + 1) * lerpSpeed;
+            if(lerpIndex >= 0.95)
             {
                 isServing = false;
+                isPopping = true;
+                lerpIndex = 0.0f;
+            }
+        }
+        else if(isPopping)
+        {
+            //
+            float newSize = -Mathf.Pow((lerpIndex - 0.5f), 2) + 1.25f;
+            Debug.Log(newSize);
+            transform.localScale = new Vector3(newSize, newSize, 1) * startScale.x;
+            lerpIndex += popSpeed;
+            if (lerpIndex >= 1.65f)
+            {
+                transform.localScale = new Vector3(0, 0, 1) * startScale.x;
+                isPopping = false;
+                lerpIndex = 0.0f;
             }
         }
     }
