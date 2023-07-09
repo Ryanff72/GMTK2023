@@ -53,7 +53,7 @@ public class IngredientGrabbing : MonoBehaviour
     Sprite SunsetBg;
     Sprite NightBg;
     bool inSubmitBox = false;
-    bool inTrash = false;
+    bool inTrashBox = false;
     ingredientStatus lastState;
 
     // Start is called before the first frame update
@@ -124,6 +124,10 @@ public class IngredientGrabbing : MonoBehaviour
         if (inSubmitBox && ingStatus == ingredientStatus.NotDragging && lastState == ingredientStatus.Dragging)
         {
             GameObject.Find("GameController").GetComponent<GameController>().serveItem = gameObject;
+        }
+        if (inTrashBox && ingStatus == ingredientStatus.NotDragging && lastState == ingredientStatus.Dragging)
+        {
+            Destroy(gameObject);
         }
         currentShadowCircle.transform.position = new Vector2(transform.position.x, currentShadowCircle.transform.position.y);
         currentShadowCircle.transform.localScale = new Vector2(1.6f, 0.46f) * Mathf.Clamp((4 / (transform.position.y + 1.5f)), 0.1f, 1.0f);
@@ -336,11 +340,13 @@ public class IngredientGrabbing : MonoBehaviour
     {
         if(collision.gameObject.name == "SubmitBoxCollider")
         {
+            collision.gameObject.transform.localScale *= 1.1f;
             inSubmitBox = true;
         }
-        if(collision.gameObject.name == "TrashCan" && ingStatus == ingredientStatus.Dragging)
+        if (collision.gameObject.name == "DeleteBoxCollider")
         {
-            Destroy(gameObject);
+            collision.gameObject.transform.localScale *= 1.1f;
+            inTrashBox = true;
         }
     }
 
@@ -348,7 +354,13 @@ public class IngredientGrabbing : MonoBehaviour
     {
         if (collision.gameObject.name == "SubmitBoxCollider")
         {
+            collision.gameObject.transform.localScale *= 0.9f;
             inSubmitBox = false;
+        }
+        if (collision.gameObject.name == "DeleteBoxCollider")
+        {
+            collision.gameObject.transform.localScale *= 0.9f;
+            inTrashBox = true;
         }
     }
 
