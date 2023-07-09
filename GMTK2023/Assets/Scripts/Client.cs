@@ -24,6 +24,13 @@ public class Client : MonoBehaviour
     public string goodReview = "goodReview";
     public string midReview = "midReview";
     public string awfReview = "awfulReview";
+    public List<string> wantedItemNamesDayOne;
+    public List<Modifier> wantedItemModsDayOne;
+    public List<string> wantedItemNamesDayTwo;
+    public List<Modifier> wantedItemModsDayTwo;
+    public List<string> wantedItemNamesDayThree;
+    public List<Modifier> wantedItemModsDayThree;
+
 
 
 
@@ -66,13 +73,32 @@ public class Client : MonoBehaviour
     {
         Item item = holdItem.GetComponent<Ingredient>().item;
         holdingItem = holdItem;
-        if(item.Name == wantedItemName && item.Mod == wantedItemMod)
+        int crntDay = GameObject.Find("GameController").GetComponent<GameController>().day;
+        List<string> wantedItemNames = wantedItemNamesDayOne;
+        List<Modifier> wantedItemMods = wantedItemModsDayOne;
+
+        if (crntDay == 2)
         {
-            lastPotion = "god";
-            disappear();
-            GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshProUGUI>().text = goodReview;
-            return;
+            wantedItemNames = wantedItemNamesDayTwo;
+            wantedItemMods = wantedItemModsDayTwo;
+        } 
+        else
+        {
+            wantedItemNames = wantedItemNamesDayThree;
+            wantedItemMods = wantedItemModsDayThree;
         }
+        for (int i = 0; i < wantedItemNames.Count; i++)
+        {
+            if (wantedItemNames[i] == item.Name && wantedItemMods[i] == item.Mod)
+            {
+                lastPotion = "god";
+                disappear();
+                GameObject.Find(dialogueObject.name + "Review").GetComponent<TextMeshProUGUI>().text = goodReview;
+                return;
+            }
+        }
+
+
         if (item.isPoisonous())
         {
             lastPotion = "awf";

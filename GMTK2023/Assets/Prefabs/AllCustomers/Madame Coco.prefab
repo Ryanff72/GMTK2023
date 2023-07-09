@@ -108,3 +108,21 @@ MonoBehaviour:
   goodReview: goodReview
   midReview: midReview
   awfReview: awfulReview
+  wantedItemNamesDayOne:
+  - Lemon Juice
+  - Lemon Juice
+  - Lemon Juice
+  - Demon Pepper
+  - Demon Pepper
+  - Demon Pepper
+  wantedItemModsDayOne: 000000000100000002000000000000000100000002000000
+  wantedItemNamesDayTwo:
+  - Elegant Martini
+  - Elegant Martini
+  - Elegant Martini
+  wantedItemModsDayTwo: 000000000100000002000000
+  wantedItemNamesDayThree:
+  - Rainbow Sludge
+  - Rainbow Sludge
+  - Rainbow Sludge
+  wantedItemModsDayThree: 000000000100000002000000

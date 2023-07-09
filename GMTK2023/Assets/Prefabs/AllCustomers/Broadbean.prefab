@@ -105,3 +105,21 @@ MonoBehaviour:
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 4450504e7a6b81a42a2cc723f5940430, type: 2}
   lastPotion: god
+  goodReview: goodReview
+  midReview: midReview
+  awfReview: awfulReview
+  wantedItemNamesDayOne:
+  - Vitamin Gummy
+  - Vitamin Gummy
+  - Vitamin Gummy
+  wantedItemModsDayOne: 000000000100000002000000
+  wantedItemNamesDayTwo:
+  - Gunpowder
+  - Gunpowder
+  - Gunpowder
+  wantedItemModsDayTwo: 000000000100000002000000
+  wantedItemNamesDayThree:
+  - Happy Pill
+  - Happy Pill
+  - Happy Pill
+  wantedItemModsDayThree: 000000000100000002000000
