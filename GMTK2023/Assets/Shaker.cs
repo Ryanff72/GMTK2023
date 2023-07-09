@@ -20,8 +20,12 @@ public class Shaker : MonoBehaviour
     bool hasOutputItems;
     public List<GameObject> shakenObjects = new List<GameObject>();
 
+    private Sprite OpenSprite;
+    public Sprite ClosedSprite;
+
     private void Start()
     {
+        OpenSprite = transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
         hasOutputItems = false;
         shakenObjects.Clear();
         shksts = shakerStatus.Dormant;
@@ -31,14 +35,18 @@ public class Shaker : MonoBehaviour
         switch (shksts)
         {
             case shakerStatus.Dormant:
+                transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
                 break;
             case shakerStatus.NotShaking:
+                transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
                 goBack();
                 break;
             case shakerStatus.Shaking:
+                transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = ClosedSprite;
                 shakeIngredients();
                 break;
             case shakerStatus.Output:
+                transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
                 goBack();
                 StartCoroutine("SpawnOutputs");
                 break;
