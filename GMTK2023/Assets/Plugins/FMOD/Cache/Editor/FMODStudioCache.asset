@@ -97,10 +97,14 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638244776922127717
+=======
+  lastModified: 638245066568768704
+>>>>>>> Stashed changes
   FileSizes:
   - Name: 
-    Value: 1286
+    Value: 1476
   Exists: 1
 --- !u!114 &-4401807060755683181
 MonoBehaviour:
@@ -134,6 +138,33 @@ MonoBehaviour:
   - Good Ending
   - General Ending
   Exists: 1
+--- !u!114 &-4075752688975003937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CharacterSFX/broadbean
+  m_EditorClassIdentifier: 
+  Path: event:/CharacterSFX/broadbean
+  Guid:
+    Data1: -959631296
+    Data2: 1310821795
+    Data3: -1084056442
+    Data4: 625639260
+  Banks:
+  - {fileID: 954403018770300999}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3278308639309609035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,9 +180,40 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
+<<<<<<< Updated upstream
   lastModified: 638244776923005800
+=======
+  lastModified: 638245066571987919
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
+--- !u!114 &-3131629359411415536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CharacterSFX/turtle
+  m_EditorClassIdentifier: 
+  Path: event:/CharacterSFX/turtle
+  Guid:
+    Data1: -598671904
+    Data2: 1162503550
+    Data3: 707222716
+    Data4: -989617673
+  Banks:
+  - {fileID: 954403018770300999}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2637345201260266910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,17 +289,25 @@ MonoBehaviour:
   - {fileID: 6375530812725390856}
   - {fileID: -5907633652249745105}
   - {fileID: -2446966224315471303}
-  - {fileID: 1164565542357125648}
   - {fileID: -8678274984944666131}
   - {fileID: -5549018132587803060}
   - {fileID: 8522576401300350601}
   - {fileID: -2637345201260266910}
+  - {fileID: 5393528120825804878}
+  - {fileID: -4075752688975003937}
+  - {fileID: 6748341900697616493}
+  - {fileID: 3981562099567458690}
+  - {fileID: -3131629359411415536}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6418379986746939691}
   StringsBanks:
   - {fileID: -5206584847609663218}
+<<<<<<< Updated upstream
   cacheTime: 638244776923045778
+=======
+  cacheTime: 638245068579415707
+>>>>>>> Stashed changes
   cacheVersion: 131605
 --- !u!114 &954403018770300999
 MonoBehaviour:
@@ -254,10 +324,14 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
+<<<<<<< Updated upstream
   lastModified: 638244776923045778
+=======
+  lastModified: 638245068579415707
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
---- !u!114 &1164565542357125648
+--- !u!114 &3981562099567458690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,14 +341,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/cauldronSplash
+  m_Name: event:/CharacterSFX/madam coco
   m_EditorClassIdentifier: 
-  Path: event:/cauldronSplash
+  Path: event:/CharacterSFX/madam coco
   Guid:
-    Data1: 966541388
-    Data2: 1125033676
-    Data3: -198423889
-    Data4: 1248423068
+    Data1: -923683698
+    Data2: 1263949571
+    Data3: -1969010032
+    Data4: -662168543
+  Banks:
+  - {fileID: 954403018770300999}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5393528120825804878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CharacterSFX/clove
+  m_EditorClassIdentifier: 
+  Path: event:/CharacterSFX/clove
+  Guid:
+    Data1: -1374720477
+    Data2: 1248107015
+    Data3: 1110301078
+    Data4: 973585816
   Banks:
   - {fileID: 954403018770300999}
   IsStream: 0
@@ -326,9 +427,40 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638244310738467930
+=======
+  lastModified: 638245066568748763
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
+--- !u!114 &6748341900697616493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CauldronSplash
+  m_EditorClassIdentifier: 
+  Path: event:/CauldronSplash
+  Guid:
+    Data1: 966541388
+    Data2: 1125033676
+    Data3: -198423889
+    Data4: 1248423068
+  Banks:
+  - {fileID: 954403018770300999}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8522576401300350601
 MonoBehaviour:
   m_ObjectHideFlags: 0

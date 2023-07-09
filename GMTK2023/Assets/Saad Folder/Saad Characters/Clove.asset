@@ -23,3 +23,10 @@ MonoBehaviour:
   - If you happen to have any pixie sugar, it may pair well with warm vegetables.
   typingInterval: 0.05
   boxColour: {r: 0, g: 0, b: 0, a: 1}
+  letterSound:
+    Guid:
+      Data1: -1374720477
+      Data2: 1248107015
+      Data3: 1110301078
+      Data4: 973585816
+    Path: event:/CharacterSFX/clove
