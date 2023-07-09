@@ -95,7 +95,12 @@ public class GameController : MonoBehaviour
             if(CustomerIndex % CharactersPerDay == 0)
             {
                 day++;
-                yield return new WaitForSeconds(newDayWaitTime);
+                yield return new WaitForSeconds(newDayWaitTime/2);
+                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
+                GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
+                GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
+                yield return new WaitForSeconds(newDayWaitTime/2);
+
             }
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
         } 

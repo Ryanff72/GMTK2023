@@ -77,12 +77,15 @@ public class Client : MonoBehaviour
         List<string> wantedItemNames = wantedItemNamesDayOne;
         List<Modifier> wantedItemMods = wantedItemModsDayOne;
 
+        Debug.Log("has: " + item.Name + " , " + item.Mod);
+
+
         if (crntDay == 2)
         {
             wantedItemNames = wantedItemNamesDayTwo;
             wantedItemMods = wantedItemModsDayTwo;
         } 
-        else
+        else if(crntDay == 3)
         {
             wantedItemNames = wantedItemNamesDayThree;
             wantedItemMods = wantedItemModsDayThree;
