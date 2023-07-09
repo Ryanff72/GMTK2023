@@ -100,7 +100,7 @@ MonoBehaviour:
   appearLerp: 0
   appearSpeed: 0.02
   Hp: 3
-  wantedItemName: veggiePaste
+  wantedItemName: Veggie Paste
   wantedItemMod: 0
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 4450504e7a6b81a42a2cc723f5940430, type: 2}
