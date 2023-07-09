@@ -95,11 +95,31 @@ public class GameController : MonoBehaviour
             if(CustomerIndex % CharactersPerDay == 0)
             {
                 day++;
-                yield return new WaitForSeconds(newDayWaitTime/2);
+                if(day == 4)
+                {
+                    yield return new WaitForSeconds(newDayWaitTime / 3);
+
+                    int sumOfHealth = 0;
+                    for(int i = 5; i < currentCustomers.Count; i++)
+                    {
+                        sumOfHealth += currentCustomers[i].GetComponent<Client>().Hp;
+                    }
+                    if(sumOfHealth <= 5)
+                    {
+                        // bad ending
+                    }
+                    else
+                    {
+                        // good ending
+                    }
+                }
+                yield return new WaitForSeconds(newDayWaitTime / 3);
+                GameObject.Find("ReviewPage").GetComponent<Animator>().SetTrigger("ShowResult");
+                yield return new WaitForSeconds(newDayWaitTime / 2);
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
-                yield return new WaitForSeconds(newDayWaitTime/2);
+                yield return new WaitForSeconds(newDayWaitTime);
 
             }
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
