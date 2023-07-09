@@ -391,7 +391,7 @@ Animator:
   m_GameObject: {fileID: 596994460}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d57648019ce86a499007007f1a4552b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 76756d74eba7256459a2c309f7f26e10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -499,17 +499,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hey this is one
-  - Anotha one
-  - dsadasa
-  - bbbbbbbbb
+  - There was once a great hero.
+  - (It is me).
+  - He was a hero among heroes!
+  - No one ever dared to challenge him.
+  - This world is filled with dangerous monsters and many heroes, but out of all
+    of them
+  - I am the most awesome!
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   boards:
-  - {fileID: 21300000, guid: b62b12738375fa349bd8871d52ecabc3, type: 3}
-  - {fileID: 21300000, guid: 3bb03a59d8206534ea482d7b83e2f016, type: 3}
-  - {fileID: 21300000, guid: c90871552cca9994f858ce65366dd982, type: 3}
-  - {fileID: 21300000, guid: bb0635b2b085e5c44b6f05f67b4647b7, type: 3}
+  - {fileID: 21300000, guid: e09008f71b326fb4d9c1135863b4291f, type: 3}
+  - {fileID: 21300000, guid: c9de0d717ef5deb4ca1a19c05f949f85, type: 3}
+  - {fileID: 21300000, guid: afd889fa54c089f4f949faa5ded3d34f, type: 3}
+  - {fileID: 21300000, guid: ef81885eeb50ab9459c39d28ff57c2c6, type: 3}
+  - {fileID: 21300000, guid: d6abc514d0955004dad48d8b106cfba2, type: 3}
+  - {fileID: 21300000, guid: c9de0d717ef5deb4ca1a19c05f949f85, type: 3}
+  - {fileID: 21300000, guid: 5b29a262b352e0a4598fb591737bcc09, type: 3}
+  - {fileID: 21300000, guid: 48f10a08fa0729e49a41163c08e5f116, type: 3}
+  - {fileID: 21300000, guid: 5b29a262b352e0a4598fb591737bcc09, type: 3}
+  - {fileID: 21300000, guid: 48f10a08fa0729e49a41163c08e5f116, type: 3}
+  - {fileID: 21300000, guid: bdc147b9921fb604c93126e0bec40499, type: 3}
+  - {fileID: 21300000, guid: b618da33150c8824ca5fce3a44213a3c, type: 3}
+  - {fileID: 21300000, guid: 9e55a7f7e485a9c488e751b244ee266f, type: 3}
+  - {fileID: 21300000, guid: d29f4b2d29879e24ba0b5389b86d5523, type: 3}
+  - {fileID: 21300000, guid: f4effd43fda33e94cb42a8f146e605f5, type: 3}
+  - {fileID: 21300000, guid: f24d5c0c5c2d33946b50877e5643fe46, type: 3}
+  - {fileID: 21300000, guid: ed50311b103078a4b89790e84b5b9c82, type: 3}
   boardTime: 2
   charTime: 0.05
+  delayBoard:
+  - 3
+  - 2
+  - 2.5
+  - 3
+  - 6.5
+  - 2.7
+  - 2
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
 --- !u!4 &863621131
 Transform:
   m_ObjectHideFlags: 0
@@ -591,7 +636,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 12.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &911734411
@@ -882,7 +927,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 18.477562, y: 0, z: 18.897491, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

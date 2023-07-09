@@ -514,14 +514,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - You failed
-  - its joever
-  - ggs...
+  - You failed to fulfil the heroes' needs.
+  - With no heroes the town is left undefendless
+  - It's over...
   boards:
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
-  boardTime: 2
+  boardTime: 4
   charTime: 0.05
 --- !u!1 &911734409
 GameObject:
@@ -589,7 +589,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 12.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &911734411
