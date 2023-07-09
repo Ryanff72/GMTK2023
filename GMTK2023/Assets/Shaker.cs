@@ -99,7 +99,7 @@ public class Shaker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ( collision.gameObject.layer == 8 && collision.gameObject.GetComponent<IngredientGrabbing>() != null && shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant)
+        if ( collision.gameObject.layer == 8 && (collision.gameObject.GetComponent<IngredientGrabbing>() != null && shksts == shakerStatus.NotShaking || shksts == shakerStatus.Dormant))
         {
             hasOutputItems = false;
             shakenObjects.Add(collision.gameObject);
