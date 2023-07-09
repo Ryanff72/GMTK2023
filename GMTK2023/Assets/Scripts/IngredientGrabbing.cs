@@ -289,9 +289,9 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x < -0.5f)
                 {
                     shakeDuration = 0.1f;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.x = Mathf.Abs(velocity.x);
-                //add sfx
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, 0f);
@@ -302,6 +302,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x > 0.5f)
                 {
                     shakeDuration = 0.1f;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
 
@@ -318,6 +319,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if(velocity.y > 1)
                 {
                     shakeDuration = 0.1f;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
                 //add sfx
