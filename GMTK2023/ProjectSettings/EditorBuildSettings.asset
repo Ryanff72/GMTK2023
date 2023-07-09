@@ -5,22 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 5e07c41e0c535bb41ad7b1e7578efa0f
-  - enabled: 0
-    path: Assets/Scenes/PhysicsDraggingTest.unity
-    guid: 2f34e219510e18e408697f9b965ea654
-  - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 219e016695d20024ebedcbb25a7855d8
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 931b2c2add18ce74f95a6edc8f5f718e
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 5e07c41e0c535bb41ad7b1e7578efa0f
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 219e016695d20024ebedcbb25a7855d8
+  - enabled: 1
+<<<<<<< HEAD
+    path: Assets/Scenes/StartScene.unity
+    guid: 931b2c2add18ce74f95a6edc8f5f718e
+  - enabled: 1
+=======
+>>>>>>> 3e6dcbe3856e823d10ee9b5efbdeea10136685b2
     path: Assets/Scenes/endingSceneWin.unity
     guid: 3a8bbefe42f18cd4a93959127603d429
   - enabled: 1
