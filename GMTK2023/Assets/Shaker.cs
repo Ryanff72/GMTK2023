@@ -28,11 +28,8 @@ public class Shaker : MonoBehaviour
 
     private void Start()
     {
-<<<<<<< Updated upstream
         OpenSprite = transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
-=======
         ShakerOpen = transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite;
->>>>>>> Stashed changes
         hasOutputItems = false;
         shakenObjects.Clear();
         shksts = shakerStatus.Dormant;
@@ -42,17 +39,10 @@ public class Shaker : MonoBehaviour
         switch (shksts)
         {
             case shakerStatus.Dormant:
-<<<<<<< Updated upstream
                 transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
                 break;
             case shakerStatus.NotShaking:
-                transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
-=======
                 transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = ShakerOpen;
-                break;
-            case shakerStatus.NotShaking:
-                transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = ShakerOpen;
->>>>>>> Stashed changes
                 goBack();
                 break;
             case shakerStatus.Shaking:
@@ -61,11 +51,8 @@ public class Shaker : MonoBehaviour
                 transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = ShakerClosed;
                 break;
             case shakerStatus.Output:
-<<<<<<< Updated upstream
                 transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = OpenSprite;
-=======
                 transform.GetChild(3).gameObject.GetComponent<SpriteRenderer>().sprite = ShakerOpen;
->>>>>>> Stashed changes
                 goBack();
                 StartCoroutine("SpawnOutputs");
                 break;

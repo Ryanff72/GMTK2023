@@ -67,11 +67,7 @@ public class MessagesManager : MonoBehaviour
 	}
 
 
-<<<<<<< Updated upstream
 	public void SpawnTextMessageAndStartDialogue(Customer dialogueObject)
-=======
-	public void SpawnTextMessageAndStartDialogue()
->>>>>>> Stashed changes
 	{
 		currentSpeaker = dialogueObject;
 
