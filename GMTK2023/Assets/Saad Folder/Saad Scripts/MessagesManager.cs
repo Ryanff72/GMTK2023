@@ -105,8 +105,10 @@ public class MessagesManager : MonoBehaviour
 
 		foreach (char letter in currentCharacter.dialogueLines[numberOfLineTyping].ToCharArray())
 		{
+
+
 			currentText.text += letter;
-			if(!currentCharacter.letterSound.IsNull)
+			if(!currentCharacter.letterSound.IsNull && currentRenderer != null)
 			{
 				AudioManager.instance.PlayOneShot(currentCharacter.letterSound, transform.position);
 			}
@@ -116,11 +118,11 @@ public class MessagesManager : MonoBehaviour
 
 
 			yield return new WaitForSeconds(currentCharacter.typingInterval);
-			if(currentText.text == currentSpeaker.dialogueLines[numberOfLineTyping])
+			if (currentText.text == currentSpeaker.dialogueLines[numberOfLineTyping])
 			{
 				isTyping = false;
 				//Then the text has reached its end
-				if(numberOfLineTyping == currentCharacter.dialogueLines.Length - 1)
+				if (numberOfLineTyping == currentCharacter.dialogueLines.Length - 1)
 				{
 					//reached end of the entire dialogue and so do nothing
 					hasFinishedDialogue = true;
