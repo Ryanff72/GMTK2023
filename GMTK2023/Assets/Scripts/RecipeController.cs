@@ -52,19 +52,29 @@ public class RecipeBook {
         {
             Debug.Log(Ingredients[i].Name);
         }
+        int biggestRecipeSize = -1;
+        int biggestRecipeIndex = -1;
+
         for (int i = 0; i < AllRecipes.Count; i++) {
-            if (checkRecipe(AllRecipes[i], Ingredients)) {
-                if(!isRecipeKnown(AllRecipes[i].Output, Ingredients)) {
-                    KnownRecipes.Add(AllRecipes[i]);
-                }
-                Debug.Log("found recipe for: " + AllRecipes[i].Output.Name);
-                return AllRecipes[i];
+            if (AllRecipes[i].Ingredients.Count > biggestRecipeSize && checkRecipe(AllRecipes[i], Ingredients)) {
+                biggestRecipeIndex = i;
+                biggestRecipeSize = AllRecipes[i].Ingredients.Count;
             }
         }
-        Debug.Log("Could not get recipe");
-        Item veggiepaste = new Item("Veggie Paste", Modifier.None);
-        Recipe veggieRecipe = new Recipe(Ingredients, veggiepaste);
-        return veggieRecipe;
+        if(biggestRecipeSize == -1)
+        {
+            Debug.Log("Could not get recipe");
+            Item veggiepaste = new Item("Veggie Paste", Modifier.None);
+            Recipe veggieRecipe = new Recipe(Ingredients, veggiepaste);
+            return veggieRecipe;
+        }
+
+        if (!isRecipeKnown(AllRecipes[biggestRecipeIndex].Output, Ingredients))
+        {
+            KnownRecipes.Add(AllRecipes[biggestRecipeIndex]);
+        }
+        Debug.Log("found recipe for: " + AllRecipes[biggestRecipeIndex].Output.Name);
+        return AllRecipes[biggestRecipeIndex];
     }
 
     public bool isRecipeKnown(Item Output, List<Item> Ingredients) {
