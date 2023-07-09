@@ -86,7 +86,7 @@ public class GameController : MonoBehaviour
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
             }
-            else if(CustomerIndex == 4)
+            else if(CustomerIndex == 3)
             {
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];

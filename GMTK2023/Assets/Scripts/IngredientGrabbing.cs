@@ -147,13 +147,11 @@ public class IngredientGrabbing : MonoBehaviour
         //pick up the object
         if (Input.GetButtonDown("Fire1") && hovering)
         {
-            GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = true;
             ingStatus = ingredientStatus.Dragging;
             transform.position = worldMousePos;
         }
         if (Input.GetButtonUp("Fire1") && ingStatus == ingredientStatus.Dragging)
         {
-            GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             ingStatus = ingredientStatus.NotDragging;
             velocity = new Vector2((transform.position.x-oldPosition.x)/0.15f, (transform.position.y - oldPosition.y) / 0.15f);
