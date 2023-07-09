@@ -54,9 +54,15 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
         initialPosition = cam.transform.position;
     }
 
-    private void Start()
+    void initShadowCircle()
     {
         currentShadowCircle = Instantiate(GameObject.Find("ShadowCircle"), new Vector2(transform.position.x, -1.5f), Quaternion.identity);
+        currentShadowCircle.GetComponent<shadowScript>().followObject = gameObject;
+    }
+
+    private void Start()
+    {
+        initShadowCircle();
     }
 
     public void StateMachine()

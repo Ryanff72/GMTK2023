@@ -6,5 +6,6 @@ public enum MusicEnum
 	NOON,
 	NIGHT,
 	BAD_ENDING,
-	GOOD_ENDING
+	GOOD_ENDING,
+	GENERAL_ENDING
 }
