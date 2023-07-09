@@ -53,6 +53,7 @@ public class IngredientGrabbing : MonoBehaviour
     Sprite SunsetBg;
     Sprite NightBg;
     bool inSubmitBox = false;
+    bool inTrash = false;
     ingredientStatus lastState;
 
     // Start is called before the first frame update
@@ -328,6 +329,10 @@ public class IngredientGrabbing : MonoBehaviour
         if(collision.gameObject.name == "SubmitBoxCollider")
         {
             inSubmitBox = true;
+        }
+        if(collision.gameObject.name == "TrashCan" && ingStatus == ingredientStatus.Dragging)
+        {
+            Destroy(gameObject);
         }
     }
 
