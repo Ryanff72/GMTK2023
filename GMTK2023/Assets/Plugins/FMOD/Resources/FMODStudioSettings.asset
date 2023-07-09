@@ -290,10 +290,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: FMOD PROJECT/GMTK2023 FMOD PROJECT.fspro
-  sourceBankPath: FMOD PROJECT/Build
+  sourceBankPath: FMOD PROJECT/ActualBuild/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -303,7 +303,8 @@ MonoBehaviour:
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
-  TargetBankFolder: 
+  TargetBankFolder: N:\Gamestuff SSD\UnityProjects\GMTK2023 JAM\GMTK2023\GMTK2023\FMOD
+    PROJECT\ActualBuild
   EventLinkage: 0
   LoggingLevel: 2
   SpeakerModeSettings: []
