@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD PROJECT/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244462804612849
+  lastModified: 638244954996458611
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -63,10 +63,10 @@ MonoBehaviour:
   Path: FMOD PROJECT/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244462804642948
+  lastModified: 638244954996468571
   FileSizes:
   - Name: Desktop
-    Value: 1054
+    Value: 1020
   Exists: 1
 --- !u!114 &-4401807060755683181
 MonoBehaviour:
@@ -119,41 +119,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 6375530812725390856}
   - {fileID: -5907633652249745105}
-  - {fileID: 550895618256748324}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6707426742032022428}
   StringsBanks:
   - {fileID: -5376485765829101277}
-  cacheTime: 638244462807554672
+  cacheTime: 638244954997577234
   cacheVersion: 131605
---- !u!114 &550895618256748324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/eat
-  m_EditorClassIdentifier: 
-  Path: event:/eat
-  Guid:
-    Data1: 1801247584
-    Data2: 1171596993
-    Data3: -1737219422
-    Data4: 1691269943
-  Banks:
-  - {fileID: 7011253967668170686}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &5036645818475443788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +141,7 @@ MonoBehaviour:
   Path: FMOD PROJECT/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244462806985224
+  lastModified: 638244954997222209
   FileSizes:
   - Name: Desktop
     Value: 4029312
@@ -216,8 +188,8 @@ MonoBehaviour:
   Path: FMOD PROJECT/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638244462807554672
+  lastModified: 638244954997577234
   FileSizes:
   - Name: Desktop
-    Value: 54784
+    Value: 50528
   Exists: 1
