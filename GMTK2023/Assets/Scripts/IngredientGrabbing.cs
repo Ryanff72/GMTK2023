@@ -335,7 +335,7 @@ public class IngredientGrabbing : MonoBehaviour
     {
         if (collision.gameObject.name == "SubmitBoxCollider")
         {
-            inSubmitBox = true;
+            inSubmitBox = false;
         }
     }
 

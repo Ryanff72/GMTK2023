@@ -266,12 +266,6 @@ public class RecipeController : MonoBehaviour
         book.AllRecipes.Add(new Recipe(new List<Item>() { lemonJuice, ShakenRavensTears }, martini));
 
 
-
-
-
-
-
-
         //RT + DP + PS + PI = [RS] Rainbow Sludge (confusion, thrill, surprise)
         Item rainbow = new Item("Rainbow Sludge");
         book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, demonPepper, powderedIron, pixieSugar }, rainbow));

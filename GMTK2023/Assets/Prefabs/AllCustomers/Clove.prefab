@@ -104,3 +104,28 @@ MonoBehaviour:
   wantedItemMod: 0
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 6b18528ec1f9ee14699ed202f970859d, type: 2}
+  lastPotion: god
+  goodReview: goodReview
+  midReview: midReview
+  awfReview: awfulReview
+  wantedItemNamesDayOne:
+  - Hot Coffee
+  - Hot Coffee
+  - Hot Coffee
+  wantedItemModsDayOne: 000000000100000002000000
+  wantedItemNamesDayTwo:
+  - Acidic Gunk
+  - Acidic Gunk
+  - Acidic Gunk
+  - Rust Catalyst
+  - Rust Catalyst
+  - Rust Catalyst
+  - Lemon Juice
+  - Lemon Juice
+  - Lemon Juice
+  wantedItemModsDayTwo: 000000000100000002000000000000000100000002000000000000000100000002000000
+  wantedItemNamesDayThree:
+  - Primordial Soup
+  - Primordial Soup
+  - Primordial Soup
+  wantedItemModsDayThree: 000000000100000002000000
