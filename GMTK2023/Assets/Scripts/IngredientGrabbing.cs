@@ -203,10 +203,11 @@ public class IngredientGrabbing : MonoBehaviour
                 {
                     hasSpawnedSmoke = true;
                     Instantiate(landingSmoke, transform.position + new Vector3(0, -0.72f, -5), Quaternion.Euler(-90, 0, 0));
-                    //SoundCreator.transform.position = transform.position;
-                    //SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
-                }
-                if (GroundCheck.collider.gameObject.tag == "Platform")
+					AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
+					//SoundCreator.transform.position = transform.position;
+					//SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
+				}
+				if (GroundCheck.collider.gameObject.tag == "Platform")
                 {
                     rb2d.velocity = rb2d.velocity + GroundCheck.collider.gameObject.GetComponent<Rigidbody2D>().velocity * Time.fixedDeltaTime;
                 }
