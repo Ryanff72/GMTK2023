@@ -54,21 +54,9 @@ public class CattleController : MonoBehaviour
         if (output)
         {
             NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output);
-
         }
 
-        List<GameObject> usedIngredients = new List<GameObject>();
-        for(int i = 0; i < recipe.Ingredients.Count; i++)
-        {
-            for(int j = 0; j < Items.Count; j++)
-            {
-                if (recipe.Ingredients[i].Name == Items[j].Name && recipe.Ingredients[i].Mod == Items[j].Mod)
-                {
-                    usedIngredients.Add(IngredientsInPot[j]);
-                }
-            }
-        }
-        for(int i = IngredientsInPot.Count; i >= 0; i--)
+        for(int i = IngredientsInPot.Count-1; i >= 0; i--)
         {
             Destroy(IngredientsInPot[i]);
         }
