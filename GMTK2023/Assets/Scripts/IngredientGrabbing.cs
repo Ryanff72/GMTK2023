@@ -74,10 +74,12 @@ public class IngredientGrabbing : MonoBehaviour
         {
             case ingredientStatus.NotDragging:
                 transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = true;
+                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 19;
                 rb2d.bodyType = RigidbodyType2D.Dynamic;
                 applyPhysics();
                 break;
             case ingredientStatus.Dragging:
+                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 25;
                 syncPosition();
                 StartCoroutine("getOldDistance", 0.05f);
                 break;

@@ -13,7 +13,7 @@ public class SpawnNew : MonoBehaviour
 
 
     public Sprite[] sp;
-    public Vector3[] spsc;
+    public Vector3 spsc;
 
     Sprite chosenSprite;
     Vector3 chosenVector3;
@@ -35,12 +35,12 @@ public class SpawnNew : MonoBehaviour
             {
                 chosenSprite = sp[i];
             }
-            else
-            {
-                chosenSprite = null;
-            }
+            
         }
-        
+        if (chosenSprite == null)
+        {
+            chosenSprite = sp[0];
+        }
 
         StartCoroutine("animAndSpawn");
     }
