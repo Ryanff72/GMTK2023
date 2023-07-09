@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     public IEnumerator startDay()
     {
+        AudioManager.instance.SetMusic(MusicEnum.MORNING);
+
         GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
         GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
         GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
@@ -82,13 +84,17 @@ public class GameController : MonoBehaviour
             CustomerIndex++;
             if(CustomerIndex == 2)
             {
+                //sunset
+                AudioManager.instance.SetMusic(MusicEnum.NOON);
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
             }
             else if(CustomerIndex == 3)
             {
-                GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
+				//night
+				AudioManager.instance.SetMusic(MusicEnum.NIGHT);
+				GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
             }

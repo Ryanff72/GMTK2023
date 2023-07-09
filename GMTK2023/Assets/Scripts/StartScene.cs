@@ -60,6 +60,7 @@ public class StartScene : MonoBehaviour
         {
             yield return new WaitForSeconds(4.0f);
             SceneManager.LoadScene("Menu");
+            AudioManager.instance.SetMusic(MusicEnum.TITLE_SCREEN);
         }
         Board.sprite = boards[boardIndex];
         StartCoroutine(nextBoard());
