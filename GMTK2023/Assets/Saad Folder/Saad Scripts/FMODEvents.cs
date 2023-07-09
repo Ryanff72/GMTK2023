@@ -19,6 +19,10 @@ public class FMODEvents : MonoBehaviour
 	[field: SerializeField] public EventReference doorOpen { get; private set; }
 	[field: SerializeField] public EventReference cauldronSplash { get; private set; }
 	[field: SerializeField] public EventReference glassBounceClink { get; private set; }
+	[field: SerializeField] public EventReference pouchOpen { get; private set; }
+	[field: SerializeField] public EventReference potSFX { get; private set; }
+	[field: SerializeField] public EventReference heaterSFX { get; private set; }
+	[field: SerializeField] public EventReference metalThingSFX { get; private set; }
 
 
 	private void Awake()
