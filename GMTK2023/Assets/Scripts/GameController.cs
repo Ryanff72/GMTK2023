@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -113,12 +114,17 @@ public class GameController : MonoBehaviour
                     if(sumOfHealth <= 5)
                     {
                         // bad ending
+				        AudioManager.instance.SetMusic(MusicEnum.BAD_ENDING);
+						SceneManager.LoadScene(4);
                     }
                     else
                     {
-                        // good ending
-                    }
-                }
+						// good ending
+						AudioManager.instance.SetMusic(MusicEnum.GOOD_ENDING);
+						SceneManager.LoadScene(3);
+
+					}
+				}
                 yield return new WaitForSeconds(newDayWaitTime / 3);
                 GameObject.Find("ReviewPage").GetComponent<Animator>().SetTrigger("ShowResult");
                 yield return new WaitForSeconds(newDayWaitTime / 2);
