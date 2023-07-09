@@ -22,6 +22,8 @@ public class Shaker : MonoBehaviour
 
     private void Start()
     {
+        hasOutputItems = false;
+        shakenObjects.Clear();
         shksts = shakerStatus.Dormant;
     }
     public void StateMachine()
@@ -89,6 +91,7 @@ public class Shaker : MonoBehaviour
             }
             shakenObjects.Clear();
             yield return new WaitForSeconds(0.5f);
+            shakenObjects.Clear();
             shksts = shakerStatus.NotShaking;
         }
         
@@ -103,6 +106,7 @@ public class Shaker : MonoBehaviour
             collision.gameObject.GetComponent<IngredientGrabbing>().ingStatus = IngredientGrabbing.ingredientStatus.Static;
             
         }
+
     }
     void goBack()
     {

@@ -160,15 +160,15 @@ public class RecipeController : MonoBehaviour
 
         //RT + $PI = [RC] Rust Catalyst (decay, infection, bitter)
         Item rustCatalyst = new Item("Rust Catalyst");
-        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, ShakenPixieSugar }, rustCatalyst));
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, ShakenPowderedIron }, rustCatalyst));
 
         //RT + #PI = [AG] Acidic Gunk (poison, melt)
         Item acidicGunk = new Item("Acidic Gunk");
-        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, HotPixieSugar }, acidicGunk));
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, HotPowderedIron }, acidicGunk));
 
         //#PI + RT = [PB] Paint Bomb (mischief, explosive)
         Item paintBomb = new Item("Paint Bomb");
-        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPowderedIron, ravensTears }, paintBomb));
+        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPixieSugar, ravensTears }, paintBomb));
 
         //$PS + RT = [HP] Happy Pill (antidepressant)
         Item happyPill = new Item("Happy Pill");
