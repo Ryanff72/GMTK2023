@@ -74,12 +74,14 @@ public class IngredientGrabbing : MonoBehaviour
         {
             case ingredientStatus.NotDragging:
                 transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = true;
-                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 19;
+                transform.GetChild(9).GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<BoxCollider2D>().enabled = true;
+                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 23;
                 rb2d.bodyType = RigidbodyType2D.Dynamic;
                 applyPhysics();
                 break;
             case ingredientStatus.Dragging:
-                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 25;
+                transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder = 27;
                 syncPosition();
                 StartCoroutine("getOldDistance", 0.05f);
                 break;
@@ -95,6 +97,7 @@ public class IngredientGrabbing : MonoBehaviour
         {
             transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = false;
             transform.GetChild(9).GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             rb2d.bodyType = RigidbodyType2D.Static;
         }
         
@@ -151,7 +154,7 @@ public class IngredientGrabbing : MonoBehaviour
             GameObject.Find("DeliverArrow").GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             ingStatus = ingredientStatus.NotDragging;
-            velocity = new Vector2((transform.position.x-oldPosition.x)/0.2f, (transform.position.y - oldPosition.y) / 0.2f);
+            velocity = new Vector2((transform.position.x-oldPosition.x)/0.15f, (transform.position.y - oldPosition.y) / 0.15f);
         }
     }
 

@@ -9,7 +9,15 @@ public class IngredientSpawn : MonoBehaviour
     bool hovering;
     public GameObject spawnedIngredient;
 
+    private Sprite idleSprite;
+    public Sprite openSprite;
+
     Vector2 worldMousePos;
+
+    private void Start()
+    {
+        idleSprite = GetComponent<SpriteRenderer>().sprite;    
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,12 +35,14 @@ public class IngredientSpawn : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
         hovering = true;
+        GetComponent<SpriteRenderer>().sprite = openSprite;
     }
     private void OnMouseExit()
     {
         hovering = false;
+        GetComponent<SpriteRenderer>().sprite = idleSprite;
     }
 }
