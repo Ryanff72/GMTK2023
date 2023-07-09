@@ -80,6 +80,7 @@ public class GameController : MonoBehaviour
         if (CustomerIndex + 1 < currentCustomers.Count)
         {
             CustomerIndex++;
+<<<<<<< Updated upstream
             if(CustomerIndex == 2)
             {
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
@@ -97,6 +98,8 @@ public class GameController : MonoBehaviour
                 day++;
                 yield return new WaitForSeconds(newDayWaitTime);
             }
+=======
+>>>>>>> Stashed changes
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();
         } 
         else
