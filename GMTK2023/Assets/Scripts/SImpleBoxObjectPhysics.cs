@@ -258,6 +258,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
                 if (velocity.x < -0.5f)
                 {
                     shakeDuration = 0.1f;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.x = Mathf.Abs(velocity.x);
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
@@ -269,6 +270,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
             {
                 if (velocity.x > 0.5f)
                 {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                     shakeDuration = 0.1f;
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
@@ -282,6 +284,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
             {
                 if (velocity.y > 1)
                 {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                     shakeDuration = 0.1f;
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
