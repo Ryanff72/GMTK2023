@@ -68,7 +68,7 @@ public class CattleController : MonoBehaviour
                 }
             }
         }
-        for(int i = 0; i < IngredientsInPot.Count; i++)
+        for(int i = IngredientsInPot.Count; i >= 0; i--)
         {
             Destroy(IngredientsInPot[i]);
         }
