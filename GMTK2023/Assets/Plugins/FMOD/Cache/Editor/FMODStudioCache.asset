@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244868353900445
+  lastModified: 638244954340420544
   FileSizes:
   - Name: 
-    Value: 1476
+    Value: 1666
   Exists: 1
 --- !u!114 &-8385997232751376474
 MonoBehaviour:
@@ -124,6 +124,33 @@ MonoBehaviour:
   - Good Ending
   - General Ending
   Exists: 1
+--- !u!114 &-5686508149861767380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/potSFX
+  m_EditorClassIdentifier: 
+  Path: event:/potSFX
+  Guid:
+    Data1: -1222962497
+    Data2: 1088960575
+    Data3: 1193730193
+    Data4: 1476334125
+  Banks:
+  - {fileID: -2622092689043820765}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5522243378599210548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +169,33 @@ MonoBehaviour:
   lastModified: 638244310738467930
   FileSizes: []
   Exists: 1
+--- !u!114 &-5203103168683671273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/pouchOpen
+  m_EditorClassIdentifier: 
+  Path: event:/pouchOpen
+  Guid:
+    Data1: -1626153053
+    Data2: 1091412015
+    Data3: 1998232233
+    Data4: 1712449148
+  Banks:
+  - {fileID: -2622092689043820765}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4841452752004841701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +251,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4462025796123037453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/heaterSFX
+  m_EditorClassIdentifier: 
+  Path: event:/heaterSFX
+  Guid:
+    Data1: 850990681
+    Data2: 1216474281
+    Data3: -1760000348
+    Data4: -62787179
+  Banks:
+  - {fileID: -2622092689043820765}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2925240648139712279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/metalThingSFX
+  m_EditorClassIdentifier: 
+  Path: event:/metalThingSFX
+  Guid:
+    Data1: 1204476744
+    Data2: 1267759315
+    Data3: 602219945
+    Data4: 2047132021
+  Banks:
+  - {fileID: -2622092689043820765}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2722622404252042340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +347,7 @@ MonoBehaviour:
   Path: FMOD PROJECT/ActualBuild/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638244894745966512
+  lastModified: 638244954340460588
   FileSizes: []
   Exists: 1
 --- !u!114 &-1703558670568254218
@@ -326,12 +434,16 @@ MonoBehaviour:
   - {fileID: -1255362346008067786}
   - {fileID: 3638524881319387576}
   - {fileID: -8385997232751376474}
+  - {fileID: -2925240648139712279}
+  - {fileID: -4462025796123037453}
+  - {fileID: -5203103168683671273}
+  - {fileID: -5686508149861767380}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5522243378599210548}
   StringsBanks:
   - {fileID: -8625906042585188630}
-  cacheTime: 638244894745966512
+  cacheTime: 638244954340460588
   cacheVersion: 131605
 --- !u!114 &2670876582940000653
 MonoBehaviour:
