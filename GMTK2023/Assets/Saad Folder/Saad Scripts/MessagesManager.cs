@@ -106,6 +106,11 @@ public class MessagesManager : MonoBehaviour
 		foreach (char letter in currentCharacter.dialogueLines[numberOfLineTyping].ToCharArray())
 		{
 			currentText.text += letter;
+			if(!currentCharacter.letterSound.IsNull)
+			{
+				AudioManager.instance.PlayOneShot(currentCharacter.letterSound, transform.position);
+			}
+
 			isTyping = true;
 			//calculates the number of lines for each message 
 

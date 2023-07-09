@@ -53,8 +53,6 @@ public class AudioManager : MonoBehaviour
 		musicBus.setVolume(musicVolume);
 		sfxBus.setVolume(sfxVolume);
 
-		AudioManager.instance.PlayOneShot(FMODEvents.instance.pageTurn, transform.position);
-
 		#region Old Code
 		////If the music has stopped, then start a new track 
 		//if(currentPlaybackstate.Equals(PLAYBACK_STATE.STOPPED))
