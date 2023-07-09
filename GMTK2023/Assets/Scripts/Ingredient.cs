@@ -20,20 +20,32 @@ public class Ingredient : MonoBehaviour
     Vector3 startPos;
     public Vector3 characterHandPos;
     public float lerpSpeed = 0.01f;
+    public GameObject statusIndicatorPrefab;
+    private GameObject statusIndicator;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        statusIndicator = Instantiate(statusIndicatorPrefab,transform.position + new Vector3(-.5f,0.8f,0), Quaternion.identity);
+        statusIndicator.transform.parent = transform;
         item = new Item(ItemName, Mod);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        statusIndicator.GetComponent<SpriteRenderer>().sortingOrder = transform.GetChild(8).GetComponent<SpriteRenderer>().sortingOrder + 1;
+        if (Mod == Modifier.Heated)
+        {
+            statusIndicator.GetComponent<SpriteRenderer>().sprite = heatedSprite;
+        }
+        else if(Mod == Modifier.Shaken)
+        {
+            statusIndicator.GetComponent<SpriteRenderer>().sprite = shakenSprite;
+        }
     }
-
     void FixedUpdate()
     {
         if(isServing)
@@ -49,22 +61,16 @@ public class Ingredient : MonoBehaviour
 
     public void Heat()
     {
-        if (heatedSprite)
-        {
-            GetComponent<SpriteRenderer>().sprite = heatedSprite;
-        }
         item.Mod = Modifier.Heated;
-        Mod = Modifier.Shaken;
+        Mod = Modifier.Heated;
+        
     }
 
     public void Shake()
     {
-        if (shakenSprite)
-        {
-            GetComponent<SpriteRenderer>().sprite = shakenSprite;
-        }
         item.Mod = Modifier.Shaken;
         Mod = Modifier.Shaken;
+        
     }
 
     public void serve()

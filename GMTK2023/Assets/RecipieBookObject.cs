@@ -82,21 +82,22 @@ public class RecipieBookObject : MonoBehaviour
                 Debug.Log("page pair count: " + pagePairCount);
                 Debug.Log("pageRecepieCount: " + pageRecepieCount);
                 newElem.transform.SetParent(transform.GetChild(pagePairCount).transform.GetChild(pageCount));
-                newElem.GetComponent<RectTransform>().position = new Vector2(7.5f + (2.95f * pageCount), 7.1f - (1.1f * pageRecepieCount));
+                newElem.GetComponent<RectTransform>().position = new Vector2(7.35f + (2.95f * pageCount), 7.1f - (1.1f * pageRecepieCount));
             }
         }
     }
 
     void newPage()
     {
+        pagePairCount++;
         pageCount = 0;
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
-         gameObject.transform.GetChild(1).gameObject.SetActive(false);
-         gameObject.transform.GetChild(2).gameObject.SetActive(false);
-         gameObject.transform.GetChild(pageRecepieCount).gameObject.SetActive(true);
-         turnLeftButton.gameObject.SetActive(true);
-        pagePairCount++;
-        pageRecepieCount = 0;
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        gameObject.transform.GetChild(pagePairCount).gameObject.SetActive(true);
+        currentpage = pagePairCount;
+        turnLeftButton.gameObject.SetActive(true);
+        pageRecepieCount = 1;
 
         
     }

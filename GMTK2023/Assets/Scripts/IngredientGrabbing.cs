@@ -94,6 +94,7 @@ public class IngredientGrabbing : MonoBehaviour
         if(shakeable == true)
         {
             transform.GetChild(8).GetComponent<SpriteRenderer>().enabled = false;
+            transform.GetChild(9).GetComponent<SpriteRenderer>().enabled = false;
             rb2d.bodyType = RigidbodyType2D.Static;
         }
         
