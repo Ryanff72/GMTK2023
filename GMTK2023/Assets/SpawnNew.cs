@@ -29,11 +29,18 @@ public class SpawnNew : MonoBehaviour
         go = spawnedItem;
 
         //make for each item that can be added to the pot
-        if (spawnedItem.name == "veggiePaste")
+        for(int i = 0; i < sp.Length; i++)
         {
-            //chosenSprite = sp[0];
-            //chosenVector3 = spsc[0]; 
+            if (spawnedItem.name == sp[i].name)
+            {
+                chosenSprite = sp[i];
+            }
+            else
+            {
+                chosenSprite = null;
+            }
         }
+        
 
         StartCoroutine("animAndSpawn");
     }
