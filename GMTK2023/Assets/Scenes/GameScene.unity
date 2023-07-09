@@ -4296,6 +4296,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 79c676de71b986f4ebab34e4061b5a90, type: 3}
   - {fileID: 21300000, guid: d143bb83281e9b049b1790c61320300c, type: 3}
   - {fileID: 21300000, guid: 8e54e4304612f4e42a2ef43d3716ab8e, type: 3}
+  - {fileID: 21300000, guid: c7e65fa4da6c7c8429310a757c8aee5d, type: 3}
+  - {fileID: 21300000, guid: 12c711b5091f9734ca5aa43050ef413b, type: 3}
+  - {fileID: 21300000, guid: cd27ef65a78e64646b6308c30148e2a8, type: 3}
   spsc: {x: 0.2, y: 0.2, z: 0.2}
 --- !u!1 &1693546016
 GameObject:
