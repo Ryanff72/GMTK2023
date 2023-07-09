@@ -15,6 +15,7 @@ public class StartScene : MonoBehaviour
     public float charTime;
     SpriteRenderer Board;
     TextMeshProUGUI text;
+    public List<float> delayBoard;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,6 @@ public class StartScene : MonoBehaviour
         text = GameObject.Find("bottomText").GetComponent<TextMeshProUGUI>();
         text.text = "";
         Board.sprite = boards[boardIndex];
-        boardIndex++;
         StartCoroutine(nextBoard());
         StartCoroutine(nextChar());
     }
@@ -47,11 +47,7 @@ public class StartScene : MonoBehaviour
 
     IEnumerator nextBoard()
     {
-        if(boardIndex == 1)
-        {
-            yield return new WaitForSeconds(1.5f);
-        }
-        yield return new WaitForSeconds(boardTime);
+        yield return new WaitForSeconds(delayBoard[lineIndex]);
         lineIndex++;
         text.text = "";
         charIndex = 0;
