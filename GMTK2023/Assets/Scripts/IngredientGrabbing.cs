@@ -203,10 +203,11 @@ public class IngredientGrabbing : MonoBehaviour
                 {
                     hasSpawnedSmoke = true;
                     Instantiate(landingSmoke, transform.position + new Vector3(0, -0.72f, -5), Quaternion.Euler(-90, 0, 0));
-                    //SoundCreator.transform.position = transform.position;
-                    //SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
-                }
-                if (GroundCheck.collider.gameObject.tag == "Platform")
+					AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
+					//SoundCreator.transform.position = transform.position;
+					//SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
+				}
+				if (GroundCheck.collider.gameObject.tag == "Platform")
                 {
                     rb2d.velocity = rb2d.velocity + GroundCheck.collider.gameObject.GetComponent<Rigidbody2D>().velocity * Time.fixedDeltaTime;
                 }
@@ -290,6 +291,7 @@ public class IngredientGrabbing : MonoBehaviour
                     shakeDuration = 0.1f;
                 }
                 velocity.x = Mathf.Abs(velocity.x);
+                //add sfx
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, 0f);
@@ -303,6 +305,9 @@ public class IngredientGrabbing : MonoBehaviour
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
 
+
+                //add sfx
+
                 if (WallCheckRight.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, 0f);
@@ -315,6 +320,7 @@ public class IngredientGrabbing : MonoBehaviour
                     shakeDuration = 0.1f;
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
+                //add sfx
             }
             if (nearGrounded == false)//workaround for gravity being wonky
             {

@@ -14,6 +14,8 @@ public class IngredientSpawn : MonoBehaviour
 
     Vector2 worldMousePos;
 
+    bool hasPlayedSFX;
+
     private void Start()
     {
         idleSprite = GetComponent<SpriteRenderer>().sprite;    
@@ -37,12 +39,34 @@ public class IngredientSpawn : MonoBehaviour
 
     private void OnMouseOver()
     {
-        hovering = true;
+		if (!hasPlayedSFX)
+		{
+			GlassSFX();
+			hasPlayedSFX = true;
+
+		}
+
+		hovering = true;
+
         GetComponent<SpriteRenderer>().sprite = openSprite;
     }
     private void OnMouseExit()
     {
+
         hovering = false;
-        GetComponent<SpriteRenderer>().sprite = idleSprite;
+		if (hasPlayedSFX)
+		{
+			GlassSFX();
+			hasPlayedSFX = false;
+		}
+		GetComponent<SpriteRenderer>().sprite = idleSprite;
+    }
+
+    void GlassSFX()
+    {
+        if(gameObject.name != "DPspawn")
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.glassBounceClink, transform.position);
+        }
     }
 }

@@ -106,6 +106,7 @@ public class RecipieBookObject : MonoBehaviour
     {
         gameObject.transform.GetChild(currentpage).gameObject.SetActive(false);
         gameObject.transform.GetChild(currentpage-1).gameObject.SetActive(true);
+        TurnSFX();
         currentpage--;
     }
 
@@ -113,10 +114,14 @@ public class RecipieBookObject : MonoBehaviour
     {
         gameObject.transform.GetChild(currentpage).gameObject.SetActive(false);
         gameObject.transform.GetChild(currentpage + 1).gameObject.SetActive(true);
-        currentpage++;
+		TurnSFX();
+		currentpage++;
     }
 
 
-
+    void TurnSFX()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.pageTurn, transform.position);
+    }
 
 }
