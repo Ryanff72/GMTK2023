@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.SetMusic(MusicEnum.MORNING);
         SceneManager.LoadScene("GameScene");
     }
 }

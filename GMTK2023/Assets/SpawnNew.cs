@@ -51,6 +51,7 @@ public class SpawnNew : MonoBehaviour
         transform.GetChild(0).transform.GetChild(0).transform.localScale = spsc;
         anim.Play("NewItem");
         Instantiate(cauldronPoof, new Vector3(-1.34000003f, -1.98000002f, -0.00999999978f), Quaternion.Euler(-90, 0, 0));
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.newPotion, transform.position);
         yield return new WaitForSeconds(1.5f);
         anim.Play("Idle");
         Instantiate(go, new Vector2(4, 1.8f), Quaternion.identity);
