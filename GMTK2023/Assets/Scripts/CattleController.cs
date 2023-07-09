@@ -72,6 +72,7 @@ public class CattleController : MonoBehaviour
         {
             Destroy(IngredientsInPot[i]);
         }
+        SpoonXTraveled = 0.0f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
