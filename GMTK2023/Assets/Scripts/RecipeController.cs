@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 using FMOD.Studio;
-using UnityEditor.PackageManager.UI;
 
 public enum Modifier {
     None,

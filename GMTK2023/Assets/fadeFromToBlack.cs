@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class fadeFromToBlack : MonoBehaviour
 {
@@ -38,5 +39,17 @@ public class fadeFromToBlack : MonoBehaviour
             color -= Time.deltaTime * fadeTime;
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, color);
         }
+    }
+
+    public void Activate()
+    {
+        activated = true;
+        StartCoroutine("Go");
+    }
+
+    IEnumerator Go()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("StartScene");
     }
 }
