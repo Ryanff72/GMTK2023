@@ -360,7 +360,7 @@ public class IngredientGrabbing : MonoBehaviour
         if (collision.gameObject.name == "DeleteBoxCollider")
         {
             collision.gameObject.transform.localScale *= 0.9f;
-            inTrashBox = true;
+            inTrashBox = false;
         }
     }
 
