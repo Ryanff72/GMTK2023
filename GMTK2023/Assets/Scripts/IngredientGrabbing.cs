@@ -290,6 +290,7 @@ public class IngredientGrabbing : MonoBehaviour
                     shakeDuration = 0.1f;
                 }
                 velocity.x = Mathf.Abs(velocity.x);
+                //add sfx
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, 0f);
@@ -303,6 +304,9 @@ public class IngredientGrabbing : MonoBehaviour
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
 
+
+                //add sfx
+
                 if (WallCheckRight.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, 0f);
@@ -315,6 +319,7 @@ public class IngredientGrabbing : MonoBehaviour
                     shakeDuration = 0.1f;
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
+                //add sfx
             }
             if (nearGrounded == false)//workaround for gravity being wonky
             {
