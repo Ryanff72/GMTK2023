@@ -666,6 +666,19 @@ MonoBehaviour:
   - Powdered Iron
   - Raven's Tears
   - Handsome Caramel
+  - Crushed Beans
+  - Elegant Martini
+  - Gunpowder
+  - Acidic Gunk
+  - Happy Pill
+  - Hot Coffee
+  - Paint Bomb
+  - Primordial Soup
+  - Rainbow Sludge
+  - Rust Catalyst
+  - Veggie Paste
+  - Vitamin Gummy
+  - Lemon Juice
   Ingredients:
   - {fileID: 5909851974252077864, guid: a2beda7737830fc4b9e845c4ab0ad68a, type: 3}
   - {fileID: 5909851974252077864, guid: 26a8eae589191274f86dcff443352fd1, type: 3}
@@ -673,6 +686,19 @@ MonoBehaviour:
   - {fileID: 5909851974252077864, guid: abe8e06b07d719a4f8f636bfdc7b7b0f, type: 3}
   - {fileID: 5909851974252077864, guid: 39c2f6c3db649de45be461a537f6e6cf, type: 3}
   - {fileID: 5909851974252077864, guid: be83fe706e3fe6a4e89718199678e0e3, type: 3}
+  - {fileID: 5909851974252077864, guid: 8a3553f11ce4813418b5692ea5e5b0b0, type: 3}
+  - {fileID: 5909851974252077864, guid: 85b3cd796efb88d44bd0ef58f1bed8aa, type: 3}
+  - {fileID: 5909851974252077864, guid: 604a62e1bbdaa4045b5d6cfa63b0b0ff, type: 3}
+  - {fileID: 5909851974252077864, guid: 8fb95f7fd99ffba439a8c77261c1063f, type: 3}
+  - {fileID: 5909851974252077864, guid: d91670cc267d2ef40a233dd150e1bf0f, type: 3}
+  - {fileID: 5909851974252077864, guid: 4b2f59ccc82284f49b2c41ce7376e7e2, type: 3}
+  - {fileID: 5909851974252077864, guid: 4b0139aca59a03a47b976cdcb7c8e8ce, type: 3}
+  - {fileID: 5909851974252077864, guid: feea89778548e2741ae85b9612e0fd60, type: 3}
+  - {fileID: 5909851974252077864, guid: ecbe7c264f5896e489964222e0531590, type: 3}
+  - {fileID: 5909851974252077864, guid: f8ec7d5c4029e854088b8bce661840b5, type: 3}
+  - {fileID: 5909851974252077864, guid: a2beda7737830fc4b9e845c4ab0ad68a, type: 3}
+  - {fileID: 5909851974252077864, guid: 71404b75207f2b042a54dc6a7d73439e, type: 3}
+  - {fileID: 5909851974252077864, guid: ef13031c310acb948bb5dbbe42fae1f2, type: 3}
 --- !u!4 &360103846
 Transform:
   m_ObjectHideFlags: 0
@@ -1338,7 +1364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535554577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 1.5, z: -10}
+  m_LocalPosition: {x: 4, y: 1.5, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1598,7 +1624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782673352}
   - component: {fileID: 782673353}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DownColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1824,7 +1850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864828852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1871,7 +1897,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 19
+  m_SortingOrder: 30
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2003,7 +2029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172774066}
   - component: {fileID: 1172774067}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LeftColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2975,7 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shksts: 0
-  shakeRequired: 120
+  shakeRequired: 60
   shakenObjects: []
 --- !u!1 &1640641315
 GameObject:
@@ -2987,7 +3013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640641316}
   - component: {fileID: 1640641317}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RightColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3298,7 +3324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683821718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 1.8, z: -0.045629628}
+  m_LocalPosition: {x: 4, y: 1.8, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3321,7 +3347,7 @@ MonoBehaviour:
   cauldronPoof: {fileID: 2497695791401498527, guid: e487a14b3daa05f4995f76b0d8b8c674, type: 3}
   sp:
   - {fileID: 21300000, guid: 1ee4f998bef12b24f937ea8016d05702, type: 3}
-  spsc: {x: 2, y: 2, z: 2}
+  spsc: {x: 0.2, y: 0.2, z: 0.2}
 --- !u!1 &1709496344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,7 +3712,7 @@ MonoBehaviour:
   Spoon: {fileID: 5909851975058169488}
   IngredientsInPot: []
   SpoonXTraveled: 0
-  SpoonStirDistance: 35
+  SpoonStirDistance: 28
   NewItemSpawner: {fileID: 1683821718}
 --- !u!1001 &1820676983
 PrefabInstance:

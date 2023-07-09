@@ -16,7 +16,6 @@ public class SpawnNew : MonoBehaviour
     public Vector3 spsc;
 
     Sprite chosenSprite;
-    Vector3 chosenVector3;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +48,7 @@ public class SpawnNew : MonoBehaviour
     public IEnumerator animAndSpawn()
     {
         transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = chosenSprite;
-        transform.GetChild(0).transform.GetChild(0).transform.localScale = chosenVector3;
+        transform.GetChild(0).transform.GetChild(0).transform.localScale = spsc;
         anim.Play("NewItem");
         Instantiate(cauldronPoof, new Vector3(-1.34000003f, -1.98000002f, -0.00999999978f), Quaternion.Euler(-90, 0, 0));
         yield return new WaitForSeconds(1.5f);

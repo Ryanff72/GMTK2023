@@ -35,11 +35,10 @@ public class RecipieBookObject : MonoBehaviour
         {
             if (newRec == recipieCanvas[i].name)
             {
-                Debug.Log("ahhhh");
                 GameObject newElem = Instantiate(recipieCanvas[i]);
                 newElem.transform.SetParent(transform.GetChild(pagePairCount).transform.GetChild(pageCount));
-                newElem.GetComponent<RectTransform>().position = new Vector2(7.5f +(2.5f*pageCount), 6.1f-(0.9f * pageRecepieCount));
-                if (pageRecepieCount < 4)
+                newElem.GetComponent<RectTransform>().position = new Vector2(7.5f +(2.5f*pageCount), 6.1f-(1.1f * pageRecepieCount));
+                if (pageRecepieCount < 3)
                 {
                     pageRecepieCount++;
                 }
