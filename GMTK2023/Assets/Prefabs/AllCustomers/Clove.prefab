@@ -105,9 +105,9 @@ MonoBehaviour:
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 6b18528ec1f9ee14699ed202f970859d, type: 2}
   lastPotion: god
-  goodReview: goodReview
-  midReview: midReview
-  awfReview: awfulReview
+  goodReview: Wow, surprisingly competent.
+  midReview: Wow, didn't expect any better of you!
+  awfReview: Are you trying to kill me.
   wantedItemNamesDayOne:
   - Hot Coffee
   - Hot Coffee

@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 using FMOD.Studio;
-using UnityEditor.PackageManager.UI;
 
 public enum Modifier {
     None,
@@ -24,6 +23,10 @@ public class Item {
 
     public bool isPoisonous()
     {
+        if(Name == "Acidic Rust" || Name == "Veggie Paste" || Name == "Rust Catalyst" || Name == "Acidic Gunk")
+        {
+            return true;
+        }
         return false;
     }
 }

@@ -105,9 +105,9 @@ MonoBehaviour:
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: a778643aeb5bc374d8c368730c03ce21, type: 2}
   lastPotion: god
-  goodReview: goodReview
-  midReview: midReview
-  awfReview: awfulReview
+  goodReview: That was fabulous dear!
+  midReview: Dear dear dear...
+  awfReview: ...
   wantedItemNamesDayOne:
   - Lemon Juice
   - Lemon Juice

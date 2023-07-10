@@ -105,9 +105,9 @@ MonoBehaviour:
   holdingItem: {fileID: 0}
   dialogueObject: {fileID: 11400000, guid: 4450504e7a6b81a42a2cc723f5940430, type: 2}
   lastPotion: god
-  goodReview: goodReview
-  midReview: midReview
-  awfReview: awfulReview
+  goodReview: That was darn tootin!
+  midReview: Ain't you got bettr' than that?
+  awfReview: I'm dyin here pal...
   wantedItemNamesDayOne:
   - Vitamin Gummy
   - Vitamin Gummy
