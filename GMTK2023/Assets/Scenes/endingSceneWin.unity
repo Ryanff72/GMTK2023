@@ -529,6 +529,7 @@ MonoBehaviour:
   - 3
   - 5
   - 6
+  song: goodending
 --- !u!1 &911734409
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
 
+    private void Start()
+    {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic("title");
+    }
     public void StartGame()
     {
         //morningsong

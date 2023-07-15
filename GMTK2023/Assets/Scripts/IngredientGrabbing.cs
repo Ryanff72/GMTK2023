@@ -16,6 +16,7 @@ public class IngredientGrabbing : MonoBehaviour
     Vector3 worldMousePos;
     Vector2 oldPosition; //used to calculate throw speed
     public bool shakeable;
+    AudioManager audioManager;
 
     // CamShakeStuff
     public GameObject cam;
@@ -70,6 +71,7 @@ public class IngredientGrabbing : MonoBehaviour
     {
         currentShadowCircle = Instantiate(GameObject.Find("ShadowCircle"), new Vector2(transform.position.x, -1.5f), Quaternion.identity);
         currentShadowCircle.GetComponent<shadowScript>().followObject = gameObject;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     public void StateMachine()
@@ -201,6 +203,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if (!grounded)
                 {
                     shakeDuration = 0.1f;
+                    audioManager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 grounded = true;
                 if (hasSpawnedSmoke == false)
@@ -256,9 +259,10 @@ public class IngredientGrabbing : MonoBehaviour
             }
             if (grounded == true)
             {
-                if (velocity.y < -15f)
+                if (velocity.y < -10f)
                 {
                     shakeDuration = 0.1f;
+                    audioManager.PlaySoundEffect("thudsfx", 0.5f);
                     velocity.y = Mathf.Abs(velocity.y);
                     velHasDiminished = false;
                 }
@@ -292,6 +296,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x < -0.5f)
                 {
                     shakeDuration = 0.1f;
+                    audioManager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 velocity.x = Mathf.Abs(velocity.x);
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
@@ -304,6 +309,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x > 0.5f)
                 {
                     shakeDuration = 0.1f;
+                    audioManager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
 
@@ -320,6 +326,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if(velocity.y > 1)
                 {
                     shakeDuration = 0.1f;
+                    audioManager.PlaySoundEffect("thudsfx", 0.5f);
                     //sound effect
                 }
                 velocity.y = -Mathf.Abs(velocity.y);

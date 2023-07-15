@@ -20,12 +20,6 @@ MonoBehaviour:
     nibbled my pea shooters to death!"
   - "Ouuwwww.. My boys are gonna need somethin\u2019 ta chew on ta get em thru tonight."
   - "Please, if ya could gimme anythin\u2019 like that!?"
-  typingInterval: 0.03
+  typingInterval: 0.02
   boxColour: {r: 0, g: 0, b: 0, a: 1}
-  letterSound:
-    Guid:
-      Data1: -959631296
-      Data2: 1310821795
-      Data3: -1084056442
-      Data4: 625639260
-    Path: event:/CharacterSFX/broadbean
+  letterSound: broadbeanvoice

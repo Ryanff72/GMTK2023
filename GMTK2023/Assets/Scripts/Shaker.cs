@@ -26,6 +26,8 @@ public class Shaker : MonoBehaviour
     private Sprite OpenSprite;
     public Sprite ClosedSprite;
 
+    AudioManager audioManager;
+
     private void Start()
     {
         OpenSprite = transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
@@ -33,6 +35,7 @@ public class Shaker : MonoBehaviour
         hasOutputItems = false;
         shakenObjects.Clear();
         shksts = shakerStatus.Dormant;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
     public void StateMachine()
     {
@@ -98,10 +101,12 @@ public class Shaker : MonoBehaviour
                 if (shakenObjects[i].GetComponent<IngredientGrabbing>().shakeable == true)
                 {
                     shakenObjects[i].GetComponent<Ingredient>().Mod = Modifier.Shaken;
+                    audioManager.PlaySoundEffect("popsfx",0.5f);
                     shakenObjects[i].GetComponent<Ingredient>().item.Mod = Modifier.Shaken;
                 }
                 shakenObjects[i].gameObject.transform.position = new Vector3(-1.22000003f, -0.439999998f, 0);
-                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(12, 18), Random.Range(17, 20));
+                
+                shakenObjects[i].GetComponent<IngredientGrabbing>().velocity = new Vector2(Random.Range(10, 20), Random.Range(20, 22));
             }
             shakenObjects.Clear();
             yield return new WaitForSeconds(0.5f);

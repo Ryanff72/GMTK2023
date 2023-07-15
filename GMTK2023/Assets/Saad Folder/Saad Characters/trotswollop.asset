@@ -18,12 +18,6 @@ MonoBehaviour:
   - "you wouldn\u2019t happen to sell anything useful for a boss, would you?"
   - "I just started my internship yesterday and I can\u2019t afford enough education
     to know what these potions do\u2026"
-  typingInterval: 0.03
+  typingInterval: 0.02
   boxColour: {r: 0, g: 0, b: 0, a: 1}
-  letterSound:
-    Guid:
-      Data1: -598671904
-      Data2: 1162503550
-      Data3: 707222716
-      Data4: -989617673
-    Path: event:/CharacterSFX/turtle
+  letterSound: trotswollopvoice

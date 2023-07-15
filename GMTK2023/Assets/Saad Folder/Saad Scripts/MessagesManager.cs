@@ -33,12 +33,15 @@ public class MessagesManager : MonoBehaviour
 	bool hasFinishedDialogue = false;
 	Coroutine currentTypingCoroutine;
 
+	AudioManager audioManager;
+
 	//raycast variables
 	Camera cam;
 	RaycastHit2D hitInfo;
 
 	private void Start()
 	{
+		audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		cam = Camera.main;
 	}
 
@@ -110,7 +113,12 @@ public class MessagesManager : MonoBehaviour
 			currentText.text += letter;
 			if(currentCharacter.letterSound != null && currentRenderer != null)
 			{
-				//sound effect
+				Debug.Log(currentCharacter.name);
+				int random = UnityEngine.Random.Range(1, 10);
+				if (random > 7) 
+				{
+					audioManager.PlaySoundEffect(currentCharacter.letterSound, 0.4f);
+				}
 			}
 
 			isTyping = true;

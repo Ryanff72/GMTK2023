@@ -521,8 +521,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
   - {fileID: 21300000, guid: 83e73fcce2e668f46b1347ccae8554a0, type: 3}
-  charTime: 0.05
-  delayBoard: []
+  charTime: 0.04
+  delayBoard:
+  - 5
+  - 5
+  - 8
+  song: badending
 --- !u!1 &911734409
 GameObject:
   m_ObjectHideFlags: 0

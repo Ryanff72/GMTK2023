@@ -16,6 +16,13 @@ public class ShiftUtility : MonoBehaviour
     float secondStageSwapTime = 0.35f;
     public float swapSpeed;
 
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
+
 
     public void shiftUtility (string utilityName)
     {
@@ -24,18 +31,18 @@ public class ShiftUtility : MonoBehaviour
         if(utilityName == "kettle")
         {
             activeUtil = activeUtility.Kettle;
-
+            audioManager.PlaySoundEffect("cauldronactive", 0.6f);
 		}
 		if (utilityName == "heater")
         {
             activeUtil = activeUtility.Heater;
-
-		}
+            audioManager.PlaySoundEffect("heateractive", 0.6f);
+        }
 		if (utilityName == "shaker")
         {
             activeUtil = activeUtility.Shaker;
-
-		}
+            audioManager.PlaySoundEffect("shakeractive", 0.6f);
+        }
 	}
 
     // Update is called once per frame

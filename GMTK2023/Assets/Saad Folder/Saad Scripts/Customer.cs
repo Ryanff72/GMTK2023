@@ -12,7 +12,7 @@ public class Customer : ScriptableObject
 	public string[] dialogueLines;
 	public float typingInterval = 0.05f;
 	public Color boxColour;
-	public AudioClip letterSound;
+	public String letterSound;
 
 
 }

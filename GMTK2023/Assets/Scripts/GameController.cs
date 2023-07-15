@@ -22,9 +22,12 @@ public class GameController : MonoBehaviour
     public List<Sprite> tablesTops;
     public List<Sprite> tablesBots;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         StartCoroutine(startDay());
     }
 
@@ -83,14 +86,14 @@ public class GameController : MonoBehaviour
             CustomerIndex++;
             if(CustomerIndex == 2 || CustomerIndex == 5 || CustomerIndex == 8 || CustomerIndex == 11)
             {
-                //noonmusic
+                audioManager.PlayMusic("noon");
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
             }
             else if(CustomerIndex == 3 || CustomerIndex == 6 || CustomerIndex == 9 || CustomerIndex == 12)
             {
-                //nightmusic
+                audioManager.PlayMusic("night");
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
@@ -118,14 +121,12 @@ public class GameController : MonoBehaviour
                         SceneManager.LoadScene("endingSceneWin");
                     }
                 }
-                yield return new WaitForSeconds(newDayWaitTime / 3);
                 GameObject.Find("ReviewPage").GetComponent<Animator>().SetTrigger("ShowResult");
-                yield return new WaitForSeconds(newDayWaitTime / 2);
+                yield return new WaitForSeconds(newDayWaitTime);
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
-                //morningsong
-                yield return new WaitForSeconds(newDayWaitTime);
+                audioManager.PlayMusic("morning");
 
             }
             currentCustomers[CustomerIndex].GetComponent<Client>().appear();

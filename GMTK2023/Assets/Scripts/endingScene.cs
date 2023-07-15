@@ -15,10 +15,12 @@ public class endingScene : MonoBehaviour
     SpriteRenderer Board;
     TextMeshProUGUI text;
     public List<float> delayBoard;
+    public string song;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayMusic(song);
         Board = GameObject.Find("Board").GetComponent<SpriteRenderer>();
         text = GameObject.Find("bottomText").GetComponent<TextMeshProUGUI>();
         text.text = "";

@@ -14,19 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Clove
   dialogueLines:
-  - 'You. Vendor. '
+  - You. Vendor. (Click to continue)
   - "I\u2019m exhausted, and I\u2019m not here to make friends."
-  - "I\u2019m here because I\u2019ve got money and a problem, and you\u2019ve got
-    the solution."
+  - "I\u2019m here because I\u2019ve got money and a problem, and looks like you\u2019ve
+    got the solution.."
+  - Look at that heater and shaker below your desk, I bet that would come in handy
+    to brew certain items.
+  - And look at that nice big cauldron to stir and mix items.
+  - Yeah you've got a very nice setup there.
   - "So, fix me something that\u2019ll keep me alert. I\u2019ll be needing my head
     later."
-  - If you happen to have any pixie sugar, it may pair well with warm vegetables.
-  typingInterval: 0.05
+  - If you happen to have any pixie sugar, it may mix well with heated vegetables.
+  typingInterval: 0.02
   boxColour: {r: 0, g: 0, b: 0, a: 1}
-  letterSound:
-    Guid:
-      Data1: -1374720477
-      Data2: 1248107015
-      Data3: 1110301078
-      Data4: 973585816
-    Path: event:/CharacterSFX/clove
+  letterSound: clovevoice

@@ -9,10 +9,11 @@ public class Heater : MonoBehaviour
     public List<float> cookTimes;
     public float cookTime;
     public GameObject smokeEffect;
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -43,6 +44,7 @@ public class Heater : MonoBehaviour
     {
         heatedObject.GetComponent<Ingredient>().Heat();
         Instantiate(smokeEffect, heatedObject.transform.position, Quaternion.Euler(-90, 0, 0));
+        audioManager.PlaySoundEffect("donecooking",0.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

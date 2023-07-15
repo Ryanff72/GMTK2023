@@ -16,8 +16,11 @@ public class IngredientSpawn : MonoBehaviour
 
     bool hasPlayedSFX;
 
+    AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         idleSprite = GetComponent<SpriteRenderer>().sprite;    
     }
 
@@ -64,6 +67,22 @@ public class IngredientSpawn : MonoBehaviour
 
     void GlassSFX()
     {
-
+        if (openSprite.name.Contains("bag"))
+        {
+            audioManager.PlaySoundEffect("pouchopen", 0.4f);
+        }
+        if (openSprite.name.Contains("metal"))
+        {
+            audioManager.PlaySoundEffect("metalopen", 0.3f);
+        }
+        if (openSprite.name.Contains("rainbow"))
+        {
+            audioManager.PlaySoundEffect("glassclink2", 0.4f);
+        }
+        if (openSprite.name.Contains("raven"))
+        {
+            audioManager.PlaySoundEffect("glassclink", 0.4f);
+        }
+        
 	}
 }

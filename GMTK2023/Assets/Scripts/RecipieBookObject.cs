@@ -9,6 +9,7 @@ public class RecipieBookObject : MonoBehaviour
     public GameObject[] recipieCanvas;
     public GameObject turnLeftButton;
     public GameObject turnRightButton;
+    AudioManager audioManager;
 
     int pageRecepieCount = 0; //the amount of recipies on the current page
     int pagePairCount = 0; //the number of pairs we have gone through
@@ -18,7 +19,10 @@ public class RecipieBookObject : MonoBehaviour
 
     int currentpage = 0;
 
-
+    private void Start()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
 
     private void Update()
     {
@@ -121,7 +125,7 @@ public class RecipieBookObject : MonoBehaviour
 
     void TurnSFX()
     {
-        //sfx
+        audioManager.PlaySoundEffect("pageturn",0.6f);
     }
 
 }

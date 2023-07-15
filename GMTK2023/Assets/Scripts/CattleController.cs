@@ -14,14 +14,26 @@ public class CattleController : MonoBehaviour
     public float SpoonStirDistance = 10.0f;
     public GameObject NewItemSpawner; // cauldron
     private AudioManager audioManager;
+    public GameObject audioManagerReplacement;
 
 
+    private void Awake()
+    {
+        GameObject audioManagertest = GameObject.Find("AudioManager");
+
+        if (audioManagertest == null)
+        {
+            GameObject go = Instantiate(audioManagerReplacement);
+            go.name = "AudioManager";
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        lastSpoonX = Spoon.transform.position.x;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        lastSpoonX = Spoon.transform.position.x;
+        
         audioManager.PlayMusic("morning");
     }
 
