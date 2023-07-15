@@ -30,7 +30,6 @@ public class GameController : MonoBehaviour
 
     public IEnumerator startDay()
     {
-        AudioManager.instance.SetMusic(MusicEnum.MORNING);
         GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
         GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
         GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
@@ -84,14 +83,14 @@ public class GameController : MonoBehaviour
             CustomerIndex++;
             if(CustomerIndex == 2 || CustomerIndex == 5 || CustomerIndex == 8 || CustomerIndex == 11)
             {
-                AudioManager.instance.SetMusic(MusicEnum.NOON);
+                //noonmusic
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = SunsetBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[1];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[1];
             }
             else if(CustomerIndex == 3 || CustomerIndex == 6 || CustomerIndex == 9 || CustomerIndex == 12)
             {
-                AudioManager.instance.SetMusic(MusicEnum.NIGHT);
+                //nightmusic
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = NightBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[2];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[2];
@@ -110,12 +109,12 @@ public class GameController : MonoBehaviour
                     }
                     if(sumOfHealth <= 5)
                     {
-                        AudioManager.instance.SetMusic(MusicEnum.BAD_ENDING);
+                        //badendingsong
                         SceneManager.LoadScene("endingSceneBad");
                     }
                     else
                     {
-                        AudioManager.instance.SetMusic(MusicEnum.GOOD_ENDING);
+                        //goodendingsong
                         SceneManager.LoadScene("endingSceneWin");
                     }
                 }
@@ -125,7 +124,7 @@ public class GameController : MonoBehaviour
                 GameObject.Find("background").GetComponent<SpriteRenderer>().sprite = MorningBg;
                 GameObject.Find("table").GetComponent<SpriteRenderer>().sprite = tablesTops[0];
                 GameObject.Find("tableBottom").GetComponent<SpriteRenderer>().sprite = tablesBots[0];
-                AudioManager.instance.SetMusic(MusicEnum.MORNING);
+                //morningsong
                 yield return new WaitForSeconds(newDayWaitTime);
 
             }

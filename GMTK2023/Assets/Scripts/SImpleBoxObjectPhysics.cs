@@ -11,6 +11,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
     public bool hovering = false;
     Vector3 worldMousePos;
     Vector2 oldPosition; //used to calculate throw speed
+    AudioManager audiomanager;
 
     // CamShakeStuff
     public GameObject cam;
@@ -63,6 +64,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
     private void Start()
     {
         initShadowCircle();
+        audiomanager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     public void StateMachine()
@@ -127,7 +129,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = true;
             bxsts = boxStatus.NotDragging;
-            velocity = new Vector2((transform.position.x - oldPosition.x) / 0.2f, (transform.position.y - oldPosition.y) / 0.2f);
+            velocity = new Vector2((transform.position.x - oldPosition.x) / 0.2f, (transform.position.y - oldPosition.y) / 0.12f);
         }
     }
 
@@ -166,13 +168,13 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
                 if (!grounded)
                 {
                     shakeDuration = 0.1f;
+                    audiomanager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 grounded = true;
                 if (hasSpawnedSmoke == false)
                 {
                     hasSpawnedSmoke = true;
                     Instantiate(landingSmoke, new Vector3(transform.position.x, leftGc.position.y, -5), Quaternion.Euler(-90, 0, 0));
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                     //SoundCreator.transform.position = transform.position;
                     //SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
                 }
@@ -222,7 +224,7 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
             }
             if (grounded == true)
             {
-                if (velocity.y < -15f)
+                if (velocity.y < -10f)
                 {
                     shakeDuration = 0.1f;
                     velocity.y = Mathf.Abs(velocity.y);
@@ -258,9 +260,10 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
                 if (velocity.x < -0.5f)
                 {
                     shakeDuration = 0.1f;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
+                    audiomanager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 velocity.x = Mathf.Abs(velocity.x);
+                
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, 0f);
@@ -270,11 +273,11 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
             {
                 if (velocity.x > 0.5f)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                     shakeDuration = 0.1f;
+                    audiomanager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
-
+                
                 if (WallCheckRight.collider.gameObject.tag == "Platform")
                 {
                     transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, 0f);
@@ -284,10 +287,11 @@ public class SimpleBoxObjectPhysics : MonoBehaviour
             {
                 if (velocity.y > 1)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                     shakeDuration = 0.1f;
+                    audiomanager.PlaySoundEffect("thudsfx", 0.5f);
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
+                
             }
             if (nearGrounded == false)//workaround for gravity being wonky
             {

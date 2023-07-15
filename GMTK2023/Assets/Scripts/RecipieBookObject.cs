@@ -121,7 +121,7 @@ public class RecipieBookObject : MonoBehaviour
 
     void TurnSFX()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.pageTurn, transform.position);
+        //sfx
     }
 
 }

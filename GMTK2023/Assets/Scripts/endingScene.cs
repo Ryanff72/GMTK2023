@@ -11,10 +11,10 @@ public class endingScene : MonoBehaviour
     int boardIndex = 0;
     int lineIndex = 0;
     public List<Sprite> boards;
-    public float boardTime;
     public float charTime;
     SpriteRenderer Board;
     TextMeshProUGUI text;
+    public List<float> delayBoard;
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +23,10 @@ public class endingScene : MonoBehaviour
         text = GameObject.Find("bottomText").GetComponent<TextMeshProUGUI>();
         text.text = "";
         Board.sprite = boards[boardIndex];
-        boardIndex++;
         StartCoroutine(nextBoard());
         StartCoroutine(nextChar());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator nextChar()
     {
@@ -47,22 +41,21 @@ public class endingScene : MonoBehaviour
 
     IEnumerator nextBoard()
     {
-        if(boardIndex == 1)
-        {
-            yield return new WaitForSeconds(1.5f);
-        }
-        yield return new WaitForSeconds(boardTime);
-        lineIndex++;
-        text.text = "";
-        charIndex = 0;
+        yield return new WaitForSeconds(delayBoard[boardIndex]);
         boardIndex++;
-        if(boardIndex >= boards.Count)
+        lineIndex++;
+        if (boardIndex >= boards.Count)
         {
-            yield return new WaitForSeconds(4.0f);
-            AudioManager.instance.SetMusic(MusicEnum.TITLE_SCREEN);
+            //titlemusic
             SceneManager.LoadScene("Menu");
         }
-        Board.sprite = boards[boardIndex];
-        StartCoroutine(nextBoard());
+        else
+        {
+            text.text = "";
+            charIndex = 0;
+            Board.sprite = boards[boardIndex];
+            StartCoroutine(nextBoard());
+        }
+
     }
 }

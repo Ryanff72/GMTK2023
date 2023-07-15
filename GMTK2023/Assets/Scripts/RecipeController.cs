@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using System.Linq;
 using Unity.VisualScripting;
-using FMOD.Studio;
 
 public enum Modifier {
     None,

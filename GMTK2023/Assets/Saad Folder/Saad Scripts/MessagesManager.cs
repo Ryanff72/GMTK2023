@@ -1,4 +1,4 @@
-using FMOD;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -108,9 +108,9 @@ public class MessagesManager : MonoBehaviour
 
 
 			currentText.text += letter;
-			if(!currentCharacter.letterSound.IsNull && currentRenderer != null)
+			if(currentCharacter.letterSound != null && currentRenderer != null)
 			{
-				AudioManager.instance.PlayOneShot(currentCharacter.letterSound, transform.position);
+				//sound effect
 			}
 
 			isTyping = true;

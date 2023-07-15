@@ -64,14 +64,6 @@ public class IngredientSpawn : MonoBehaviour
 
     void GlassSFX()
     {
-        if(gameObject.name != "DPspawn")
-        {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.glassBounceClink, transform.position);
-        }
-        else if(gameObject.name == "DPspawn")
-        {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.pouchOpen, transform.position);
 
-		}
 	}
 }

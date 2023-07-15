@@ -7,6 +7,7 @@ TagManager:
   - Spoon
   - Heater
   - TextBox
+  - GameAudio
   layers:
   - Default
   - TransparentFX

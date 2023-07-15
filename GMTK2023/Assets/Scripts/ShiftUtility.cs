@@ -24,19 +24,16 @@ public class ShiftUtility : MonoBehaviour
         if(utilityName == "kettle")
         {
             activeUtil = activeUtility.Kettle;
-			AudioManager.instance.PlayOneShot(FMODEvents.instance.potSFX, transform.position);
 
 		}
 		if (utilityName == "heater")
         {
             activeUtil = activeUtility.Heater;
-			AudioManager.instance.PlayOneShot(FMODEvents.instance.heaterSFX, transform.position);
 
 		}
 		if (utilityName == "shaker")
         {
             activeUtil = activeUtility.Shaker;
-			AudioManager.instance.PlayOneShot(FMODEvents.instance.metalThingSFX, transform.position);
 
 		}
 	}
@@ -69,16 +66,16 @@ public class ShiftUtility : MonoBehaviour
         if (firstStageSwapTime > 0)
         {
             firstStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34000003f, -0.81f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -0.81f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
         }
         else if(secondStageSwapTime > 0)
         {
             secondStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34000003f, -1.49000001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -1.49000001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
         }
     }
 
@@ -88,16 +85,16 @@ public class ShiftUtility : MonoBehaviour
         if (firstStageSwapTime > 0)
         {
             firstStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34526443f, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -1.44000003f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -1.44000003f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
         }
         else if (secondStageSwapTime > 0)
         {
             secondStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -1.84000003f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -1.84000003f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
         }
     }
 
@@ -106,16 +103,16 @@ public class ShiftUtility : MonoBehaviour
         if (firstStageSwapTime > 0)
         {
             firstStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34526443f, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f,-0.44000001f,0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -6.65f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -0.44000001f,0.0367328897f), Time.deltaTime * swapSpeed);
         }
         else if (secondStageSwapTime > 0)
         {
             secondStageSwapTime -= Time.deltaTime;
-            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(-1.34526443f, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
-            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(-1.34526443f, -0.74000001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            kettlego.transform.position = Vector3.Lerp(kettlego.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            heatergo.transform.position = Vector3.Lerp(heatergo.transform.position, new Vector3(transform.position.x, -6.6500001f, 0.0367328897f), Time.deltaTime * swapSpeed);
+            shakergo.transform.position = Vector3.Lerp(shakergo.transform.position, new Vector3(transform.position.x, -0.74000001f, 0.0367328897f), Time.deltaTime * swapSpeed);
         }
     }
 

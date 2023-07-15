@@ -13,7 +13,7 @@ public class CattleController : MonoBehaviour
     bool SpoonInPot = false;
     public float SpoonStirDistance = 10.0f;
     public GameObject NewItemSpawner; // cauldron
-
+    private AudioManager audioManager;
 
 
 
@@ -21,6 +21,8 @@ public class CattleController : MonoBehaviour
     void Start()
     {
         lastSpoonX = Spoon.transform.position.x;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlayMusic("morning");
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class CattleController : MonoBehaviour
         if (output)
         {
             NewItemSpawner.GetComponent<SpawnNew>().SpawnItem(output);
+            audioManager.PlaySoundEffect("newpotion", 0.8f);
         }
 
         for(int i = IngredientsInPot.Count-1; i >= 0; i--)

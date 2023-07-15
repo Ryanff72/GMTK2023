@@ -32,9 +32,9 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetButtonDown("Jump"))
         {
-            AudioManager.instance.SetMusic(MusicEnum.TITLE_SCREEN);
+            //song
             SceneManager.LoadScene("Menu");
         }
     }

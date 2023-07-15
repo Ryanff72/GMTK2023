@@ -162,7 +162,7 @@ public class IngredientGrabbing : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = true;
             ingStatus = ingredientStatus.NotDragging;
-            velocity = new Vector2((transform.position.x-oldPosition.x)/0.15f, (transform.position.y - oldPosition.y) / 0.15f);
+            velocity = new Vector2((transform.position.x-oldPosition.x)/0.15f, (transform.position.y - oldPosition.y) / 0.09f);
         }
     }
 
@@ -207,7 +207,6 @@ public class IngredientGrabbing : MonoBehaviour
                 {
                     hasSpawnedSmoke = true;
                     Instantiate(landingSmoke, transform.position + new Vector3(0, -0.72f, -5), Quaternion.Euler(-90, 0, 0));
-					AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
 					//SoundCreator.transform.position = transform.position;
 					//SoundCreator.GetComponent<AudioProximity>().PlaySound(landSound, 150f, 6f);
 				}
@@ -293,7 +292,6 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x < -0.5f)
                 {
                     shakeDuration = 0.1f;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.x = Mathf.Abs(velocity.x);
                 if (WallCheckLeft.collider.gameObject.tag == "Platform")
@@ -306,7 +304,6 @@ public class IngredientGrabbing : MonoBehaviour
                 if (velocity.x > 0.5f)
                 {
                     shakeDuration = 0.1f;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
                 }
                 velocity.x = -Mathf.Abs(velocity.x);
 
@@ -323,7 +320,7 @@ public class IngredientGrabbing : MonoBehaviour
                 if(velocity.y > 1)
                 {
                     shakeDuration = 0.1f;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.objectBounce, transform.position);
+                    //sound effect
                 }
                 velocity.y = -Mathf.Abs(velocity.y);
                 //add sfx
