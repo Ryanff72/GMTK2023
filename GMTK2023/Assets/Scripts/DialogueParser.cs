@@ -6,18 +6,17 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public static class DialogueParser
 {
     public static string Dialogue;
 
-    public static void initDialogue()
+    public static void initDialogue(TextAsset file)
     {
-        var fileStream = new FileStream(Application.dataPath + "/Dialogue.txt", FileMode.Open, FileAccess.Read);
-        using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
-        {
-            Dialogue = streamReader.ReadToEnd();
-        }
+
+        Dialogue = file.text;
+
     }
     public static List<string> LoadDialogue(string Name, int Hp, int Day, string LastPotion)
     {

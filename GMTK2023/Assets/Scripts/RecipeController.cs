@@ -213,6 +213,7 @@ public class RecipeController : MonoBehaviour
         Item rustCatalyst = new Item("Rust Catalyst");
         book.AllRecipes.Add(new Recipe(new List<Item>() { ravensTears, ShakenPowderedIron }, rustCatalyst));
         book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenRavensTears, ShakenPowderedIron }, rustCatalyst));
+        book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenRavensTears, powderedIron }, rustCatalyst));
 
 
         /*RT + #PI = [AG] Acidic Gunk (poison, melt)
@@ -230,9 +231,6 @@ public class RecipeController : MonoBehaviour
         PI + RT = [PB] Paint Bomb (mischief, explosive)*/
         Item paintBomb = new Item("Paint Bomb");
         book.AllRecipes.Add(new Recipe(new List<Item>() { powderedIron, HotRavensTears }, paintBomb));
-        book.AllRecipes.Add(new Recipe(new List<Item>() { HotPowderedIron, HotRavensTears }, paintBomb));
-        book.AllRecipes.Add(new Recipe(new List<Item>() { powderedIron, ShakenRavensTears }, paintBomb));
-        book.AllRecipes.Add(new Recipe(new List<Item>() { ShakenPowderedIron, ShakenRavensTears }, paintBomb));
         book.AllRecipes.Add(new Recipe(new List<Item>() { powderedIron, ravensTears }, paintBomb));
 
 

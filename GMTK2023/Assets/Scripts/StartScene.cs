@@ -32,7 +32,7 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown("escape"))
         {
             //song
             SceneManager.LoadScene("Menu");
@@ -60,6 +60,7 @@ public class StartScene : MonoBehaviour
         if(boardIndex >= boards.Count)
         {
             yield return new WaitForSeconds(4.0f);
+            SceneManager.LoadScene("Menu");
         }
         Board.sprite = boards[boardIndex];
         StartCoroutine(nextBoard());

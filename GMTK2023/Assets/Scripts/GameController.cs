@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public Sprite NightBg;
     public List<Sprite> tablesTops;
     public List<Sprite> tablesBots;
+    public TextAsset Dialogue;
 
     AudioManager audioManager;
 
@@ -59,7 +60,7 @@ public class GameController : MonoBehaviour
             }
         }
         currentCustomers[0].GetComponent<Client>().appear();
-        DialogueParser.initDialogue();
+        DialogueParser.initDialogue(Dialogue);
     }
 
 

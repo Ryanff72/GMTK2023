@@ -601,7 +601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153117937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: -1.2, z: 2.7632868}
+  m_LocalPosition: {x: 3.32, y: -1.2, z: 2.7632868}
   m_LocalScale: {x: 0.77903, y: 0.77903, z: 0.77903}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5437,6 +5437,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3cb6ed80d304ee2498e8ae3c55daeb14, type: 3}
   - {fileID: 21300000, guid: 2000cb5f96f031b4783c86e363050542, type: 3}
   - {fileID: 21300000, guid: 7555db978b6a28740ba631552396f62f, type: 3}
+  Dialogue: {fileID: 4900000, guid: e09ea3ed4e53b97478dfe72b2d7a4b54, type: 3}
 --- !u!4 &2078553499
 Transform:
   m_ObjectHideFlags: 0
@@ -5666,7 +5667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9166078544754231997, guid: 1510a8d60d29f3b43ab1ad383ec487ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
